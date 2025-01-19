@@ -295,69 +295,68 @@ img {
   font: var(--text-sm);
   color: var(--color-gray-500);
 }
-/* RESPONSIVE DESIGN */
 
-/* Para telas maiores que 1024px */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
     .jobs .cards {
-      grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+      grid-template-columns: repeat(2, 1fr); 
     }
   
     .services .cards {
-      flex-direction: column; /* Coloca os cards em coluna */
-      gap: 16px; /* Espaçamento entre os cards */
+      flex-direction: column; 
+      gap: 16px; 
     }
   
     .intro .live-badge {
-      bottom: 16px; /* Ajusta a posição do badge */
+      bottom: 16px; 
     }
   
     .intro .name {
-      word-wrap: break-word; /* Quebra as palavras longas */
+        word-wrap: break-word; 
+        white-space: normal;   
     }
-  }
+}
   
-  /* Para telas menores que 768px */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .jobs .cards {
-      grid-template-columns: 1fr; /* 1 coluna */
+      grid-template-columns: 1fr;
     }
   
     .intro {
-      padding: 80px 0 40px; /* Ajusta o padding da seção de introdução */
+      padding: 80px 0 40px; 
     }
   
     .intro .name {
-      word-wrap: break-word; /* Quebra as palavras longas */
+        word-wrap: break-word; 
+        white-space: normal;   
     }
   
     .intro .live-badge {
-      bottom: 8px; /* Ajusta a posição do badge */
+      bottom: 8px; 
     }
-  }
+}
   
-  /* Para telas menores que 480px */
-  @media (max-width: 480px) {
+ 
+@media (max-width: 480px) {
     .container {
-      padding: 0 15px; /* Ajusta o padding da container */
+      padding: 0 15px; 
     }
   
     .skills ul {
-      flex-direction: column; /* Alinha os itens da lista em coluna */
-      gap: 10px; /* Espaçamento entre os itens */
+      flex-direction: column; 
+      gap: 10px; 
     }
   
     .intro .name {
-      word-wrap: break-word; /* Quebra as palavras longas */
+        word-wrap: break-word; 
+        white-space: normal;   
     }
   
     .contact .list ul {
-      gap: 12px; /* Ajusta o espaçamento entre os itens da lista de contato */
+      gap: 12px; 
     }
-  }
+}
   
-
-
 @keyframes pulse {
     0% {
       transform: translateX(-50%) scale(1);
