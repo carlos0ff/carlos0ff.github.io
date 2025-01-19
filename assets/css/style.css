@@ -139,9 +139,10 @@ img {
 }
 
 .intro .name {
-  font: var(--subtitle);
-  color: 33FF33;
-  margin-bottom: 8px;
+    word-wrap: break-word; 
+    white-space: normal;   
+    font-size: 1.2em;      
+    margin-bottom: 10px;   
 }
 
 .intro .name span {
@@ -149,8 +150,11 @@ img {
 }
 
 .intro .occupation {
-  font: var(--title-lg);
-  color: var(--color-gray-600);
+    font-size: 2.5em; 
+    font-weight: bold;     
+    margin-top: 0;        
+    margin-bottom: 20px;   
+    text-align: center;    
 }
 
 .description {
