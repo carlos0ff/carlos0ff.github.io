@@ -135,11 +135,11 @@ img {
     border-radius: 15px;
     font-size: 16px;
     font-weight: bold;
-    margin-top: 10px; 
     text-align: center;
     position: relative;
-    top: 10px;
+    top: -30px;
 }
+
 
 @keyframes pulse {
   0% {
@@ -324,12 +324,7 @@ img {
     flex-direction: column;
     gap: 16px;
   }
-
-  .intro .avatar {
-    width: 80px;
-    height: 80px;
-  }
-
+  
   .intro .live-badge {
     bottom: 16px;
   }
@@ -344,13 +339,8 @@ img {
     padding: 80px 0 40px;
   }
 
-  .intro .avatar {
-    width: 60px;
-    height: 60px;
-  }
-
   .intro .live-badge {
-    bottom: 8px;
+    bottom: 4px;
   }
 }
 
