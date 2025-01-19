@@ -101,7 +101,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 0 57px;
+  padding: 100px 0 10px;
 }
 
 .intro .avatar {
@@ -129,17 +129,17 @@ img {
 /* Badge Developer */
 .live-badge {
     display: inline-block;
-    background-color: #4CAF50; 
-    color: #fff; 
+    background-color: #4CAF50;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 16px;
     font-weight: bold;
+    margin-top: 10px;
     text-align: center;
     position: relative;
-    top: -30px;
+    top: -35px;
 }
-
 
 @keyframes pulse {
   0% {
@@ -324,7 +324,12 @@ img {
     flex-direction: column;
     gap: 16px;
   }
-  
+
+  .intro .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
   .intro .live-badge {
     bottom: 16px;
   }
@@ -339,8 +344,13 @@ img {
     padding: 80px 0 40px;
   }
 
+  .intro .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
   .intro .live-badge {
-    bottom: 4px;
+    bottom: 8px;
   }
 }
 
