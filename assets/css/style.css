@@ -138,21 +138,6 @@ img {
     top: -28px;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-50%) scale(1.03);
-    opacity: 0.98;
-  }
-  100% {
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
-  }
-}
-
 .intro .name {
   font: var(--subtitle);
   color: 33FF33;
@@ -310,48 +295,80 @@ img {
   font: var(--text-sm);
   color: var(--color-gray-500);
 }
-
 /* RESPONSIVE DESIGN */
+
+/* Para telas maiores que 1024px */
 @media (max-width: 1024px) {
-  .jobs .cards {
-    grid-template-columns: repeat(2, 1fr);
+    .jobs .cards {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+  
+    .services .cards {
+      flex-direction: column; /* Coloca os cards em coluna */
+      gap: 16px; /* Espaçamento entre os cards */
+    }
+  
+    .intro .live-badge {
+      bottom: 16px; /* Ajusta a posição do badge */
+    }
+  
+    .intro .name {
+      word-wrap: break-word; /* Quebra as palavras longas */
+    }
   }
+  
+  /* Para telas menores que 768px */
+  @media (max-width: 768px) {
+    .jobs .cards {
+      grid-template-columns: 1fr; /* 1 coluna */
+    }
+  
+    .intro {
+      padding: 80px 0 40px; /* Ajusta o padding da seção de introdução */
+    }
+  
+    .intro .name {
+      word-wrap: break-word; /* Quebra as palavras longas */
+    }
+  
+    .intro .live-badge {
+      bottom: 8px; /* Ajusta a posição do badge */
+    }
+  }
+  
+  /* Para telas menores que 480px */
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 15px; /* Ajusta o padding da container */
+    }
+  
+    .skills ul {
+      flex-direction: column; /* Alinha os itens da lista em coluna */
+      gap: 10px; /* Espaçamento entre os itens */
+    }
+  
+    .intro .name {
+      word-wrap: break-word; /* Quebra as palavras longas */
+    }
+  
+    .contact .list ul {
+      gap: 12px; /* Ajusta o espaçamento entre os itens da lista de contato */
+    }
+  }
+  
 
-  .services .cards {
-    flex-direction: column;
-    gap: 16px;
-  }
 
-  .intro .live-badge {
-    bottom: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .jobs .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .intro {
-    padding: 80px 0 40px;
-  }
-
-  .intro .live-badge {
-    bottom: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .skills ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .contact .list ul {
-    gap: 12px;
-  }
+@keyframes pulse {
+    0% {
+      transform: translateX(-50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%) scale(1.03);
+      opacity: 0.98;
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 1;
+    }
 }
