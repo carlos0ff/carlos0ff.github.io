@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | José Carlos - Desenvolvedor Backend</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 30px;
+            height: calc(100% - 30px);
+            width: 2px;
+            background-color: #e2e8f0;
+        }
+        
+        .dark .timeline-item:not(:last-child):after {
+            background-color: #334155;
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .dark-card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-dark-900 dark:text-gray-200 antialiased">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-dark-800/80 backdrop-blur-md shadow-sm dark:shadow-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="text-2xl font-bold gradient-text">carlos0ff</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a href="index.html" class="text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 px-3 py-2 font-medium transition-colors">Home</a>
+              <a href="about.html" class="text-primary-600 dark:text-primary-500 px-3 py-2 font-medium transition-colors">Sobre</a>
+              <a href="projects.html" class="text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 px-3 py-2 font-medium transition-colors">Projetos</a>
+              <a href="contact.html" class="text-gray-900 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-500 px-3 py-2 font-medium transition-colors">Contato</a>
+              <a href="contact.html" class="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 font-medium transition-colors">Contrate-me</a>
+            </div>
+          </div>
+          <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Abrir menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Hero -->
+  <section class="py-16 bg-white dark:bg-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Prazer, sou <span class="gradient-text">José Carlos</span></h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+            Desenvolvedor Backend com 3+ anos de experiência criando soluções escaláveis e eficientes. Apaixonado por resolver problemas complexos através da tecnologia.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="projects.html" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-lg font-medium flex items-center">
+              <i class="fas fa-code mr-2"></i> Ver Projetos
+            </a>
+            <a href="contact.html" class="px-6 py-3 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg font-medium flex items-center">
+              <i class="fas fa-paper-plane mr-2"></i> Fale Comigo
+            </a>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 flex justify-center">
+          <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-indigo-700 rounded-full blur-md opacity-20 animate-float"></div>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                 alt="José Carlos" 
+                 class="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-dark-700 shadow-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="py-16 bg-gray-50 dark:bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <!-- My Story -->
+          <div class="bg-white dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+              <i class="fas fa-book-open mr-3 text-primary-600"></i>
+              Minha História
+            </h2>
+            <div class="prose dark:prose-invert max-w-none">
+              <p class="mb-4">Minha jornada na tecnologia começou cedo, aos 15 anos, quando tive meu primeiro contato com programação através de um curso técnico. Desde então, me apaixonei pela capacidade de criar soluções através de código.</p>
+              
+              <p class="mb-4">Atualmente, estou cursando Ciência da Computação enquanto trabalho como Desenvolvedor Backend, onde aplico meus conhecimentos para construir sistemas robustos e escaláveis.</p>
+              
+              <p class="mb-4">Minha experiência em suporte técnico me deu uma visão única sobre as necessidades dos usuários finais, o que me ajuda a desenvolver sistemas mais intuitivos e eficientes.</p>
+              
+              <p>Fora do mundo do código, sou um entusiasta de hardware, jogos indie e café especial. Acredito que o aprendizado contínuo é a chave para o crescimento profissional e pessoal.</p>
+            </div>
+          </div>
+          
+          <!-- Experience -->
+          <div class="bg-white dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+              <i class="fas fa-briefcase mr-3 text-primary-600"></i>
+              Experiência Profissional
+            </h2>
+            
+            <div class="space-y-8">
+              <!-- Timeline Item 1 -->
+              <div class="timeline-item relative pl-10">
+                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Desenvolvedor Backend</h3>
+                <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 dark:text-gray-400 mb-2">
+                  <span class="font-medium">TechSolutions Inc.</span>
+                  <span class="hidden sm:block sm:mx-2">•</span>
+                  <span>Jan 2022 - Presente</span>
+                </div>
+                <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+                  <li>Desenvolvimento e manutenção de APIs RESTful para plataforma de e-commerce</li>
+                  <li>Implementação de sistema de autenticação JWT com refresh tokens</li>
+                  <li>Otimização de queries MongoDB, reduzindo tempo de resposta em 40%</li>
+                  <li>Integração com serviços de pagamento (Stripe, PayPal)</li>
+                </ul>
+              </div>
+              
+              <!-- Timeline Item 2 -->
+              <div class="timeline-item relative pl-10">
+                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Suporte Técnico Nível 2</h3>
+                <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 dark:text-gray-400 mb-2">
+                  <span class="font-medium">DataSystems Ltda.</span>
+                  <span class="hidden sm:block sm:mx-2">•</span>
+                  <span>Mar 2020 - Dez 2021</span>
+                </div>
+                <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+                  <li>Atendimento a clientes corporativos com problemas técnicos complexos</li>
+                  <li>Automatização de processos de suporte usando Python, reduzindo tempo de resolução em 30%</li>
+                  <li>Documentação técnica de sistemas e treinamento de novos colaboradores</li>
+                </ul>
+              </div>
+              
+              <!-- Timeline Item 3 -->
+              <div class="timeline-item relative pl-10">
+                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-xl font-semibold">Estagiário em Desenvolvimento</h3>
+                <div class="flex flex-col sm:flex-row sm:items-center text-gray-600 dark:text-gray-400 mb-2">
+                  <span class="font-medium">InovaTech Startups</span>
+                  <span class="hidden sm:block sm:mx-2">•</span>
+                  <span>Ago 2019 - Fev 2020</span>
+                </div>
+                <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+                  <li>Desenvolvimento de features para aplicação web usando Node.js e React</li>
+                  <li>Participação em sprints ágeis (Scrum)</li>
+                  <li>Implementação de testes unitários e de integração</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <!-- Skills -->
+          <div class="bg-white dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+            <h3 class="text-xl font-bold mb-6 flex items-center">
+              <i class="fas fa-cogs mr-3 text-primary-600"></i>
+              Minhas Habilidades
+            </h3>
+            
+            <div class="space-y-5">
+              <!-- Skill 1 -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Node.js</span>
+                  <span class="text-gray-600 dark:text-gray-400">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
+                </div>
+              </div>
+              
+              <!-- Skill 2 -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">JavaScript/TypeScript</span>
+                  <span class="text-gray-600 dark:text-gray-400">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              
+              <!-- Skill 3 -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">MongoDB</span>
+                  <span class="text-gray-600 dark:text-gray-400">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
+                </div>
+              </div>
+              
+              <!-- Skill 4 -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">PostgreSQL</span>
+                  <span class="text-gray-600 dark:text-gray-400">75%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full skill-bar" style="width: 75%"></div>
+                </div>
+              </div>
+              
+              <!-- Skill 5 -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Docker</span>
+                  <span class="text-gray-600 dark:text-gray-400">70%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full skill-bar" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Education -->
+          <div class="bg-white dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+            <h3 class="text-xl font-bold mb-6 flex items-center">
+              <i class="fas fa-graduation-cap mr-3 text-primary-600"></i>
+              Formação Acadêmica
+            </h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-university text-primary-600 mr-3"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Bacharelado em Ciência da Computação</h4>
+                  <p class="text-gray-600 dark:text-gray-400">Universidade Federal</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-500">2021 - 2025 (previsão)</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-certificate text-primary-600 mr-3"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Técnico em Informática</h4>
+                  <p class="text-gray-600 dark:text-gray-400">ETEC Centro</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-500">2018 - 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Languages -->
+          <div class="bg-white dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+            <h3 class="text-xl font-bold mb-6 flex items-center">
+              <i class="fas fa-language mr-3 text-primary-600"></i>
+              Idiomas
+            </h3>
+            
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Português</span>
+                  <span class="text-gray-600 dark:text-gray-400">Nativo</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Inglês</span>
+                  <span class="text-gray-600 dark:text-gray-400">Avançado</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Espanhol</span>
+                  <span class="text-gray-600 dark:text-gray-400">Intermediário</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div class="bg-primary-600 h-2.5 rounded-full" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts -->
+  <section class="py-16 bg-white dark:bg-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Curiosidades</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Fact 1 -->
+        <div class="bg-gray-50 dark:bg-dark-700 rounded-xl p-6 text-center">
+          <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-code text-primary-600 dark:text-primary-400 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">50+</h3>
+          <p class="text-gray-600 dark:text-gray-400">Projetos concluídos</p>
+        </div>
+        
+        <!-- Fact 2 -->
+        <div class="bg-gray-50 dark:bg-dark-700 rounded-xl p-6 text-center">
+          <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-mug-hot text-primary-600 dark:text-primary-400 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">∞</h3>
+          <p class="text-gray-600 dark:text-gray-400">Xícaras de café</p>
+        </div>
+        
+        <!-- Fact 3 -->
+        <div class="bg-gray-50 dark:bg-dark-700 rounded-xl p-6 text-center">
+          <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-book text-primary-600 dark:text-primary-400 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">1200+</h3>
+          <p class="text-gray-600 dark:text-gray-400">Horas de estudo</p>
+        </div>
+        
+        <!-- Fact 4 -->
+        <div class="bg-gray-50 dark:bg-dark-700 rounded-xl p-6 text-center">
+          <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-headset text-primary-600 dark:text-primary-400 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">100%</h3>
+          <p class="text-gray-600 dark:text-gray-400">Focado em soluções</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-primary-600 to-indigo-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Vamos trabalhar juntos?</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">Estou sempre aberto a novas oportunidades e desafios. Se você tem um projeto em mente, vamos conversar!</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="contact.html" class="px-8 py-4 bg-white text-primary-600 rounded-lg shadow-lg hover:bg-gray-100 transition-all font-medium text-lg">
+          <i class="fas fa-envelope mr-2"></i> Envie uma mensagem
+        </a>
+        <a href="projects.html" class="px-8 py-4 border border-white rounded-lg hover:bg-white/10 transition-all font-medium text-lg">
+          <i class="fas fa-code mr-2"></i> Ver meus projetos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark-800 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">carlos0ff</h3>
+          <p class="mb-4">Desenvolvedor Backend & Suporte Técnico criando soluções digitais eficientes.</p>
+          <div class="flex space-x-4">
+            <a href="https://github.com/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors">Sobre</a></li>
+            <li><a href="projects.html" class="hover:text-white transition-colors">Projetos</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Tecnologias</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition-colors">Node.js</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Banco de Dados</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">APIs REST</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">DevOps</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contato</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-2 text-sm"></i>
+              <span>contato@carlos0ff.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone-alt mt-1 mr-2 text-sm"></i>
+              <span>+55 (XX) XXXX-XXXX</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-2 text-sm"></i>
+              <span>Brasil</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm">
+        <p>© 2023 José Carlos. Todos os direitos reservados.</p>
+        <p class="mt-2">Feito com <i class="fas fa-heart text-red-500"></i> e muito código</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    // Check for saved user preference or system preference
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+    
+    // Animate skill bars on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const skillBars = document.querySelectorAll('.skill-bar');
+      
+      const animateSkills = () => {
+        skillBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 100);
+        });
+      };
+      
+      // Small delay to allow page to render
+      setTimeout(animateSkills, 300);
+    });
+  </script>
+
+</body>
+</html>
