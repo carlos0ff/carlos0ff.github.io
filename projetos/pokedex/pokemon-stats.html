@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Estatísticas Pokémon | Banco de Dados Pokémon</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+        <h1>Estatísticas Pokémon</h1>
+        <p>Visualize detalhes completos, estatísticas, evoluções e movimentos de cada Pokémon</p>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html"  class="nav-button active">Todos Pokémon</a>
+        <a href="pokemon-stats.html" class="nav-button">Estatísticas</a>
+        <a href="" class="nav-button">Por Geração</a>
+        <a href="" class="nav-button">Lendários</a>
+        <a href="" class="nav-button">Favoritos</a>
+    </nav>
+    
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Pesquise por nome ou número...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+    
+    <!-- Pokémon Stats Container -->
+    <div class="pokemon-stats-container">
+        <!-- Charizard -->
+        <div class="pokemon-stats-card">
+            <div class="pokemon-stats-image">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+            </div>
+            <div class="pokemon-stats-details">
+                <div class="pokemon-stats-header">
+                    <h2 class="pokemon-stats-name">Charizard</h2>
+                    <span class="pokemon-stats-id">#006</span>
+                </div>
+                
+                <div class="pokemon-stats-types">
+                    <span class="type-badge type-fire">Fogo</span>
+                    <span class="type-badge type-flying">Voador</span>
+                </div>
+                
+                <p class="pokemon-stats-description">
+                    Charizard voa pelo céu em busca de oponentes poderosos. Ele respira um calor tão grande que derrete qualquer coisa. No entanto, nunca dá um sopro ardente a qualquer oponente mais fraco que ele.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">HP</span>
+                            <span class="stat-value">78</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 52%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Ataque</span>
+                            <span class="stat-value">84</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 56%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Defesa</span>
+                            <span class="stat-value">78</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 52%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Ataque Especial</span>
+                            <span class="stat-value">109</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 73%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Defesa Especial</span>
+                            <span class="stat-value">85</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 57%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Velocidade</span>
+                            <span class="stat-value">100</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 67%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Total</span>
+                            <span class="stat-value">534</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 89%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Evolution Chain -->
+        <div class="evolution-chain">
+            <h3 class="evolution-title">Cadeia de Evolução</h3>
+            <div class="evolution-steps">
+                <div class="evolution-step">
+                    <div class="evolution-pokemon">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="Charmander">
+                        <div class="evolution-pokemon-name">Charmander</div>
+                        <div class="evolution-pokemon-level">Nível 16</div>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-pokemon">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png" alt="Charmeleon">
+                        <div class="evolution-pokemon-name">Charmeleon</div>
+                        <div class="evolution-pokemon-level">Nível 36</div>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-pokemon">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+                        <div class="evolution-pokemon-name">Charizard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Type Effectiveness -->
+        <div class="type-effectiveness">
+            <h3 class="evolution-title">Efetividade de Tipos</h3>
+            <div class="effectiveness-grid">
+                <!-- Super Eficaz -->
+                <div class="effectiveness-card super-effective">
+                    <div class="effectiveness-header">
+                        <div class="effectiveness-icon">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <h4 class="effectiveness-title">Super Eficaz</h4>
+                    </div>
+                    <div class="effectiveness-value">2× Dano</div>
+                    <div class="effectiveness-types">
+                        <span class="type-badge type-water">Água</span>
+                        <span class="type-badge type-electric">Elétrico</span>
+                        <span class="type-badge type-rock">Pedra</span>
+                    </div>
+                    <p class="effectiveness-desc">
+                        Estes tipos causam o dobro de dano a Charizard
+                    </p>
+                </div>
+                
+                <!-- Pouco Eficaz -->
+                <div class="effectiveness-card not-very-effective">
+                    <div class="effectiveness-header">
+                        <div class="effectiveness-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <h4 class="effectiveness-title">Pouco Eficaz</h4>
+                    </div>
+                    <div class="effectiveness-value">½× Dano</div>
+                    <div class="effectiveness-types">
+                        <span class="type-badge type-fire">Fogo</span>
+                        <span class="type-badge type-grass">Planta</span>
+                        <span class="type-badge type-fighting">Lutador</span>
+                        <span class="type-badge type-bug">Inseto</span>
+                        <span class="type-badge type-fairy">Fada</span>
+                    </div>
+                    <p class="effectiveness-desc">
+                        Estes tipos causam metade do dano a Charizard
+                    </p>
+                </div>
+                
+                <!-- Pokémon Fraco Contra -->
+                <div class="effectiveness-card weak-against">
+                    <div class="effectiveness-header">
+                        <div class="effectiveness-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="effectiveness-title">Fraco Contra</h4>
+                    </div>
+                    <div class="effectiveness-value">Vulnerável</div>
+                    <div class="weakness-examples">
+                        <div class="weakness-pokemon">
+                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" alt="Vaporeon">
+                            <span>Vaporeon</span>
+                            <div class="weakness-types">
+                                <span class="type-badge type-water">Água</span>
+                            </div>
+                        </div>
+                        <div class="weakness-pokemon">
+                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/076.png" alt="Golem">
+                            <span>Golem</span>
+                            <div class="weakness-types">
+                                <span class="type-badge type-rock">Pedra</span>
+                                <span class="type-badge type-ground">Terra</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="effectiveness-desc">
+                        Pokémon que exploram as fraquezas de Charizard
+                    </p>
+                </div>
+                
+                <!-- Imune -->
+                <div class="effectiveness-card no-effect">
+                    <div class="effectiveness-header">
+                        <div class="effectiveness-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h4 class="effectiveness-title">Imune</h4>
+                    </div>
+                    <div class="effectiveness-value">0× Dano</div>
+                    <div class="effectiveness-types">
+                        <span class="type-badge type-ground">Terra</span>
+                    </div>
+                    <p class="effectiveness-desc">
+                        Este tipo não causa dano a Charizard
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Moves List -->
+        <div class="moves-list">
+            <h3 class="evolution-title">Movimentos Principais</h3>
+            <table class="moves-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Categoria</th>
+                        <th>Poder</th>
+                        <th>Precisão</th>
+                        <th>PP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lança-Chamas</td>
+                        <td><span class="type-badge type-fire">Fogo</span></td>
+                        <td>Especial</td>
+                        <td>90</td>
+                        <td>100%</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Garra Dragão</td>
+                        <td><span class="type-badge type-dragon">Dragão</span></td>
+                        <td>Físico</td>
+                        <td>80</td>
+                        <td>100%</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Terra Treme</td>
+                        <td><span class="type-badge type-ground">Terra</span></td>
+                        <td>Físico</td>
+                        <td>100</td>
+                        <td>100%</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Giro do Fogo</td>
+                        <td><span class="type-badge type-fire">Fogo</span></td>
+                        <td>Especial</td>
+                        <td>35</td>
+                        <td>85%</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Investida</td>
+                        <td><span class="type-badge type-normal">Normal</span></td>
+                        <td>Físico</td>
+                        <td>40</td>
+                        <td>100%</td>
+                        <td>35</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recommended Pokémon Section -->
+        <div class="recommended-section">
+            <h3 class="recommended-title">
+                <i class="fas fa-users"></i>
+                Pokémon Recomendados
+            </h3>
+            <p style="margin-bottom: 25px; opacity: 0.9;">
+                Estes Pokémon formam uma boa equipe com Charizard, cobrindo suas fraquezas e complementando seus tipos:
+            </p>
+            
+            <div class="recommended-grid">
+                <!-- Tyranitar -->
+                <div class="recommended-card">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/248.png" alt="Tyranitar" class="recommended-img">
+                    <h4 class="recommended-name">Tyranitar</h4>
+                    <div class="recommended-types">
+                        <span class="type-badge type-rock">Pedra</span>
+                        <span class="type-badge type-dark">Sombrio</span>
+                    </div>
+                    <div class="synergy-badge">Cobre fraqueza contra Pedra</div>
+                    <p class="recommended-desc">
+                        Resistente a Pedra e Elétrico, que são fraquezas do Charizard.
+                    </p>
+                </div>
+                
+                <!-- Gyarados -->
+                <div class="recommended-card">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/130.png" alt="Gyarados" class="recommended-img">
+                    <h4 class="recommended-name">Gyarados</h4>
+                    <div class="recommended-types">
+                        <span class="type-badge type-water">Água</span>
+                        <span class="type-badge type-flying">Voador</span>
+                    </div>
+                    <div class="synergy-badge">Resistente a Água</div>
+                    <p class="recommended-desc">
+                        Cobre a fraqueza contra Água e é imune a ataques terrestres.
+                    </p>
+                </div>
+                
+                <!-- Electivire -->
+                <div class="recommended-card">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/466.png" alt="Electivire" class="recommended-img">
+                    <h4 class="recommended-name">Electivire</h4>
+                    <div class="recommended-types">
+                        <span class="type-badge type-electric">Elétrico</span>
+                    </div>
+                    <div class="synergy-badge">Contra Pokémon Água</div>
+                    <p class="recommended-desc">
+                        Excelente contra Pokémon aquáticos que ameaçam Charizard.
+                    </p>
+                </div>
+                
+                <!-- Excadrill -->
+                <div class="recommended-card">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/530.png" alt="Excadrill" class="recommended-img">
+                    <h4 class="recommended-name">Excadrill</h4>
+                    <div class="recommended-types">
+                        <span class="type-badge type-ground">Terra</span>
+                        <span class="type-badge type-steel">Aço</span>
+                    </div>
+                    <div class="synergy-badge">Contra Elétrico e Pedra</div>
+                    <p class="recommended-desc">
+                        Resiste a ataques elétricos e é forte contra Pokémon de pedra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Termos de Uso</a>
+            <a href="#" class="footer-link">Política de Privacidade</a>
+            <a href="#" class="footer-link">Contato</a>
+            <a href="#"

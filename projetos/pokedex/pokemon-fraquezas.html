@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estatísticas Pokémon | Banco de Dados Pokémon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --dark-bg: #121212;
+      --darker-bg: #0a0a0a;
+      --card-bg: #1e1e1e;
+      --primary: #ffcb05;
+      --primary-dark: #c7a008;
+      --water: #6890f0;
+      --fire: #f08030;
+      --grass: #78c850;
+      --electric: #f8d030;
+      --psychic: #f85888;
+      --fighting: #c03028;
+      --poison: #a040a0;
+      --ground: #e0c068;
+      --flying: #a890f0;
+      --bug: #a8b820;
+      --rock: #b8a038;
+      --ghost: #705898;
+      --dragon: #7038f8;
+      --dark: #705848;
+      --steel: #b8b8d0;
+      --fairy: #ee99ac;
+      --ice: #98d8d8;
+      --text-light: #f5f5f5;
+      --text-dark: #333;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 40px 0;
+      margin-bottom: 30px;
+      position: relative;
+      background: linear-gradient(135deg, var(--darker-bg), var(--dark-bg));
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(255, 203, 5, 0.3);
+    }
+    
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .nav-button {
+      padding: 10px 20px;
+      border-radius: 30px;
+      background-color: var(--card-bg);
+      color: var(--text-light);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+    
+    .nav-button:hover, .nav-button.active {
+      background-color: var(--primary);
+      color: var(--text-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 203, 5, 0.3);
+    }
+    
+    /* Search Section */
+    .search-section {
+      margin: 30px 0;
+      text-align: center;
+    }
+    
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 30px;
+      border: none;
+      background-color: var(--card-bg);
+      color: var(--text-light);
+      font-size: 1rem;
+      padding-right: 50px;
+    }
+    
+    .search-button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    
+    /* Pokémon Stats Container */
+    .pokemon-stats-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    /* Pokémon Stats Card */
+    .pokemon-stats-card {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .pokemon-stats-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .pokemon-stats-image {
+      text-align: center;
+    }
+    
+    .pokemon-stats-image img {
+      width: 100%;
+      max-width: 300px;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    }
+    
+    .pokemon-stats-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .pokemon-stats-name {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+    
+    .pokemon-stats-id {
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+    
+    .pokemon-stats-types {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .pokemon-stats-description {
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .stat-item {
+      margin-bottom: 15px;
+    }
+    
+    .stat-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .stat-name {
+      color: var(--primary);
+    }
+    
+    .stat-value {
+      font-family: 'Courier New', monospace;
+    }
+    
+    .stat-bar-container {
+      height: 10px;
+      background-color: var(--darker-bg);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .stat-bar {
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    }
+    
+    /* Evolution Chain */
+    .evolution-chain {
+      margin-top: 40px;
+    }
+    
+    .evolution-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .evolution-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+    
+    .evolution-steps {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .evolution-step {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .evolution-step:hover {
+      transform: translateY(-5px);
+    }
+    
+    .evolution-arrow {
+      font-size: 2rem;
+      color: var(--primary);
+      opacity: 0.5;
+    }
+    
+    .evolution-pokemon {
+      background-color: var(--darker-bg);
+      padding: 15px;
+      border-radius: 10px;
+      width: 150px;
+    }
+    
+    .evolution-pokemon img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    
+    .evolution-pokemon-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .evolution-pokemon-level {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    /* Type Effectiveness */
+    .type-effectiveness {
+      margin-top: 40px;
+    }
+    
+    .effectiveness-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .effectiveness-card {
+      background-color: var(--darker-bg);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .effectiveness-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    /* Weakness Examples */
+    .weakness-examples {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .weakness-pokemon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 80px;
+    }
+    
+    .weakness-pokemon img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 5px;
+      transition: transform 0.3s;
+    }
+    
+    .weakness-pokemon img:hover {
+      transform: scale(1.1);
+    }
+    
+    .weakness-pokemon span {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    /* Moves List */
+    .moves-list {
+      margin-top: 40px;
+    }
+    
+    .moves-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    .moves-table th, .moves-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--darker-bg);
+    }
+    
+    .moves-table th {
+      background-color: var(--primary);
+      color: var(--text-dark);
+      font-weight: bold;
+    }
+    
+    .moves-table tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Type Colors */
+    .type-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .type-electric { background-color: var(--electric); color: var(--text-dark); }
+    .type-grass { background-color: var(--grass); }
+    .type-fire { background-color: var(--fire); }
+    .type-water { background-color: var(--water); }
+    .type-psychic { background-color: var(--psychic); }
+    .type-fighting { background-color: var(--fighting); }
+    .type-poison { background-color: var(--poison); }
+    .type-ground { background-color: var(--ground); color: var(--text-dark); }
+    .type-flying { background-color: var(--flying); }
+    .type-bug { background-color: var(--bug); }
+    .type-rock { background-color: var(--rock); }
+    .type-ghost { background-color: var(--ghost); }
+    .type-dragon { background-color: var(--dragon); }
+    .type-dark { background-color: var(--dark); }
+    .type-steel { background-color: var(--steel); color: var(--text-dark); }
+    .type-fairy { background-color: var(--fairy); }
+    .type-ice { background-color: var(--ice); color: var(--text-dark); }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--darker-bg);
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .footer-link {
+      color: var(--primary);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    
+    .footer-link:hover {
+      opacity: 0.8;
+    }
+    
+    .social-icons {
+      margin: 20px 0;
+    }
+    
+    .social-icon {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: opacity 0.3s;
+    }
+    
+    .social-icon:hover {
+      opacity: 0.8;
+    }
+    
+    .copyright {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+        <h1>Estatísticas Pokémon</h1>
+        <p>Visualize detalhes completos, estatísticas, evoluções e movimentos de cada Pokémon</p>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <button class="nav-button">Todos Pokémon</button>
+        <button class="nav-button active">Estatísticas</button>
+        <button class="nav-button">Comparar</button>
+        <button class="nav-button">Tipos</button>
+        <button class="nav-button">Favoritos</button>
+    </nav>
+    
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Pesquise por nome ou número...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+    
+    <!-- Pokémon Stats Container -->
+    <div class="pokemon-stats-container">
+        <!-- Charizard -->
+        <div class="pokemon-stats-card">
+            <div class="pokemon-stats-image">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+            </div>
+            <div class="pokemon-stats-details">
+                <div class="pokemon-stats-header">
+                    <h2 class="pokemon-stats-name">Charizard</h2>
+                    <span class="pokemon-stats-id">#006</span>
+                </div>
+                
+                <div class="pokemon-stats-types">
+                    <span class="type-badge type-fire">Fogo</span>
+                    <span class="type-badge type-flying">Voador</span>
+                </div>
+                
+                <p class="pokemon-stats-description">
+                    Charizard voa pelo céu em busca de oponentes poderosos. Ele respira um calor tão grande que derrete qualquer coisa. No entanto, nunca dá um sopro ardente a qualquer oponente mais fraco que ele.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">HP</span>
+                            <span class="stat-value">78</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 52%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Ataque</span>
+                            <span class="stat-value">84</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 56%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Defesa</span>
+                            <span class="stat-value">78</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 52%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Ataque Especial</span>
+                            <span class="stat-value">109</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 73%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Defesa Especial</span>
+                            <span class="stat-value">85</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 57%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Velocidade</span>
+                            <span class="stat-value">100</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 67%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <span class="stat-name">Total</span>
+                            <span class="stat-value">534</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar" style="width: 89%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Evolution Chain -->
+        <div class="evolution-chain">
+            <h3 class="evolution-title">Cadeia de Evolução</h3>
+            <div class="evolution-steps">
+                <div class="evolution-step">
+                    <div class="evolution-pokemon">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="Charmander">
+                        <div class="evolution-pokemon-name">Charmander</div>
+                        <div class="evolution-pokemon-level">Nível 16</div>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-pokemon">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png" alt="Charmeleon">
+                        <div class="evolution-pokemon-name">Charmeleon</div>
+                        <div class="evolution-pokemon-level">Nível 36</div>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="evolution-step">
+                    <div class="evolution-pokemon">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+                        <div class="evolution-pokemon-name">Charizard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Type Effectiveness -->
+        <div class="type-effectiveness">
+            <h3 class="evolution-title">Efetividade de Tipos</h3>
+            <div class="effectiveness-grid">
+                <div class="effectiveness-card">
+                    <div class="effectiveness-title">Super Eficaz (2x)</div>
+                    <div class="pokemon-stats-types">
+                        <span class="type-badge type-water">Água</span>
+                        <span class="type-badge type-electric">Elétrico</span>
+                        <span class="type-badge type-rock">Pedra</span>
+                    </div>
+                </div>
+                
+                <div class="effectiveness-card">
+                    <div class="effectiveness-title">Pouco Eficaz (0.5x)</div>
+                    <div class="pokemon-stats-types">
+                        <span class="type-badge type-fire">Fogo</span>
+                        <span class="type-badge type-grass">Planta</span>
+                        <span class="type-badge type-fighting">Lutador</span>
+                        <span class="type-badge type-bug">Inseto</span>
+                        <span class="type-badge type-steel">Aço</span>
+                        <span class="type-badge type-fairy">Fada</span>
+                    </div>
+                </div>
+                
+                <div class="effectiveness-card">
+                    <div class="effectiveness-title">Pokémon Fraco Contra</div>
+                    <div class="weakness-examples">
+                        <div class="weakness-pokemon">
+                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" alt="Vaporeon">
+                            <span>Vaporeon</span>
+                        </div>
+                        <div class="weakness-pokemon">
+                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/076.png" alt="Golem">
+                            <span>Golem</span>
+                        </div>
+                        <div class="weakness-pokemon">
+                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png" alt="Lapras">
+                            <span>Lapras</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="effectiveness-card">
+                    <div class="effectiveness-title">Imune (0x)</div>
+                    <div class="pokemon-stats-types">
+                        <span class="type-badge type-ground">Terra</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Moves List -->
+        <div class="moves-list">
+            <h3 class="evolution-title">Movimentos Principais</h3>
+            <table class="moves-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Categoria</th>
+                        <th>Poder</th>
+                        <th>Precisão</th>
+                        <th>PP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lança-Chamas</td>
+                        <td><span class="type-badge type-fire">Fogo</span></td>
+                        <td>Especial</td>
+                        <td>90</td>
+                        <td>100%</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Garra Dragão</td>
+                        <td><span class="type-badge type-dragon">Dragão</span></td>
+                        <td>Físico</td>
+                        <td>80</td>
+                        <td>100%</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Terra Treme</td>
+                        <td><span class="type-badge type-ground">Terra</span></td>
+                        <td>Físico</td>
+                        <td>100</td>
+                        <td>100%</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Giro do Fogo</td>
+                        <td><span class="type-badge type-fire">Fogo</span></td>
+                        <td>Especial</td>
+                        <td>35</td>
+                        <td>85%</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Investida</td>
+                        <td><span class="type-badge type-normal">Normal</span></td>
+                        <td>Físico</td>
+                        <td>40</td>
+                        <td>100%</td>
+                        <td>35</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Termos de Uso</a>
+            <a href="#" class="footer-link">Política de Privacidade</a>
+            <a href="#" class="footer-link">Contato</a>
+            <a href="#" class="footer-link">Sobre Nós</a>
+            <a href="#" class="footer-link">FAQ</a>
+        </div>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">© 2025 Pokémon Company. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

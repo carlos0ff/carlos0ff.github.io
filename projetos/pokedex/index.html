@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Pokédex Completa | Banco de Dados Pokémon</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+        <h1>Pokédex Completa</h1>
+        <p>Explore todos os Pokémon, suas estatísticas, evoluções e muito mais em nosso banco de dados completo</p>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html"  class="nav-button active">Todos Pokémon</a>
+        <a href="pokemon-stats.html" class="nav-button">Estatísticas</a>
+        <a href="#embreve" class="nav-button">Por Geração</a>
+        <a href="#embreve" class="nav-button">Lendários</a>
+        <a href="#embreve" class="nav-button">Favoritos</a>
+    </nav>
+    
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Pesquise por nome ou número...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+
+    
+    <!-- Pokémon Grid -->
+    <section class="pokemon-grid">
+        <!-- Pikachu -->
+        <div class="pokemon-card">
+            <span class="pokemon-id">#025</span>
+            <h2>Pikachu</h2>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Pikachu" class="pokemon-image">
+            <div class="pokemon-types">
+                <span class="type-badge type-electric">Elétrico</span>
+            </div>
+            <p>Pikachu é um Pokémon do tipo Elétrico conhecido por suas bochechas vermelhas que armazenam eletricidade.</p>
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span class="stat-name">HP</span>
+                    <span>35</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 35%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Ataque</span>
+                    <span>55</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 55%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Defesa</span>
+                    <span>40</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 40%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bulbasaur -->
+        <div class="pokemon-card">
+            <span class="pokemon-id">#001</span>
+            <h2>Bulbasaur</h2>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur" class="pokemon-image">
+            <div class="pokemon-types">
+                <span class="type-badge type-grass">Planta</span>
+                <span class="type-badge type-poison">Venenoso</span>
+            </div>
+            <p>Bulbasaur é um Pokémon do tipo Planta/Venenoso que carrega uma semente em suas costas desde o nascimento.</p>
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span class="stat-name">HP</span>
+                    <span>45</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 45%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Ataque</span>
+                    <span>49</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 49%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Defesa</span>
+                    <span>49</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 49%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Charmander -->
+        <div class="pokemon-card">
+            <span class="pokemon-id">#004</span>
+            <h2>Charmander</h2>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="Charmander" class="pokemon-image">
+            <div class="pokemon-types">
+                <span class="type-badge type-fire">Fogo</span>
+            </div>
+            <p>Charmander é um Pokémon do tipo Fogo com uma chama que queima constantemente na ponta de sua cauda.</p>
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span class="stat-name">HP</span>
+                    <span>39</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 39%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Ataque</span>
+                    <span>52</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 52%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Defesa</span>
+                    <span>43</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 43%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Squirtle -->
+        <div class="pokemon-card">
+            <span class="pokemon-id">#007</span>
+            <h2>Squirtle</h2>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle" class="pokemon-image">
+            <div class="pokemon-types">
+                <span class="type-badge type-water">Água</span>
+            </div>
+            <p>Squirtle é um Pokémon do tipo Água que se protege retraindo seu longo pescoço em sua concha.</p>
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span class="stat-name">HP</span>
+                    <span>44</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 44%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Ataque</span>
+                    <span>48</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 48%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Defesa</span>
+                    <span>65</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 65%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mewtwo -->
+        <div class="pokemon-card">
+            <span class="pokemon-id">#150</span>
+            <h2>Mewtwo</h2>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="Mewtwo" class="pokemon-image">
+            <div class="pokemon-types">
+                <span class="type-badge type-psychic">Psíquico</span>
+            </div>
+            <p>Mewtwo é um Pokémon lendário criado por manipulação genética. Possui poderes psíquicos incríveis.</p>
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span class="stat-name">HP</span>
+                    <span>106</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 70%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Ataque</span>
+                    <span>110</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 73%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Defesa</span>
+                    <span>90</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gengar -->
+        <div class="pokemon-card">
+            <span class="pokemon-id">#094</span>
+            <h2>Gengar</h2>
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar" class="pokemon-image">
+            <div class="pokemon-types">
+                <span class="type-badge type-ghost">Fantasma</span>
+                <span class="type-badge type-poison">Venenoso</span>
+            </div>
+            <p>Gengar é um Pokémon do tipo Fantasma/Venenoso que adora se esconder nas sombras para surpreender suas vítimas.</p>
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span class="stat-name">HP</span>
+                    <span>60</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 40%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Ataque</span>
+                    <span>65</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 43%;"></div>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-name">Defesa</span>
+                    <span>60</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-progress" style="width: 40%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Section - Legendary Pokémon -->
+    <section class="featured-section">
+        <h2 class="section-title">Pokémon Lendários</h2>
+        <div class="featured-container">
+            <div class="featured-card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="Mewtwo" class="featured-image">
+                <div class="featured-content">
+                    <h3>Mewtwo</h3>
+                    <p>Um Pokémon criado por manipulação genética. Embora seu poder científico seja terrível, seu coração permanece selvagem.</p>
+                    <a href="#" class="read-more">Ver detalhes</a>
+                </div>
+            </div>
+            
+            <div class="featured-card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png" alt="Mew" class="featured-image">
+                <div class="featured-content">
+                    <h3>Mew</h3>
+                    <p>Um Pokémon tão raro que muitos especialistas acreditam que é apenas um mito. Seu DNA contém o código genético de todos os Pokémon.</p>
+                    <a href="#" class="read-more">Ver detalhes</a>
+                </div>
+            </div>
+            
+            <div class="featured-card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/249.png" alt="Lugia" class="featured-image">
+                <div class="featured-content">
+                    <h3>Lugia</h3>
+                    <p>Diz-se que Lugia é o guardião dos mares. Dizem que seu bater de asas pode causar tempestades que duram 40 dias.</p>
+                    <a href="#" class="read-more">Ver detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Section - Starter Pokémon -->
+    <section class="featured-section">
+        <h2 class="section-title">Pokémon Iniciais</h2>
+        <div class="featured-container">
+            <div class="featured-card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur" class="featured-image">
+                <div class="featured-content">
+                    <h3>Bulbasaur</h3>
+                    <p>Há uma semente de planta nas costas deste Pokémon desde o dia em que nasce. A semente cresce lentamente.</p>
+                    <a href="#" class="read-more">Ver detalhes</a>
+                </div>
+            </div>
+            
+            <div class="featured-card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="Charmander" class="featured-image">
+                <div class="featured-content">
+                    <h3>Charmander</h3>
+                    <p>Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.</p>
+                    <a href="#" class="read-more">Ver detalhes</a>
+                </div>
+            </div>
+            
+            <div class="featured-card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Squirtle" class="featured-image">
+                <div class="featured-content">
+                    <h3>Squirtle</h3>
+                    <p>Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.</p>
+                    <a href="#" class="read-more">Ver detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Termos de Uso</a>
+            <a href="#" class="footer-link">Política de Privacidade</a>
+            <a href="#" class="footer-link">Contato</a>
+            <a href="#" class="footer-link">Sobre Nós</a>
+            <a href="#" class="footer-link">FAQ</a>
+        </div>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">© 2025 Pokémon Company. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+  // Simple interactivity
+  document.addEventListener('DOMContentLoaded', function() {
+    // Nav buttons active state
+    const navButtons = document.querySelectorAll('.nav-button');
+    navButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        navButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+    
+    // Gen buttons active state
+    const genButtons = document.querySelectorAll('.gen-button');
+    genButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        genButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+    
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    
+    searchButton.addEventListener('click', () => {
+      if(searchInput.value.trim() !== '') {
+        alert(`Buscando por: ${searchInput.value}`);
+        // In a real app, you would filter the Pokémon here
+      }
+    });
+    
+    searchInput.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter' && searchInput.value.trim() !== '') {
+        alert(`Buscando por: ${searchInput.value}`);
+        // In a real app, you would filter the Pokémon here
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
