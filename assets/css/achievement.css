@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Press+Start+2P&display=swap');
+    
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: #121212;
+    overflow: hidden;
+}
+
+.meme-text {
+    font-weight: 700;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.pixel-corners {
+    border-radius: 0;
+    clip-path: polygon(
+    0% 5px, 5px 5px, 5px 0%, calc(100% - 5px) 0%, calc(100% - 5px) 5px, 100% 5px, 
+    100% calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 
+    5px calc(100% - 5px), 0% calc(100% - 5px));
+}
+
+.current-time {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s;
+}

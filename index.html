@@ -85,53 +85,11 @@
     </div>
   </div>
 </section>
-<button onclick="window.location.replace('start.html')" 
-        class="bg-green-500 text-white px-4 py-2 mt-4">
-    Testar Redirecionamento
-</button>
-<!-- Core Javascript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-  // Configuração do countdown
-  const countdownDate = new Date("2023-12-31T23:59:59").getTime(); // Defina sua data final aqui
-  
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
-    
-    // Se o tempo acabou
-    if (distance <= 0) {
-      clearInterval(countdownInterval);
-      
-      // Mostrar mensagem de redirecionamento
-      const timerContainer = document.createElement('div');
-      timerContainer.className = 'fixed inset-0 flex items-center justify-center bg-black/80 z-50';
-      timerContainer.innerHTML = `
-        <div class="text-center p-8 bg-dark-800 rounded-lg">
-          <h3 class="text-2xl text-white mb-4">Redirecionando...</h3>
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto"></div>
-        </div>
-      `;
-      document.body.appendChild(timerContainer);
-      
-      // Redirecionar após 2 segundos
-      setTimeout(() => {
-        window.location.href = "start.html";
-      }, 2000);
-      
-      return;
-    }
-    
-    // Seu código de contagem regressiva aqui (opcional)
-    // const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    // const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    // etc...
-  }
 
-  // Iniciar o countdown
-  const countdownInterval = setInterval(updateCountdown, 1000);
-  updateCountdown(); // Chamar imediatamente para evitar atraso inicial
-</script>
+
+<!-- Core Javascript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+
 </body>
 </html>
