@@ -12,7 +12,7 @@
 
   <!-- Core Javascript -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind.config.js"></script>
+  <script src="config/tailwind.config.js"></script>
 
 </head>
 
@@ -36,11 +36,10 @@
       
       <h2 class="text-sm md:text-base text-gray-400/80 dark:text-gray-500 font-light mb-3">
         <span class="dark:text-gray-400">Desenvolvedor back-end</span> 
-        <span class="text-primary-400/90 dark:text-primary-300">Java</span> 
-        <span class="dark:text-gray-500">|</span> 
+        <span class="text-red-400/90 dark:text-red-300">Java</span> 
+        <span class="dark:text-gray-500">&</span> 
         <span class="text-indigo-400/90 dark:text-indigo-300">Angular</span>
       </h2>
-
     </div>
 
     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -49,13 +48,14 @@
         <i class="fas fa-code text-lg transition-transform group-hover:scale-110"></i>
         Explorar Projetos
       </a>
-      
+
       <a href="#" 
-         class="px-8 py-3.5 border-2 border-gray-300/30 hover:border-primary-400/50 rounded-lg hover:bg-gray-900/50 transition-all duration-300 font-medium text-lg flex items-center justify-center gap-2 group">
-        <i class="fas fa-file-alt group-hover:text-primary-400 transition-colors"></i>
-        Currículo PDF
+         class="px-8 py-3.5 border-2 border-gray-300/30 dark:border-gray-600/30 hover:border-primary-400/50 rounded-lg hover:bg-gray-100/50 dark:hover:bg-dark-800/50 transition-all duration-300 font-medium text-lg flex items-center justify-center gap-2 group">
+        <i class="fas fa-file-alt group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors"></i>
+        Baixar Currículo 
       </a>
     </div>
+    
 
     <!-- Badges de Redes Sociais - Versão com Instagram -->
     <div class="flex flex-wrap justify-center gap-3 mb-12 max-w-md mx-auto">
@@ -80,15 +80,58 @@
       <a href="mailto:carlosiilva66@gmail.com" target="_blank" 
          class="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm font-medium flex items-center 
          hover:bg-gray-700 hover:text-white ">
-        <i class="fas fa-envelope  mr-2"></i> Emal
+        <i class="fas fa-envelope  mr-2"></i> Email
       </a>
     </div>
   </div>
 </section>
-
+<button onclick="window.location.replace('start.html')" 
+        class="bg-green-500 text-white px-4 py-2 mt-4">
+    Testar Redirecionamento
+</button>
 <!-- Core Javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  // Configuração do countdown
+  const countdownDate = new Date("2023-12-31T23:59:59").getTime(); // Defina sua data final aqui
+  
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+    
+    // Se o tempo acabou
+    if (distance <= 0) {
+      clearInterval(countdownInterval);
+      
+      // Mostrar mensagem de redirecionamento
+      const timerContainer = document.createElement('div');
+      timerContainer.className = 'fixed inset-0 flex items-center justify-center bg-black/80 z-50';
+      timerContainer.innerHTML = `
+        <div class="text-center p-8 bg-dark-800 rounded-lg">
+          <h3 class="text-2xl text-white mb-4">Redirecionando...</h3>
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto"></div>
+        </div>
+      `;
+      document.body.appendChild(timerContainer);
+      
+      // Redirecionar após 2 segundos
+      setTimeout(() => {
+        window.location.href = "start.html";
+      }, 2000);
+      
+      return;
+    }
+    
+    // Seu código de contagem regressiva aqui (opcional)
+    // const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    // const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    // etc...
+  }
 
+  // Iniciar o countdown
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown(); // Chamar imediatamente para evitar atraso inicial
+</script>
 </body>
 </html>
