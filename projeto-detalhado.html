@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API do Brasileirão | José Carlos - Desenvolvedor Backend</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="config/tailwind.config.js"></script>
+
+  
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 bg-gray-800/80 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+        <a href="/" class="text-3xl font-bold gradient-title">José Carlos</a>
+        <a href="/" class="text-gray-300 hover:text-white transition-colors text-sm">← Voltar ao portfólio</a>
+    </div>
+</nav>
+
+<!-- Project Header -->
+<section class="bg-dark dark:bg-dark-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div>
+          <nav class="flex mb-4" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+              <li class="inline-flex items-center">
+                <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white">
+                  <i class="fas fa-home mr-2"></i>
+                  Home
+                </a>
+              </li>
+              <li>
+                <div class="flex items-center">
+                  <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                  <a href="projetos/" class="ml-1 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white">Projetos</a>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div class="flex items-center">
+                  <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                  <span class="ml-1 text-sm font-medium text-gray-500 dark:text-gray-300">API de E-commerce</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          <h1 class="text-3xl md:text-4xl font-bold mb-2">API de E-commerce</h1>
+          <p class="text-lg text-gray-600 dark:text-gray-400">Solução robusta para plataformas de comércio eletrônico</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex space-x-3">
+          <a href="https://github.com/carlos0ff/ecommerce-api" target="_blank" class="px-4 py-2 bg-gray-100 dark:bg-dark-700 hover:bg-gray-200 dark:hover:bg-dark-600 rounded-lg flex items-center">
+            <i class="fab fa-github mr-2" aria-hidden="true"></i> Ver código
+          </a>
+        
+          <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700 transition">
+            <i class="fas fa-external-link-alt mr-2"></i> Demo
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Detalhes do Projeto -->
+<section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+            <div class="rounded-xl overflow-hidden mb-8">
+                <img src="assets/image/classificação_do_brasileirão.png" 
+                alt="API de E-commerce" 
+                class="w-full h-auto object-cover project-image">
+            </div>
+        
+        <!-- Project Description -->
+        <div class="bg-dark dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Sobre o Projeto</h2>
+            <div class="prose dark:prose-invert max-w-none">
+                <p class="mb-4">Esta API foi desenvolvida para servir como backend completo para uma plataforma de e-commerce, oferecendo todos os recursos necessários para operações de compra e venda online.</p>
+                
+                <p class="mb-4">O sistema foi projetado para ser altamente escalável, atendendo desde pequenos negócios até grandes varejistas, com capacidade para processar milhares de requisições por minuto.</p>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Desafios e Soluções</h3>
+            <ul class="list-disc pl-6 mb-4 space-y-2">
+                <li><strong>Alta disponibilidade:</strong> Implementação de balanceamento de carga e auto-scaling na AWS</li>
+                <li><strong>Segurança:</strong> Sistema de autenticação JWT com refresh tokens e proteção contra ataques CSRF</li>
+                <li><strong>Performance:</strong> Cache Redis para consultas frequentes e otimização de queries no MongoDB</li>
+                <li><strong>Pagamentos:</strong> Integração com múltiplos gateways (Stripe, PayPal e Mercado Pago)</li>
+            </ul>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Funcionalidades Principais</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    </div>
+                    <p>Catálogo de produtos com filtros avançados</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    </div>
+                    <p>Carrinho de compras persistente</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    </div>
+                    <p>Sistema de avaliação de produtos</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    </div>
+                    <p>Processamento de pedidos em tempo real</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    </div>
+                    <p>Recomendações personalizadas</p>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    </div>
+                    <p>Webhooks para integrações</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+        <h2 class="text-2xl font-bold mb-4">Detalhes Técnicos</h2>
+        <div class="prose dark:prose-invert max-w-none">
+            <h3 class="text-xl font-semibold mt-6 mb-3">Arquitetura</h3>
+            <p class="mb-4">A aplicação segue o padrão MVC (Model-View-Controller) com separação clara de responsabilidades. Para garantir a manutenibilidade, o código foi organizado em módulos por domínio de negócio.</p>
+            <div class="mb-6">
+                <h4 class="font-medium mb-2">Tecnologias Utilizadas</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tech-badge px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm">Node.js</span>
+                    <span class="tech-badge px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Express</span>
+                    <span class="tech-badge px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MongoDB</span>
+                    <span class="tech-badge px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Redis</span>
+                    <span class="tech-badge px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">AWS</span>
+                    <span class="tech-badge px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Docker</span>
+                </div>
+            </div>
+        
+            <h3 class="text-xl font-semibold mt-6 mb-3">Endpoints Principais</h3>
+            <div class="overflow-x-auto">
+                <table role="table" aria-label="Lista de Endpoints da API">
+
+                    <thead class="bg-gray-50 dark:bg-gray-800">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Método</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Endpoint</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descrição</th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-dark dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-200">GET</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">/api/products</td>
+                        <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Listar produtos com filtros</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-200">POST</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">/api/auth/register</td>
+                        <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Registrar novo usuário</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-200">POST</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">/api/orders</td>
+                        <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-300">Criar novo pedido</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <h3 class="text-xl font-semibold mt-6 mb-3">Deploy e Monitoramento</h3>
+            <p class="mb-4">A API está hospedada na AWS utilizando EC2 com auto-scaling e balanceamento de carga através do ELB. O monitoramento é feito com CloudWatch e New Relic para métricas de performance.</p>
+            
+            <p>Para CI/CD, foi implementado um pipeline com GitHub Actions que executa testes automatizados e faz deploy em staging/production baseado em tags Git.</p>
+        </div>
+    </div>
+</div>
+
+<div class="space-y-6">
+    <!-- Project Info -->
+    <div class="bg-dark dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+        <h3 class="text-lg font-semibold mb-4">Informações do Projeto</h3>
+        <ul class="space-y-3">
+            <li class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">Autor</span>
+                <span class="font-medium"></span>
+            </li>
+            <li class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">Data</span>
+                <span class="font-medium">Março 2023</span>
+            </li>
+            <li class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">Categoria</span>
+                <span class="font-medium">Backend API</span>
+            </li>
+            <li class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">Status</span>
+                <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs">Em produção</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Technologies -->
+    <div class="bg-dark dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+        <h3 class="text-lg font-semibold mb-4">Tecnologias</h3>
+            <div class="space-y-3">
+                <div>
+                    <h4 class="text-sm font-medium mb-1">Backend</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs">Java</span>
+                        <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs">Sprint Boot</span>
+                        <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs">JWT</span>
+                    </div>
+                </div>
+            <div>
+            <h4 class="text-sm font-medium mb-1">Banco de Dados</h4>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">PostgreSQL</span>
+                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Redis</span>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-sm font-medium mb-1">Infraestrutura</h4>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs">AWS</span>
+                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs">Docker</span>
+                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs">GitHub Actions</span>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!-- Related Projects -->
+<div class="bg-dark dark:bg-dark-800 rounded-xl shadow-md dark:shadow-none p-6">
+    <h3 class="text-lg font-semibold mb-4">Projetos Relacionados</h3>
+    <div class="space-y-4">
+        <a href="#" class="flex items-start group">
+        <div class="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-dark-700 rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                alt="Pipeline CI/CD" 
+                class="w-full h-full object-cover">
+        </div>
+        <div class="ml-3">
+            <h4 class="text-sm font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500">Pipeline CI/CD</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">DevOps</p>
+        </div>
+        </a>
+        <a href="#" class="flex items-start group">
+        <div class="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-dark-700 rounded-lg overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                alt="Sistema de Gestão" 
+                class="w-full h-full object-cover">
+        </div>
+        <div class="ml-3">
+            <h4 class="text-sm font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500">Sistema de Gestão</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Fullstack</p>
+        </div>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Rodapé -->
+<footer class="bg-gray-800 text-gray-300 text-center py-6 border-t border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+            <span class="text-gray-500 text-xl font-bold gradient-text">José Carlos</span>
+        </div>
+        <div class="flex space-x-6">
+            <a href="https://github.com/carlos0ff" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github text-xl"></i> Github</a>
+            <a href="https://linkedin.com/in/carlos0ff" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i> LinkedIn</a>
+            <a href="https://instagram.com/carliinhos0f" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i> Instagram</a>
+            <a href="mailto:carlosiilva66@gmail.com" class=""><i class="fas fa-envelope  mr-2"></i> Email</a>
+        </div>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-500">
+            <p>Desenvolvido com ❤️ por <a href="https://github.com/carlos0ff" target="_blank">José Carlos</a> </p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
