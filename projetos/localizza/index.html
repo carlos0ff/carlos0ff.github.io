@@ -11,52 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              600: '#2563eb',
-              700: '#1d4ed8',
-            },
-            dark: {
-              800: '#1e293b',
-              900: '#0f172a',
-            },
-            retro: {
-              500: '#ff6b6b',
-              600: '#f06595',
-              700: '#cc5de8',
-              800: '#845ef7',
-            }
-          },
-          boxShadow: {
-            'retro': '0 4px 14px 0 rgba(255, 107, 107, 0.2)',
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    .tech-badge {
-      @apply px-3 py-1 rounded-full text-xs font-medium;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #ff6b6b, #845ef7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .feature-card {
-      @apply bg-gray-800/50 p-4 rounded-lg border border-gray-700 hover:border-retro-500 transition-colors;
-    }
-    .retro-glow {
-      box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
-    }
-  </style>
+  <script src="/config/tailwind.config.js"></script>
 </head>
 
 <body class="dark bg-gray-900 text-gray-100">
@@ -66,7 +24,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
     <a href="/" class="text-2xl font-bold gradient-text flex items-center">
       <span class="bg-gray-800 p-2 rounded-lg mr-2">
-        <i class="fas fa-car text-yellow-400"></i>
+        <i class="fas fa-code text-blue-400"></i>
       </span>
       José Carlos
     </a>
@@ -94,7 +52,7 @@
             <li>
               <div class="flex items-center">
                 <i class="fas fa-chevron-right text-gray-500 text-xs mx-2"></i>
-                <a href="projetos/" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Projetos</a>
+                <a href="/projetos" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Projetos</a>
               </div>
             </li>
             <li aria-current="page">
@@ -129,12 +87,12 @@
       </div>
 
       <div class="hidden md:block relative">
-        <div class="w-[48rem] h-[32rem] bg-yellow-500/20 rounded-full blur-3xl absolute -top-32 -right-32"></div>
-        <div class="relative bg-gray-800 p-10 rounded-3xl border-2 border-yellow-500 w-[35rem] shadow-[0_20px_60px_-10px_rgba(253,224,71,0.6)]">
+        <div class="w-[48rem] h-[32rem] bg-blue-500/20 rounded-lg blur-3xl absolute -top-32 -right-32"></div>
+        <div class="relative bg-gray-800 p-10 rounded-3xl border-2 border-gray-700 w-[35rem]">
           <div class="flex items-center mb-6">
-            <div class="w-4 h-4 rounded-full bg-red-500 mr-3"></div>
-            <div class="w-4 h-4 rounded-full bg-yellow-500 mr-3"></div>
-            <div class="w-4 h-4 rounded-full bg-green-500"></div>
+            <div class="w-4 h-4 rounded-lg bg-red-500 mr-3"></div>
+            <div class="w-4 h-4 rounded-lg bg-yellow-500 mr-3"></div>
+            <div class="w-4 h-4 rounded-lg bg-green-500"></div>
           </div>
 
           <div class="bg-gray-900 p-6 rounded-xl font-mono text-base leading-relaxed overflow-x-auto text-yellow-400">
@@ -169,7 +127,7 @@
         <!-- Sobre o Projeto -->
         <div class="bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
           <h2 class="text-3xl font-bold mb-6 flex items-center">
-            <span class="w-4 h-4 bg-yellow-400 rounded-full mr-3"></span>
+            <span class="w-4 h-4 bg-yellow-400 rounded-lg mr-3"></span>
             Sobre o Projeto
           </h2>
           <div class="prose prose-invert max-w-none space-y-6">
@@ -242,7 +200,7 @@
             </li>
             <li class="flex justify-between items-center py-2 border-b border-gray-700">
               <span class="text-gray-400">Status</span>
-              <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-medium">Em produção</span>
+              <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-lg text-xs font-medium">Em produção</span>
             </li>
             <li class="flex justify-between items-center py-2">
               <span class="text-gray-400">Cliente</span>
@@ -261,37 +219,28 @@
             <div>
               <h4 class="font-medium mb-2 text-gray-300 flex items-center">
                 <i class="fas fa-server mr-2 text-sm"></i>
-                Backend
+                Fullstack
               </h4>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-sm bg-blue-900/30 text-blue-400">Node.js</span>
-                <span class="px-3 py-1 rounded-full text-sm bg-gray-800 text-gray-300">Express</span>
-                <span class="px-3 py-1 rounded-full text-sm bg-yellow-900/30 text-yellow-400">JWT</span>
-                <span class="px-3 py-1 rounded-full text-sm bg-red-900/30 text-red-400">Redis</span>
+                <span class="px-3 py-1 rounded-lg text-sm bg-blue-900/30 text-blue-400">PHP </span>
+                <span class="px-3 py-1 rounded-lg text-sm bg-blue-900/30 text-blue-400">HTML5</span>
+                <span class="px-3 py-1 rounded-lg text-sm bg-blue-900/30 text-blue-400">CSS3</span>
+                <span class="px-3 py-1 rounded-lg text-sm bg-blue-900/30 text-blue-400">Javascript</span>
+                <span class="px-3 py-1 rounded-lg text-sm bg-blue-900/30 text-blue-400">Bootstrap</span>
               </div>
             </div>
+           
             <div>
               <h4 class="font-medium mb-2 text-gray-300 flex items-center">
                 <i class="fas fa-database mr-2 text-sm"></i>
                 Banco de Dados
               </h4>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-sm  bg-green-900/30 text-green-400">MongoDB</span>
-                <span class="px-3 py-1 rounded-full text-sm  bg-blue-900/30 text-blue-400">PostgreSQL</span>
+                <span class="px-3 py-1 rounded-lg text-sm  bg-blue-900/30 text-blue-400">MySQL</span>
+                <span class="px-3 py-1 rounded-lg text-sm  bg-blue-900/30 text-blue-400">MySQL Workbanch</span>
               </div>
             </div>
-            <div>
-              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
-                <i class="fas fa-cloud mr-2 text-sm"></i>
-                Infraestrutura
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full text-sm  bg-yellow-900/30 text-yellow-400">AWS</span>
-                <span class="px-3 py-1 rounded-full text-sm  bg-blue-900/30 text-blue-400">Docker</span>
-                <span class="px-3 py-1 rounded-full text-sm  bg-gray-800 text-gray-300">GitHub Actions</span>
-                <span class="px-3 py-1 rounded-full text-sm  bg-purple-900/30 text-purple-400">Kubernetes</span>
-              </div>
-            </div>
+            
           </div>
         </div>
 

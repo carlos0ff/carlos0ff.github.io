@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Computador de 8 bits desenvolvido por José Carlos - Projeto de Hardware e Arquitetura de Computadores">
+
+  <title>Computador de 8 bits | José Carlos - Projetos de Hardware</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  
+</head>
+
+<body class="dark bg-gray-900 text-gray-100">
+
+  
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 bg-gray-800/90 backdrop-blur-md shadow-lg border-b border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500 flex items-center">
+      <span class="bg-gray-800 p-2 rounded-lg mr-2">
+        <i class="fas fa-microchip text-green-500"></i>
+      </span>
+      José Carlos
+    </a>
+    
+    <div class="flex items-center space-x-6">
+      <a href="/" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+        <i class="fas fa-arrow-left mr-2"></i> Voltar ao portfólio
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-gray-900 to-gray-800 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+      <div class="flex-1">
+        <nav class="flex mb-6" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-2">
+            <li class="inline-flex items-center">
+              <a href="/" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-home mr-2"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <i class="fas fa-chevron-right text-gray-500 text-xs mx-2"></i>
+                <a href="projetos/" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Projetos</a>
+              </div>
+            </li>
+            <li aria-current="page">
+              <div class="flex items-center">
+                <i class="fas fa-chevron-right text-gray-500 text-xs mx-2"></i>
+                <span class="text-sm font-medium text-white">Computador de 8 bits</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Computador de <span class="gradient-text">8 bits</span></h1>
+        <p class="text-xl text-gray-300 max-w-2xl">Implementação física de um computador completo com arquitetura própria, construído com componentes discretos</p>
+        
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://github.com/carlos0ff/8bit-computer" target="_blank" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center transition-all duration-300 shadow-lg hover:shadow-xl">
+            <i class="fab fa-github mr-3 text-lg" aria-hidden="true"></i> 
+            <div>
+              <div class="text-xs text-gray-400">Ver projeto no</div>
+              <div class="font-semibold">GitHub</div>
+            </div>
+          </a>
+        
+          <a href="#" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center transition-all duration-300 opacity-70 cursor-not-allowed">
+            <i class="fas fa-video mr-3 text-lg"></i>
+            <div>
+              <div class="text-xs text-gray-400">Demonstração</div>
+              <div class="font-semibold">Em vídeo</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden md:block relative">
+        <div class="w-[48rem] h-[32rem] bg-blue-500/20 rounded-full blur-3xl absolute -top-32 -right-32"></div>
+        <div class="relative bg-gray-800 p-10 rounded-3xl border-2 border-gray-700 w-[40rem]">
+          <div class="flex items-center mb-6">
+            <div class="w-4 h-4 rounded-full bg-red-500 mr-3"></div>
+            <div class="w-4 h-4 rounded-full bg-yellow-500 mr-3"></div>
+            <div class="w-4 h-4 rounded-full bg-green-500"></div>
+          </div>
+
+          <div class="bg-gray-900 p-6 rounded-xl font-mono text-lg leading-relaxed overflow-x-auto">
+            <span class="text-green-400">LOAD A, 0x0F</span><br>
+            <span class="text-green-400">ADD B</span><br>
+            <span class="text-green-400">STORE [0x10], A</span><br>
+            <span class="text-green-400">JUMP 0x00</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+  
+<!-- Project Details -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2 space-y-10">
+        <div class="rounded-2xl overflow-hidden shadow-xl retro-glow">
+          <img src="/assets/image/8bit-computer.jpg" alt="Foto do computador de 8 bits montado em protoboard"
+          class="w-full h-auto object-cover">
+          <div class="bg-gray-800 p-4 text-sm text-gray-400">
+            <i class="fas fa-info-circle mr-2 text-gray-300"></i> Visão geral do computador de 8 bits montado em protoboard com LEDs indicadores de estado.
+          </div>
+        </div>
+
+        <!-- About Project -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
+          <h2 class="text-3xl font-bold mb-6 flex items-center">
+            <span class="w-4 h-4 bg-blue-500 rounded-full mr-3"></span>
+            Sobre o Projeto
+          </h2>
+          <div class="prose prose-invert max-w-none space-y-6">
+            <p class="text-gray-300 leading-relaxed">
+              Este computador de 8 bits é uma implementação física completa de uma arquitetura de computador simples,
+              construída com componentes discretos em protoboard. O projeto inclui CPU, memória RAM, barramentos de dados
+              e controle, e um conjunto de instruções personalizado capaz de executar operações básicas.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div class="feature-card">
+                <div class="text-green-500 text-2xl mb-3">
+                  <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Arquitetura</h3>
+                <p class="text-gray-400 text-sm">Design baseado no modelo de Von Neumann com barramento único.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="text-blue-500 text-2xl mb-3">
+                  <i class="fas fa-memory"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Memória</h3>
+                <p class="text-gray-400 text-sm">16 bytes de RAM implementados com flip-flops.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="text-blue-400 text-2xl mb-3">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Clock</h3>
+                <p class="text-gray-400 text-sm">Clock ajustável de 1Hz a 10Hz para depuração.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="text-yellow-400 text-2xl mb-3">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Instruções</h3>
+                <p class="text-gray-400 text-sm">Conjunto de 12 instruções incluindo operações aritméticas.</p>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-tasks mr-3 text-gray-300"></i>
+                Características Principais
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">CPU de 8 bits</p>
+                    <p class="text-sm text-gray-400">Com registradores A e B</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">16 bytes de RAM</p>
+                    <p class="text-sm text-gray-400">Endereçamento de 4 bits</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Barramento de dados</p>
+                    <p class="text-sm text-gray-400">8 bits com multiplexação</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Clock manual/automático</p>
+                    <p class="text-sm text-gray-400">Para depuração passo a passo</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Display LED</p>
+                    <p class="text-sm text-gray-400">Para visualização de estados</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Entrada/Saída</p>
+                    <p class="text-sm text-gray-400">Chaves e LEDs para interação</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
+          <h2 class="text-3xl font-bold mb-6 flex items-center">
+            <span class="w-4 h-4 bg-purple-500 rounded-full mr-3"></span>
+            Detalhes Técnicos
+          </h2>
+          <div class="prose prose-invert max-w-none space-y-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-project-diagram mr-3 text-gray-600"></i>
+                Arquitetura
+              </h3>
+              
+              <p class="text-gray-300">
+                O computador implementa uma arquitetura de Von Neumann com um barramento compartilhado para dados e instruções.
+                A CPU contém uma ALU simples capaz de realizar operações aritméticas e lógicas básicas, dois registradores de
+                propósito geral (A e B), e um contador de programa.
+              </p>
+              
+              <div class="mt-6">
+                <h4 class="font-medium mb-3 text-gray-200">Componentes Principais</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-2 py-1 bg-red-500/20 text-red-500 border border-red-500/30">74LS181 (ALU)</span>
+                  <span class="px-2 py-1 bg-gray-800 text-gray-300 border border-gray-700">74LS173 (Registradores)</span>
+                  <span class="px-2 py-1 bg-green-900/50 text-green-400 border border-green-800">74LS189 (RAM)</span>
+                  <span class="px-2 py-1 bg-blue-900/50 text-blue-400 border border-blue-800">74LS161 (Contador)</span>
+                  <span class="px-2 py-1 bg-yellow-900/50 text-yellow-400 border border-yellow-800">74LS245 (Barramento)</span>
+                  <span class="px-2 py-1 bg-purple-900/50 text-purple-400 border border-purple-800">74LS139 (Decodificador)</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-code mr-3 text-purple-400"></i>
+                Conjunto de Instruções
+              </h3>
+              <div class="overflow-x-auto rounded-lg border border-gray-700">
+                <table class="min-w-full divide-y divide-gray-700">
+                  <thead class="bg-gray-800">
+                    <tr>
+                      <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-400 uppercase tracking-wider">Opcode</th>
+                      <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-400 uppercase tracking-wider">Instrução</th>
+                      <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-400 uppercase tracking-wider">Descrição</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-gray-800 divide-y divide-gray-700">
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-green-500">0000</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">NOP</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Nenhuma operação</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 font-mono text-green-500">0001</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">LDA [addr]</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Carrega valor em A</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-green-500">0010</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">LDB [addr]</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Carrega valor em B</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-green-500">0011</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">STA [addr]</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Armazena A na memória</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-green-500">0100</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">ADD</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Soma A e B (resultado em A)</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-green-500">0101</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">SUB</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Subtrai B de A (resultado em A)</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap font-mono text-green-500">0110</td>
+                      <td class="px-6 py-4 whitespace-nowrap font-mono">JMP [addr]</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Salto incondicional</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-cogs mr-3 text-blue-600"></i>
+                Implementação Física
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-700/30 p-5 rounded-lg border border-gray-700">
+                  <h4 class="font-bold text-lg mb-3 text-gray">Eletrônica</h4>
+                  <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Montado em protoboard de 840 pontos</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Alimentação 5V DC</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>LEDs indicadores para todos os barramentos</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-gray-700/30 p-5 rounded-lg border border-gray-700">
+                  <h4 class="font-bold text-lg mb-3 text-gray">Depuração</h4>
+                  <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Clock manual com botão pulsador</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Clock automático ajustável</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Modo passo a passo para execução de instruções</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-8">
+        <!-- Project Info -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-info-circle mr-2 text-green-500"></i>
+            Informações do Projeto
+          </h3>
+          <ul class="space-y-4 text-sm">
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Autor</span>
+              <span class="font-medium">José Carlos</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Data</span>
+              <span class="font-medium"></span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Categoria</span>
+              <span class="font-medium">Hardware/Arquitetura</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Status</span>
+              <span class="px-2 py-1 bg-yellow-900/30 text-yellow-500 rounded-full text-md">Em andamento</span>
+
+            </li>
+            <li class="flex justify-between items-center py-2">
+              <span class="text-gray-400">Complexidade</span>
+              <span class="font-medium">~100 componentes</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technologies -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-microchip mr-2 text-green-300"></i>
+            Componentes
+          </h3>
+          <div class="space-y-5">
+            <div>
+              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
+                <i class="fas fa-cog mr-2 text-sm"></i>
+                Circuitos Integrados
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-retro-500/20 text-green-500">74LS series</span>
+                <span class="px-2 py-1 bg-gray-800 text-gray-300 border border-gray-700">LM555 (Clock)</span>
+                <span class="px-2 py-1 bg-blue-900/30 text-blue-400">LEDs</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
+                <i class="fas fa-plug mr-2 text-sm"></i>
+                Eletrônica
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-green-900/30 text-green-400 ">Protoboard</span>
+                <span class="px-2 py-1 bg-yellow-900/30 text-yellow-400">Fios jumper</span>
+                <span class="px-2 py-1 bg-red-900/30 text-red-400">Resistores</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
+                <i class="fas fa-tools mr-2 text-sm"></i>
+                Ferramentas
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-purple-900/30 text-purple-400">Multímetro</span>
+                <span class="px-2 py-1 bg-gray-800 text-gray-300 border border-gray-700">Osciloscópio</span>
+                <span class="px-2 py-1 bg-blue-900/30 text-blue-400">Fonte de alimentação</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Projects -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4">Projetos Relacionados</h3>
+          <div class="space-y-4">
+              <a href="#" class="flex items-start group">
+              <div class="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-dark-700 rounded-lg overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                      alt="Pipeline CI/CD" 
+                      class="w-full h-full object-cover">
+              </div>
+              <div class="ml-3">
+                  <h4 class="text-sm font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500">Pipeline CI/CD</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">DevOps</p>
+              </div>
+              </a>
+              <a href="#" class="flex items-start group">
+              <div class="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-dark-700 rounded-lg overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                      alt="Sistema de Gestão" 
+                      class="w-full h-full object-cover">
+              </div>
+              <div class="ml-3">
+                  <h4 class="text-sm font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500">Sistema de Gestão</h4>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Fullstack</p>
+              </div>
+              </a>
+          </div>
+      </div>
+
+        <!-- Stats -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-chart-bar mr-2 text-green-500"></i>
+            Especificações
+          </h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-wh">8</div>
+              <div class="text-xs text-gray-400">Bits</div>
+            </div>
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-green-400">16</div>
+              <div class="text-xs text-gray-400">Bytes RAM</div>
+            </div>
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-blue-400">12</div>
+              <div class="text-xs text-gray-400">Instruções</div>
+            </div>
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-yellow-400">10Hz</div>
+              <div class="text-xs text-gray-400">Clock máximo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-300 py-12 border-t border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-bold mb-4 gradient-text">José Carlos</h3>
+        <p class="text-sm text-gray-400">Engenheiro e entusiasta de hardware, especializado em arquitetura de computadores.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-400">Contato</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="mailto:contato@josecarlos.dev" class="text-gray-400 hover:text-white transition-colors flex items-center">
+              <i class="fas fa-envelope mr-2"></i> contato@josecarlos.dev
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center">
+              <i class="fab fa-linkedin mr-2"></i> linkedin.com/in/carlos0ff
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-400 ">Redes Sociais</h4>
+        <div class="flex space-x-6">
+          <a href="https://github.com/carlos0ff" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github text-xl"></i> Github</a>
+          <a href="https://linkedin.com/in/carlos0ff" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i> LinkedIn</a>
+          <a href="https://instagram.com/carliinhos0f" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i> Instagram</a>
+          <a href="mailto:carlosiilva66@gmail.com" class=""><i class="fas fa-envelope  mr-2"></i> Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+      <p>Desenvolvido com ❤️ por <a href="https://github.com/carlos0ff" target="_blank">José Carlos</a> </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

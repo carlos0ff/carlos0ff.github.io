@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="API completa para plataformas de e-commerce desenvolvida por José Carlos - Desenvolvedor Backend">
+
+  <title>API de E-commerce | José Carlos - Desenvolvedor Backend</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="config/tailwind.config.js"></script>
+ 
+  
+</head>
+
+<body class="dark bg-gray-900 text-gray-100">
+
+<!-- Navbar melhorada -->
+<nav class="sticky top-0 z-50 bg-gray-800/90 backdrop-blur-md shadow-lg border-b border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold gradient-text flex items-center">
+      <span class="bg-gray-800 p-2 rounded-lg mr-2">
+        <i class="fas fa-code text-blue-400"></i>
+      </span>
+      José Carlos
+    </a>
+    <div class="flex items-center space-x-6">
+      <a href="/" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center">
+        <i class="fas fa-arrow-left mr-2"></i> Voltar ao portfólio
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section redesenhada -->
+<section class="bg-gradient-to-br from-gray-900 to-gray-800 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+      <div class="flex-1">
+        <nav class="flex mb-6" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-2">
+            <li class="inline-flex items-center">
+              <a href="/" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-home mr-2"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <i class="fas fa-chevron-right text-gray-500 text-xs mx-2"></i>
+                <a href="projetos/" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Projetos</a>
+              </div>
+            </li>
+            <li aria-current="page">
+              <div class="flex items-center">
+                <i class="fas fa-chevron-right text-gray-500 text-xs mx-2"></i>
+                <span class="text-sm font-medium text-white">API de E-commerce</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">API do <span class="text-blue-400">Brasileirão</span></h1>
+        <p class="text-xl text-gray-300 max-w-2xl">Solução robusta para plataformas de comércio eletrônico com alta performance e segurança</p>
+        
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://github.com/carlos0ff/brasileirao-api" target="_blank" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center transition-all duration-300 shadow-lg hover:shadow-xl">
+            <i class="fab fa-github mr-3 text-lg" aria-hidden="true"></i> 
+            <div>
+              <div class="text-xs text-gray-400">Ver código no</div>
+              <div class="font-semibold">GitHub</div>
+            </div>
+          </a>
+        
+          <a href="#" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center transition-all duration-300 opacity-70 cursor-not-allowed">
+            <i class="fas fa-external-link-alt mr-3 text-lg"></i>
+            <div>
+              <div class="text-xs text-gray-400">Demo</div>
+              <div class="font-semibold">Indisponível</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden md:block relative">
+      <div class="w-[48rem] h-[32rem] bg-blue-500/20 rounded-full blur-3xl absolute -top-32 -right-32"></div>
+      <div class="relative bg-gray-800 p-10 rounded-3xl border-2 border-gray-700 w-[35rem] ">
+        <div class="flex items-center mb-6">
+          <div class="w-4 h-4 rounded-full bg-red-500 mr-3"></div>
+          <div class="w-4 h-4 rounded-full bg-yellow-500 mr-3"></div>
+          <div class="w-4 h-4 rounded-full bg-green-500"></div>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-xl font-mono text-base leading-relaxed overflow-x-auto text-yellow-400">
+          &lt;?php<br>
+          include "conexao.php";<br>
+          $query = "SELECT * FROM veiculos";<br>
+          $resultado = mysqli_query($conn, $query);<br>
+          while($carro = mysqli_fetch_assoc($resultado)) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;echo $carro['modelo'];<br>
+          }<br>
+          ?&gt;
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- Project Details -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <!-- Main Column -->
+      <div class="lg:col-span-2 space-y-10">
+        <!-- Project Image -->
+        <div class="rounded-2xl overflow-hidden border border-gray-700 shadow-xl">
+          <img src="/assets/image/classificação_do_brasileirão.png" alt="Diagrama da arquitetura da API de E-commerce"
+          class="w-full h-auto object-cover">
+          <div class="bg-gray-800 p-4 text-sm text-gray-400">
+            <i class="fas fa-info-circle mr-2 text-gray-400"></i> Diagrama da arquitetura da API mostrando os principais componentes e fluxos de dados.
+          </div>
+        </div>
+
+        <!-- About Project -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
+          <h2 class="text-3xl font-bold mb-6 flex items-center">
+            <span class="w-4 h-4 bg-blue-500 rounded-full mr-3"></span>
+            Sobre o Projeto
+          </h2>
+          <div class="prose prose-invert max-w-none space-y-6">
+            <p class="text-gray-300 leading-relaxed">
+              Esta API foi meticulosamente desenvolvida para servir como backbone completo para plataformas de e-commerce, 
+              oferecendo todos os recursos necessários para operações complexas de compra e venda online, desde o catálogo 
+              de produtos até o processamento de pagamentos.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div class="feature-card">
+                <div class="text-blue-400 text-2xl mb-3">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Performance</h3>
+                <p class="text-gray-400 text-sm">Processamento otimizado para lidar com mais de 10.000 requisições por minuto.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="text-green-400 text-2xl mb-3">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Segurança</h3>
+                <p class="text-gray-400 text-sm">Autenticação JWT com refresh tokens e proteção contra ataques comuns.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="text-purple-400 text-2xl mb-3">
+                  <i class="fas fa-expand"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Escalabilidade</h3>
+                <p class="text-gray-400 text-sm">Arquitetura modular que permite fácil expansão de funcionalidades.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="text-yellow-400 text-2xl mb-3">
+                  <i class="fas fa-plug"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Integrações</h3>
+                <p class="text-gray-400 text-sm">Suporte a múltiplos gateways de pagamento e serviços de terceiros.</p>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-tasks mr-3 text-blue-400"></i>
+                Funcionalidades Principais
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Catálogo de produtos</p>
+                    <p class="text-sm text-gray-400">Com filtros avançados e busca por texto</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Carrinho de compras</p>
+                    <p class="text-sm text-gray-400">Persistente entre sessões</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Sistema de avaliações</p>
+                    <p class="text-sm text-gray-400">Com moderação e análise de sentimentos</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Processamento de pedidos</p>
+                    <p class="text-sm text-gray-400">Em tempo real com notificações</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Recomendações</p>
+                    <p class="text-sm text-gray-400">Personalizadas baseadas em histórico</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                  <div>
+                    <p class="font-medium">Webhooks</p>
+                    <p class="text-sm text-gray-400">Para integração com outros sistemas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
+          <h2 class="text-3xl font-bold mb-6 flex items-center">
+            <span class="w-4 h-4 bg-purple-500 rounded-full mr-3"></span>
+            Detalhes Técnicos
+          </h2>
+          <div class="prose prose-invert max-w-none space-y-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-project-diagram mr-3 text-purple-400"></i>
+                Arquitetura
+              </h3>
+              <p class="text-gray-300">
+                A aplicação segue uma arquitetura modular baseada em microsserviços, com separação clara de responsabilidades
+                e comunicação via API REST e mensageria. O design foi pensado para alta disponibilidade e fácil manutenção.
+              </p>
+              
+              <div class="mt-6">
+                <h4 class="font-medium mb-3 text-gray-200">Tecnologias Utilizadas</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-2 py-1 bg-blue-900/50 text-blue-400 border border-blue-800 rounded-full text-sm">Node.js 18</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-gray-800 text-gray-300 border border-gray-700">Express</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-green-900/50 text-green-400 border border-green-800">MongoDB</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-red-900/50 text-red-400 border border-red-800">Redis</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-yellow-900/50 text-yellow-400 border border-yellow-800">AWS</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-indigo-900/50 text-indigo-400 border border-indigo-800">Docker</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-purple-900/50 text-purple-400 border border-purple-800">Kubernetes</span>
+                  <span class="px-2 py-1 px-3 py-1 rounded-full text-sm  bg-pink-900/50 text-pink-400 border border-pink-800">RabbitMQ</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-code mr-3 text-purple-400"></i>
+                Endpoints Principais
+              </h3>
+              <div class="overflow-x-auto rounded-lg border border-gray-700">
+                <table class="min-w-full divide-y divide-gray-700">
+                  <thead class="bg-gray-800">
+                    <tr>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Método</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Endpoint</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Descrição</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-gray-800 divide-y divide-gray-700">
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="api-method bg-green-900/30 text-green-400">GET</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-blue-400">/api/products</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Listar produtos com filtros e paginação</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="api-method bg-blue-900/30 text-blue-400">POST</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-blue-400">/api/auth/register</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Registrar novo usuário</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="api-method bg-yellow-900/30 text-yellow-400">PUT</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-blue-400">/api/products/:id</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Atualizar produto</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="api-method bg-red-900/30 text-red-400">DELETE</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-blue-400">/api/products/:id</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Remover produto</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-colors">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="api-method bg-purple-900/30 text-purple-400">PATCH</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-blue-400">/api/cart</td>
+                      <td class="px-6 py-4 text-sm text-gray-300">Atualizar carrinho</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-server mr-3 text-purple-400"></i>
+                Infraestrutura
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-700/30 p-5 rounded-lg border border-gray-700">
+                  <h4 class="font-bold text-lg mb-3 text-blue-400">Deploy</h4>
+                  <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Hospedado na AWS com EC2 auto-scaling</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Load balancer distribuindo tráfego</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Docker containers para isolamento</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-gray-700/30 p-5 rounded-lg border border-gray-700">
+                  <h4 class="font-bold text-lg mb-3 text-blue-400">Monitoramento</h4>
+                  <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>CloudWatch para métricas</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>New Relic para performance</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i class="fas fa-check text-green-400 mt-1 text-xs"></i>
+                      <span>Sentry para tratamento de erros</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-8">
+        <!-- Project Info -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-info-circle mr-2 text-blue-400"></i>
+            Informações do Projeto
+          </h3>
+          <ul class="space-y-4 text-sm">
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Autor</span>
+              <span class="font-medium">José Carlos</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Data</span>
+              <span class="font-medium">Março 2023</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Categoria</span>
+              <span class="font-medium">Backend API</span>
+            </li>
+            <li class="flex justify-between items-center py-2 border-b border-gray-700">
+              <span class="text-gray-400">Status</span>
+              <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-medium">Em produção</span>
+            </li>
+            <li class="flex justify-between items-center py-2">
+              <span class="text-gray-400">Cliente</span>
+              <span class="font-medium">Confidencial</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technologies -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-cogs mr-2 text-blue-400"></i>
+            Tecnologias
+          </h3>
+          <div class="space-y-5">
+            <div>
+              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
+                <i class="fas fa-server mr-2 text-sm"></i>
+                Backend
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full text-sm bg-blue-900/30 text-blue-400">Node.js</span>
+                <span class="px-3 py-1 rounded-full text-sm bg-gray-800 text-gray-300">Express</span>
+                <span class="px-3 py-1 rounded-full text-sm bg-yellow-900/30 text-yellow-400">JWT</span>
+                <span class="px-3 py-1 rounded-full text-sm bg-red-900/30 text-red-400">Redis</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
+                <i class="fas fa-database mr-2 text-sm"></i>
+                Banco de Dados
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full text-sm  bg-green-900/30 text-green-400">MongoDB</span>
+                <span class="px-3 py-1 rounded-full text-sm  bg-blue-900/30 text-blue-400">PostgreSQL</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2 text-gray-300 flex items-center">
+                <i class="fas fa-cloud mr-2 text-sm"></i>
+                Infraestrutura
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full text-sm  bg-yellow-900/30 text-yellow-400">AWS</span>
+                <span class="px-3 py-1 rounded-full text-sm  bg-blue-900/30 text-blue-400">Docker</span>
+                <span class="px-3 py-1 rounded-full text-sm  bg-gray-800 text-gray-300">GitHub Actions</span>
+                <span class="px-3 py-1 rounded-full text-sm  bg-purple-900/30 text-purple-400">Kubernetes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Projects -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-project-diagram mr-2 text-blue-400"></i>
+            Projetos Relacionados
+          </h3>
+          <div class="space-y-4">
+            <a href="#" class="group block">
+              <div class="bg-gray-700/50 p-4 rounded-lg border border-gray-700 group-hover:border-blue-400 transition-colors">
+                <h4 class="font-medium mb-1 group-hover:text-blue-400 transition-colors">Sistema de Pagamentos</h4>
+                <p class="text-xs text-gray-400">API para processamento de transações financeiras</p>
+              </div>
+            </a>
+            <a href="#" class="group block">
+              <div class="bg-gray-700/50 p-4 rounded-lg border border-gray-700 group-hover:border-blue-400 transition-colors">
+                <h4 class="font-medium mb-1 group-hover:text-blue-400 transition-colors">Microserviço de Notificações</h4>
+                <p class="text-xs text-gray-400">Sistema de mensagens em tempo real</p>
+              </div>
+            </a>
+            <a href="#" class="group block">
+              <div class="bg-gray-700/50 p-4 rounded-lg border border-gray-700 group-hover:border-blue-400 transition-colors">
+                <h4 class="font-medium mb-1 group-hover:text-blue-400 transition-colors">API de Recomendações</h4>
+                <p class="text-xs text-gray-400">Sistema de recomendação personalizada</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <i class="fas fa-chart-bar mr-2 text-blue-400"></i>
+            Estatísticas
+          </h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-blue-400">10k+</div>
+              <div class="text-xs text-gray-400">Req/min</div>
+            </div>
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-green-400">99.9%</div>
+              <div class="text-xs text-gray-400">Uptime</div>
+            </div>
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-purple-400">200ms</div>
+              <div class="text-xs text-gray-400">Avg. response</div>
+            </div>
+            <div class="bg-gray-700/30 p-3 rounded-lg text-center">
+              <div class="text-2xl font-bold text-yellow-400">8</div>
+              <div class="text-xs text-gray-400">Microservices</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- Footer melhorado -->
+<footer class="bg-gray-800 text-gray-300 py-12 border-t border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-bold mb-4 gradient-text">José Carlos</h3>
+        <p class="text-sm text-gray-400">Desenvolvedor Backend especializado em APIs escaláveis e sistemas distribuídos.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-400">Contato</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="mailto:contato@josecarlos.dev" class="text-gray-400 hover:text-white transition-colors flex items-center">
+              <i class="fas fa-envelope mr-2"></i> contato@josecarlos.dev
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center">
+              <i class="fab fa-linkedin mr-2"></i> linkedin.com/in/carlos0ff
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-400">Redes Sociais</h4>
+        <div class="flex space-x-4">
+          <a href="https://github.com/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://medium.com/@carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl">
+            <i class="fab fa-medium"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+      <p>© 2023 José Carlos. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -29,3 +29,16 @@
 .glitch-animation {
     animation: glitch 1s infinite;
 }
+
+
+.group:hover .group-hover\:block {
+    display: block;
+}
+
+
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

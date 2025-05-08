@@ -12,30 +12,117 @@ const projects = [
     description: " API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
     tags: ["Java", "Spring Boot", "Git"],
     image: "../../assets/image/brasileirao-logo-ouro.png", 
-    detailsLink: "#",
+    detailsLink: "brasileirao-API",
     githubLink: "https://github.com/carlos0ff/Brasileirao-API"
   },
   {
     title: "Pokédex",
     badge: "Frontend",
-    description: "A Pokédex é um dispositivo eletrônico que cataloga e fornece informações sobre todas as espécies Pokémon conhecidas.",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
     tags: ["HTML5", "CSS3", "Javascript"],
     image: "../../assets/image/brasileirao-logo-ouro.png", 
-    detailsLink: "/projetos/okedex ",
+    detailsLink: "/projetos/pokedex",
     githubLink: "#"
   },
   {
-    title: "Localizza",
-    badge: "Backend",
-    description: "Um projeto de teste",
-    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    title: "Sistema de Aluguel de Carros",
+    badge: "Null",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap"],
     image: "../../assets/image/brasileirao-logo-ouro.png",
+    detailsLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "ss",
+    badge: "Backend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    image: "/assets/image/8bit-computer.jpg",
+    detailsLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "ss",
+    badge: "Backend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    image: "/assets/image/8bit-computer.jpg",
+    detailsLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "ss",
+    badge: "Backend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    image: "/assets/image/8bit-computer.jpg",
     detailsLink: "#",
     githubLink: "#"
   }
 ];
 
+function displayRelatedProjects() {
+  const projectsList = document.getElementById('projects-list');
+  const limitedProjects = projects.slice(0, 3);
+
+  limitedProjects.forEach(project => {
+    const projectElement = document.createElement('a');
+    projectElement.href = project.detailsLink;
+    projectElement.classList.add(
+      'relative', 'flex', 'items-start', 'group', 'hover:bg-gray-100/50', 'dark:hover:bg-dark-700/50',
+      'p-2', 'rounded-lg', 'transition-colors', 'duration-200'
+    );
+
+    // Container da thumbnail
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add(
+      'relative', 'w-16', 'h-16', 'flex-shrink-0', 'rounded-md', 'overflow-hidden', 
+      'bg-gray-200', 'dark:bg-dark-600'
+    );
+
+    const imageElement = document.createElement('img');
+    imageElement.src = project.thumbnail || project.image || '/assets/image/default-thumb.jpg';
+    imageElement.alt = project.title;
+    imageElement.classList.add('w-full', 'h-full', 'object-cover');
+    imageContainer.appendChild(imageElement);
+
+    // Imagem grande no hover
+    const hoverImage = document.createElement('img');
+    hoverImage.src = project.image;
+    hoverImage.alt = project.title;
+    hoverImage.classList.add(
+      'hidden', 'group-hover:block', 'absolute', 'top-0', 'left-20', 'z-50',
+      'w-56', 'h-56', 'rounded-lg', 'object-cover', 'shadow-lg', 'transition', 'duration-200'
+    );
+
+    imageContainer.appendChild(hoverImage);
+
+    // Container de texto
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('ml-3', 'flex-1');
+
+    const projectTitle = document.createElement('h4');
+    projectTitle.classList.add('text-sm', 'font-medium', 'text-gray-800', 'dark:text-gray-100', 'group-hover:text-primary-600', 'dark:group-hover:text-primary-400');
+    projectTitle.textContent = project.title;
+
+    const projectDescription = document.createElement('p');
+    projectDescription.classList.add('text-xs', 'text-gray-500', 'dark:text-gray-400', 'line-clamp-2');
+    projectDescription.textContent = project.description;
+
+    textContainer.appendChild(projectTitle);
+    textContainer.appendChild(projectDescription);
+
+    projectElement.appendChild(imageContainer);
+    projectElement.appendChild(textContainer);
+
+    projectsList.appendChild(projectElement);
+  });
+}
+
 function getBadgeColor(badge) {
+  if (!badge) return 'bg-gray-800/50 text-gray-300'; // Null badge
+
   switch (badge.toLowerCase()) {
     case "backend":
       return "bg-blue-600/50 text-blue-100";
@@ -47,9 +134,10 @@ function getBadgeColor(badge) {
       return "bg-gray-600/50 text-gray-100";
   }
 }
-  
+
 function renderProjects() {
   container.innerHTML = "";
+  
   const start = (currentPage - 1) * projectsPerPage;
   const end = start + projectsPerPage;
   const currentProjects = projects.slice(start, end);
@@ -68,7 +156,7 @@ function renderProjects() {
         <div class="p-6">
           <div class="flex justify-between items-start mb-2">
             <h3 class="text-xl font-bold">${project.title}</h3>
-            <span class="text-xs ${getBadgeColor(project.badge)} px-2 py-1 rounded">${project.badge}</span>
+            <span class="text-xs ${getBadgeColor(project.badge)} px-2 py-1 rounded">${project.badge || "Null"}</span>
           </div>
 
           <p class="text-gray-400 mb-4">${project.description}</p>
@@ -89,11 +177,11 @@ function renderProjects() {
       </div>
     `;
   });
-  
+
   renderPagination();
 }
-  
 
+  
 function renderPagination() {
   pagination.innerHTML = "";
   const totalPages = Math.ceil(projects.length / projectsPerPage);
@@ -157,10 +245,10 @@ function renderPagination() {
   }`;
 
   nextBtn.onclick = () => {
-      if (currentPage < totalPages) {
-          currentPage++;
-          renderProjects();
-      }
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderProjects();
+    }
   };
 
   pagination.appendChild(nextBtn);
