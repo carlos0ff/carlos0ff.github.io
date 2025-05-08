@@ -8,7 +8,7 @@ let currentPage = 1;
 const projects = [
   {
     title: "API do Brasileirão",
-    badge: "Backend",
+    badge: "BACKEND",
     description: " API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
     tags: ["Java", "Spring Boot", "Git"],
     image: "../../assets/image/brasileirao-logo-ouro.png", 
