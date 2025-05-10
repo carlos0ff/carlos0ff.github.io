@@ -1,44 +1,68 @@
-:root {
-    --primary-gradient: linear-gradient(to right, #00FF00, #0DFF00); /* Gradiente verde neon */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+#project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 2px;
+}
+
+.features li {
+    margin-bottom: 0.25rem;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.spec-item {
+    font-size: 0.75rem;
+}
+
+.spec-value {
+    font-weight: bold;
+    color: #a5b4fc;
 }
 
 
-@keyframes glitch {
-    0% {
-        transform: translate(0, 0);
-        text-shadow: 0 1px 0 #00ff00, 1px 0 0 #00ff00, 0 1px 2px #00ff00;
-    }
-    20% {
-        transform: translate(-5px, -5px);
-        text-shadow: -1px 0 0 #00ff00, 1px 0 0 #00ff00, 0 0 5px #00ff00;
-    }
-    40% {
-        transform: translate(5px, 5px);
-        text-shadow: 1px 0 0 #00ff00, -1px 0 0 #00ff00, 0 1px 2px #00ff00;
-    }
-    60% {
-        transform: translate(-5px, -5px);
-        text-shadow: 0 1px 0 #00ff00, 1px 0 0 #00ff00, 0 0 5px #00ff00;
-    }
-    100% {
-        transform: translate(0, 0);
-        text-shadow: 0 1px 0 #00ff00, 1px 0 0 #00ff00, 0 1px 2px #00ff00;
-    }
+.project-header {
+  position: relative;
+  height: 12rem; 
+  background-color: #1f2937; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.glitch-animation {
-    animation: glitch 1s infinite;
+.project-header img {
+  height: 7rem; 
+  object-fit: contain; 
+  transition: transform 0.5s ease;
 }
 
-
-.group:hover .group-hover\:block {
-    display: block;
+.project-header img:hover {
+  transform: scale(1.05); 
 }
 
-
-.gradient-text {
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.project-header .badge {
+  position: absolute;
+  top: 0.75rem; 
+  right: 0.75rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
 }
