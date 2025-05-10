@@ -8,55 +8,12 @@
   <title>Aluguel de Carros | José Carlos - Sistemas Web</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="../../assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              600: '#2563eb',
-              700: '#1d4ed8',
-            },
-            dark: {
-              800: '#1e293b',
-              900: '#0f172a',
-            },
-            retro: {
-              500: '#ff6b6b',
-              600: '#f06595',
-              700: '#cc5de8',
-              800: '#845ef7',
-            }
-          },
-          boxShadow: {
-            'retro': '0 4px 14px 0 rgba(255, 107, 107, 0.2)',
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    .tech-badge {
-      @apply px-3 py-1 rounded-full text-xs font-medium;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #ff6b6b, #845ef7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .feature-card {
-      @apply bg-gray-800/50 p-4 rounded-lg border border-gray-700 hover:border-retro-500 transition-colors;
-    }
-    .retro-glow {
-      box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
-    }
-  </style>
+  
+
 </head>
 
 <body class="dark bg-gray-900 text-gray-100">
@@ -66,7 +23,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
     <a href="/" class="text-2xl font-bold gradient-text flex items-center">
       <span class="bg-gray-800 p-2 rounded-lg mr-2">
-        <i class="fas fa-car text-yellow-400"></i>
+        <i class="fas fa-code text-blue-400"></i>
       </span>
       José Carlos
     </a>
@@ -118,13 +75,14 @@
             </div>
           </a>
 
-          <a href="#" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center transition-all duration-300 opacity-70 cursor-not-allowed">
-            <i class="fas fa-video mr-3 text-lg"></i>
+          <a href="../../demo/pokedex/" target="_blank" class="px-6 py-3 bg-blue-800 hover:bg-blue-700 rounded-lg flex items-center transition-all duration-300">
+            <i class="fas fa-external-link-alt mr-3 text-lg"></i>
             <div>
-              <div class="text-xs text-gray-400">Demonstração</div>
-              <div class="font-semibold">Em breve</div>
+              <div class="text-xs text-white">Acessar</div>
+              <div class="font-semibold">Disponível</div>
             </div>
           </a>
+
         </div>
       </div>
 

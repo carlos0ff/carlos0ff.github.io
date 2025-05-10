@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoManager - Gestão de Veículos</title>
+    
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+
+<!-- Barra de Navegação -->
+<nav class="navbar">
+    <div class="container navbar-container">
+        <!-- Logo -->
+        <div class="navbar-logo">
+            <img src="assets/images/logo_unipe.webp" alt="AutoManager Logo" class="logo">
+        </div>
+        
+        <!-- Barra de Pesquisa -->
+        <div class="navbar-search">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Pesquisar veículos...">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Perfil do Usuário -->
+        <div class="user-profile" id="userProfile">
+            <div class="user-greeting">
+                <span class="greeting-text">Bem-vindo</span>
+                <span class="user-name">Carlos Silva</span>
+            </div>
+            <img src="assets/images/user-avatar.jpg" alt="Foto do usuário" class="user-avatar">
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+
+            <!-- Menu Dropdown -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <li><a href="#"><i class="fas fa-user"></i> Meu Perfil</a></li>
+                    <li><a href="#em-breve"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Barra de Filtros -->
+<div class="filter-bar">
+    <button class="filter-btn active">
+        <i class="fas fa-car"></i> Todos
+    </button>
+    <button class="filter-btn">
+        <i class="fas fa-gas-pump"></i> Disponíveis
+    </button>
+    <button class="filter-btn">
+        <i class="fas fa-wrench"></i> Em Manutenção
+    </button>
+    <button class="filter-btn">
+        <i class="fas fa-road"></i> Em Uso
+    </button>
+    <button class="filter-btn">
+        <i class="fas fa-calendar-times"></i> Reservados
+    </button>
+</div>
+    
+<!-- Conteúdo Principal -->
+<main class="container">
+    <section class="vehicle-listing">
+        <h1 class="section-title">Frota de Veículos</h1>
+        
+        <!-- Lista de Veículos --> 
+        <div class="vehicle-cards">
+            <!-- HB20S -->
+            <article class="vehicle-card">
+                <img src="assets/images/vehicles/HB2C.png" alt="Hyundai HB20S 2023" class="vehicle-image">
+                <div class="vehicle-content">
+                    <div class="vehicle-header">
+                        <div class="category-container">
+                            <div class="category-label">Categoria</div>
+                            <div class="category">Sedan <span>• Compacto</span></div>
+                        </div>
+                        <div class="availability-container">
+                            <div class="availability-label">Disponibilidade</div>
+                            <div class="availability available">Disponível</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="vehicle-brand">Hyundai HB20S
+                        <small class="vehicle-model">1.0 Turbo 2023</small>
+                    </h2>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump spec-icon"></i>
+                            <span class="spec-value">Flex</span>
+                            <span class="spec-label">Combustível</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-car spec-icon"></i>
+                            <span class="spec-value">Automático</span>
+                            <span class="spec-label">Câmbio</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-users spec-icon"></i>
+                            <span class="spec-value">5</span>
+                            <span class="spec-label">Passageiros</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-suitcase spec-icon"></i>
+                            <span class="spec-value">2</span>
+                            <span class="spec-label">Malas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-price">
+                        <div class="daily-price">
+                            <span class="price-label">Diária:</span>
+                            <span class="price-value">R$ 180</span>
+                        </div>
+                        <div class="weekly-price">
+                            <span class="price-label">Semanal:</span>
+                            <span class="price-value">R$ 1.080</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-features">
+                        <span class="feature-tag">Ar Condicionado</span>
+                        <span class="feature-tag">Direção Elétrica</span>
+                        <span class="feature-tag">Multimídia</span>
+                    </div>
+                    
+                    <button class="rent-btn" data-vehicle-id="1">
+                        <i class="fas fa-calendar-check"></i> Alugar Agora
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Fiat Toro -->
+            <article class="vehicle-card">
+                <img src="assets/images/vehicles/TORO.png" alt="Fiat Toro 2023" class="vehicle-image">
+                <div class="vehicle-content">
+                    <div class="vehicle-header">
+                        <div class="category-container">
+                            <div class="category-label">Categoria</div>
+                            <div class="category">Picape <span>• 4x4</span></div>
+                        </div>
+                        <div class="availability-container">
+                            <div class="availability-label">Disponibilidade</div>
+                            <div class="availability available">Disponível</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="vehicle-brand">Fiat Toro
+                        <small class="vehicle-model">Volcano 2.0 Diesel</small>
+                    </h2>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump spec-icon"></i>
+                            <span class="spec-value">Diesel</span>
+                            <span class="spec-label">Combustível</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-car spec-icon"></i>
+                            <span class="spec-value">Automático</span>
+                            <span class="spec-label">Câmbio</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-users spec-icon"></i>
+                            <span class="spec-value">5</span>
+                            <span class="spec-label">Passageiros</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-truck-pickup spec-icon"></i>
+                            <span class="spec-value">1.100kg</span>
+                            <span class="spec-label">Carga</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-price">
+                        <div class="daily-price">
+                            <span class="price-label">Diária:</span>
+                            <span class="price-value">R$ 380</span>
+                        </div>
+                        <div class="weekly-price">
+                            <span class="price-label">Semanal:</span>
+                            <span class="price-value">R$ 2.280</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-features">
+                        <span class="feature-tag">4x4</span>
+                        <span class="feature-tag">Cabine Dupla</span>
+                        <span class="feature-tag">Teto Solar</span>
+                    </div>
+                    
+                    <button class="rent-btn" data-vehicle-id="2">
+                        <i class="fas fa-calendar-check"></i> Alugar Agora
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Fiat Argo -->
+            <article class="vehicle-card">
+                <img src="assets/images/vehicles/ARGO.png" alt="Fiat Argo 2023" class="vehicle-image">
+                <div class="vehicle-content">
+                    <div class="vehicle-header">
+                        <div class="category-container">
+                            <div class="category-label">Categoria</div>
+                            <div class="category">Hatch <span>• Compacto</span></div>
+                        </div>
+                        <div class="availability-container">
+                            <div class="availability-label">Disponibilidade</div>
+                            <div class="availability unavailable">Indisponível</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="vehicle-brand">Fiat Argo
+                        <small class="vehicle-model">Drive 1.3 2023</small>
+                    </h2>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump spec-icon"></i>
+                            <span class="spec-value">Flex</span>
+                            <span class="spec-label">Combustível</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-car spec-icon"></i>
+                            <span class="spec-value">Manual</span>
+                            <span class="spec-label">Câmbio</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-users spec-icon"></i>
+                            <span class="spec-value">5</span>
+                            <span class="spec-label">Passageiros</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-suitcase spec-icon"></i>
+                            <span class="spec-value">1</span>
+                            <span class="spec-label">Mala</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-price">
+                        <div class="daily-price">
+                            <span class="price-label">Diária:</span>
+                            <span class="price-value">R$ 150</span>
+                        </div>
+                        <div class="weekly-price">
+                            <span class="price-label">Semanal:</span>
+                            <span class="price-value">R$ 900</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-features">
+                        <span class="feature-tag">Econômico</span>
+                        <span class="feature-tag">Ar Condicionado</span>
+                        <span class="feature-tag">Direção Elétrica</span>
+                    </div>
+                    
+                    <button class="rent-btn" data-vehicle-id="3" disabled>
+                        <i class="fas fa-times-circle"></i> Indisponível
+                    </button>
+
+                    
+                </div>
+            </article>
+            
+            <!-- Jeep Renegade -->
+            <article class="vehicle-card">
+                <img src="assets/images/vehicles/RENE.png" alt="Jeep Renegade 2023" class="vehicle-image">
+                <div class="vehicle-content">
+                    <div class="vehicle-header">
+                        <div class="category-container">
+                            <div class="category-label">Categoria</div>
+                            <div class="category">SUV <span>• 4x4</span></div>
+                        </div>
+                        <div class="availability-container">
+                            <div class="availability-label">Disponibilidade</div>
+                            <div class="availability available">Disponível</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="vehicle-brand">Jeep Renegade
+                        <small class="vehicle-model">Longitude 1.8 Flex</small>
+                    </h2>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump spec-icon"></i>
+                            <span class="spec-value">Flex</span>
+                            <span class="spec-label">Combustível</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-car spec-icon"></i>
+                            <span class="spec-value">Automático</span>
+                            <span class="spec-label">Câmbio</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-users spec-icon"></i>
+                            <span class="spec-value">5</span>
+                            <span class="spec-label">Passageiros</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-suitcase spec-icon"></i>
+                            <span class="spec-value">3</span>
+                            <span class="spec-label">Malas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-price">
+                        <div class="daily-price">
+                            <span class="price-label">Diária:</span>
+                            <span class="price-value">R$ 320</span>
+                        </div>
+                        <div class="weekly-price">
+                            <span class="price-label">Semanal:</span>
+                            <span class="price-value">R$ 1.920</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-features">
+                        <span class="feature-tag">Tração 4x4</span>
+                        <span class="feature-tag">Teto Solar</span>
+                        <span class="feature-tag">Central Multimídia</span>
+                    </div>
+                    
+                    <button class="rent-btn" data-vehicle-id="4">
+                        <i class="fas fa-calendar-check"></i> Alugar Agora
+                    </button>
+                    
+                </div>
+            </article>
+            
+            <!-- Fiat Pulse -->
+            <article class="vehicle-card">
+                <img src="assets/images/vehicles/PLSE.png" alt="Fiat Pulse 2023" class="vehicle-image">
+                <div class="vehicle-content">
+                    <div class="vehicle-header">
+                        <div class="category-container">
+                            <div class="category-label">Categoria</div>
+                            <div class="category">SUV <span>• Compacto</span></div>
+                        </div>
+                        <div class="availability-container">
+                            <div class="availability-label">Disponibilidade</div>
+                            <div class="availability available">Disponível</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="vehicle-brand">Fiat Pulse
+                        <small class="vehicle-model">Audace 1.0 Turbo</small>
+                    </h2>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump spec-icon"></i>
+                            <span class="spec-value">Flex</span>
+                            <span class="spec-label">Combustível</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-car spec-icon"></i>
+                            <span class="spec-value">Automático</span>
+                            <span class="spec-label">Câmbio</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-users spec-icon"></i>
+                            <span class="spec-value">5</span>
+                            <span class="spec-label">Passageiros</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-suitcase spec-icon"></i>
+                            <span class="spec-value">2</span>
+                            <span class="spec-label">Malas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-price">
+                        <div class="daily-price">
+                            <span class="price-label">Diária:</span>
+                            <span class="price-value">R$ 280</span>
+                        </div>
+                        <div class="weekly-price">
+                            <span class="price-label">Semanal:</span>
+                            <span class="price-value">R$ 1.680</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-features">
+                        <span class="feature-tag">Design Esportivo</span>
+                        <span class="feature-tag">Tela 10.1"</span>
+                        <span class="feature-tag">Assistente de Estacionamento</span>
+                    </div>
+                    
+                    <button class="rent-btn" data-vehicle-id="5">
+                        <i class="fas fa-calendar-check"></i> Alugar Agora
+                    </button>
+                    
+                </div>
+            </article>
+
+            <!--  -->
+            <article class="vehicle-card">
+                <div class="vehicle-badge">NOVO</div>
+                <img src="assets/images/vehicles/PEUA.png" alt="Peugeot 2023" class="vehicle-image">
+                <div class="vehicle-content">
+                    <div class="vehicle-header">
+                        <div class="category-container">
+                            <div class="category-label">Categoria</div>
+                            <div class="category">Hatch <span>• Premium</span></div>
+                        </div>
+                        <div class="availability-container">
+                            <div class="availability-label">Disponibilidade</div>
+                            <div class="availability available">Últimas Unidades</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="vehicle-brand">Peugeot 208
+                        <small class="vehicle-model">GT Pack 1.6 Turbo</small>
+                    </h2>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-gas-pump spec-icon"></i>
+                            <span class="spec-value">Flex</span>
+                            <span class="spec-label">Combustível</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-car spec-icon"></i>
+                            <span class="spec-value">Automático 6v</span>
+                            <span class="spec-label">Câmbio</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-users spec-icon"></i>
+                            <span class="spec-value">5</span>
+                            <span class="spec-label">Passageiros</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-suitcase-rolling spec-icon"></i>
+                            <span class="spec-value">3</span>
+                            <span class="spec-label">Malas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-price">
+                        <div class="daily-price">
+                            <span class="price-label">Diária:</span>
+                            <span class="price-value">R$ 420</span>
+                            <small class="price-discount">(10% OFF)</small>
+                        </div>
+                        <div class="weekly-price">
+                            <span class="price-label">Semanal:</span>
+                            <span class="price-value">R$ 2.520</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-features">
+                        <span class="feature-tag">Teto Panorâmico</span>
+                        <span class="feature-tag">Tela 10"</span>
+                        <span class="feature-tag">Assistente de Direção</span>
+                        <span class="feature-tag">Park Assist</span>
+                    </div>
+                    
+                    <button class="rent-btn pulse-effect" data-vehicle-id="5">
+                        <i class="fas fa-bolt"></i> Reserva Rápida
+                    </button>
+                    
+                </div>
+            </article>
+        </div>
+        
+        <!-- Paginação -->
+        <div class="pagination">
+            <a href="#" class="pagination-link disabled">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="#" class="pagination-link active">1</a>
+            <a href="#" class="pagination-link">2</a>
+            <a href="#" class="pagination-link">3</a>
+            <a href="#" class="pagination-link">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer sem Tailwind -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="assets/images/logo_unipe.webp" alt="" srcset="" class="logo logo_unipe">
+      <p class="footer-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias maxime labore quam ab eaque aliquam beatae porro nisi minus cum asperiores rem animi amet, dolores ipsa aperiam nostrum quis dicta!
+      </p>
+    </div>
+    <div class="footer-section">
+      <h4 class="footer-subtitle">Contato</h4>
+      <ul class="footer-list">
+        <li><a href="mailto:contato@josecarlos.dev"><i class="fas fa-envelope"></i> contato@josecarlos.dev</a></li>
+        <li><a href="https://linkedin.com/in/carlos0ff" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> linkedin.com/in/carlos0ff</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4 class="footer-subtitle">Redes Sociais</h4>
+      <div class="footer-socials">
+        <a href="https://github.com/carlos0ff" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/carlos0ff" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href="https://medium.com/@carlos0ff" target="_blank" rel="noopener noreferrer"><i class="fab fa-medium"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>José Carlos</strong>. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+
+<!-- Modal de Comparação -->
+<div id="comparisonModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Comparar Veículos</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Selecione até 3 veículos para comparar as especificações.</p>
+            <div class="comparison-grid" id="comparisonGrid">
+                <!-- Conteúdo dinâmico será inserido aqui via JavaScript -->
+            </div>
+        </div>
+        <button class="reserve-btn">Confirmar Reserva</button>
+    </div>
+</div>
+    
+<!-- Core JavaScript -->
+<script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+</body>
+</html>

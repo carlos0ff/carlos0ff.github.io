@@ -1,41 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+.recuo {
+  text-indent: 2em; /* Recua 2 unidades de tamanho de fonte */
+}
+
+.tech-badge {
+  @apply px-3 py-1 rounded-full text-xs font-medium text-blue-100 bg-blue-900;
+}
+
+
+.retro-glow {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Azul Tailwind (blue-500) com opacidade */
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #1e40af); /* blue-500 to blue-900 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.feature-card {
+  @apply bg-gray-800/50 p-4 rounded-lg border border-blue-800 hover:border-blue-500 transition-colors;
+}
+
 #project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 2px;
+  background: #4b5563;
+  border-radius: 2px;
 }
 
 .features li {
-    margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .specs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }
 
 .spec-item {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .spec-value {
-    font-weight: bold;
-    color: #a5b4fc;
+  font-weight: bold;
+  color: #a5b4fc;
 }
-
 
 .project-header {
   position: relative;

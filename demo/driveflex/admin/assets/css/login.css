@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://i.pinimg.com/originals/80/d2/44/80d24473b646602ee4c79482461f23bc.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
+.login-container {
+    padding: 40px;
+    border-radius: 4px;
+    max-width: 420px;
+    width: 100%;
+    color: #fff;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.login-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fce38a;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Estilo do botão de login */
+.login-container button {
+    width: 100%;
+    background-color: #fce38a;
+    color: #000;
+    line-height: 1.5;
+    font-weight: 700;
+    padding: 12px 17px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.login-container button:hover {
+    background-color: #f3cc67;
+}
+
+/* Link de registro */
+.login-container .register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-container .register-link a {
+    color: #fce38a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-container .register-link a:hover {
+    text-decoration: underline;
+    color: #f3cc67;
+}
+
+/* Estilos dos campos de input */
+.form {
+    width: 100%;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.form input {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding-top: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #f3cc67;
+}
+
+.form label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #f3cc67;
+
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    left: 0px;
+    color: #fce38a;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+    transform: translateX(0%);
+    outline: none;
+}
+
+/* Mensagens de erro */
+.login-container .error-message {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Mensagens de sucesso */
+.login-container .success-message {
+    color: #36c36b;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px;
+    }
+
+    .login-container h2 {
+        font-size: 22px;
+    }
+
+    .login-container button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+
+pre.debug-output {
+    background-color: #2b2b2b;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: auto;
+    white-space: pre-wrap; /* Permite quebra de linha */
+    word-wrap: break-word;
+}
+
+/* Estilos para chaves */
+pre.debug-output .key {
+    color: #66d9ef;
+    font-weight: bold;
+}
+
+/* Estilos para valores de string */
+pre.debug-output .string {
+    color: #a6e22e;
+}
+
+/* Estilos para valores numéricos */
+pre.debug-output .number {
+    color: #ae81ff;
+}
+
+/* Estilos para valores booleanos */
+pre.debug-output .boolean {
+    color: #fd971f;
+}
+
+/* Estilos para valores nulos */
+pre.debug-output .null {
+    color: #75715e;
+    font-style: italic;
+}
