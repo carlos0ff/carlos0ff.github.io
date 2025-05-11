@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.recuo {
-  text-indent: 2em; /* Recua 2 unidades de tamanho de fonte */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.tech-badge {
-  @apply px-3 py-1 rounded-full text-xs font-medium text-blue-100 bg-blue-900;
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 
-.retro-glow {
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Azul Tailwind (blue-500) com opacidade */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
 }
 
 .gradient-text {
@@ -19,7 +26,6 @@
   background-clip: text;
   color: transparent;
 }
-
 
 .feature-card {
   @apply bg-gray-800/50 p-4 rounded-lg border border-blue-800 hover:border-blue-500 transition-colors;

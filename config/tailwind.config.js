@@ -1,20 +1,19 @@
 tailwind.config = {
+  content: ['./*.html'],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-bg': "url('/assets/image/background_bmw.jpg')",
+      },
       colors: {
         primary: {
-          600: '#2563eb',
-          700: '#1d4ed8',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
         },
-        dark: {
-          800: '#1e293b',
-          900: '#0f172a',
-        },
-        retro: {
-          500: '#ff6b6b',
-          600: '#f06595',
-          700: '#cc5de8',
-          800: '#845ef7',
+        matrix: {
+          green: '#00ff41',
+          dark: '#003b00'
         }
       },
       boxShadow: {

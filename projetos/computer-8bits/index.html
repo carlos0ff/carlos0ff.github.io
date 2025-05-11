@@ -13,8 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  
+
 </head>
 
 <body class="dark bg-gray-900 text-gray-100">
@@ -360,7 +359,7 @@
         <!-- Project Info -->
         <div class="bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-700">
           <h3 class="text-lg font-semibold mb-4 flex items-center">
-            <i class="fas fa-info-circle mr-2 text-green-500"></i>
+            <i class="fas fa-info-circle mr-2 text-gray-500"></i>
             Informações do Projeto
           </h3>
           <ul class="space-y-4 text-sm">
@@ -370,7 +369,7 @@
             </li>
             <li class="flex justify-between items-center py-2 border-b border-gray-700">
               <span class="text-gray-400">Data</span>
-              <span class="font-medium"></span>
+              <span class="font-medium">—</span>
             </li>
             <li class="flex justify-between items-center py-2 border-b border-gray-700">
               <span class="text-gray-400">Categoria</span>
@@ -400,7 +399,7 @@
                 Circuitos Integrados
               </h4>
               <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-retro-500/20 text-green-500">74LS series</span>
+                <span class="px-2 py-1 bg-green-500/20 text-green-500 ">74LS series</span>
                 <span class="px-2 py-1 bg-gray-800 text-gray-300 border border-gray-700">LM555 (Clock)</span>
                 <span class="px-2 py-1 bg-blue-900/30 text-blue-400">LEDs</span>
               </div>
@@ -490,45 +489,28 @@
 </section>
   
 <!-- Footer -->
-<footer class="bg-gray-800 text-gray-300 py-12 border-t border-gray-700">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-lg font-bold mb-4 gradient-text">José Carlos</h3>
-        <p class="text-sm text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias maxime labore quam ab eaque aliquam beatae porro nisi minus cum asperiores rem animi amet, dolores ipsa aperiam nostrum quis dicta!
-        </p>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-400">Contato</h4>
-        <ul class="space-y-2">
-          <li>
-            <a href="mailto:contato@josecarlos.dev" class="text-gray-400 hover:text-white transition-colors flex items-center">
-              <i class="fas fa-envelope mr-2"></i> contato@josecarlos.dev
-            </a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center">
-              <i class="fab fa-linkedin mr-2"></i> linkedin.com/in/carlos0ff
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-gray-400 ">Redes Sociais</h4>
-        <div class="flex space-x-6">
-          <a href="https://github.com/carlos0ff" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github text-xl"></i> Github</a>
-          <a href="https://linkedin.com/in/carlos0ff" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i> LinkedIn</a>
-          <a href="https://instagram.com/carliinhos0f" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i> Instagram</a>
-          <a href="mailto:carlosiilva66@gmail.com" class=""><i class="fas fa-envelope  mr-2"></i> Email</a>
-        </div>
-      </div>
-    </div>
-    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
-      <p>Desenvolvido com ❤️ por <a href="https://github.com/carlos0ff" target="_blank">José Carlos</a> </p>
-    </div>
+<footer class="bg-gray-900 text-gray-400 text-sm py-6 border-t border-gray-700 text-center">
+  <div class="flex justify-center gap-6 mb-2">
+    <a href="https://github.com/carlos0ff" target="_blank" class="hover:text-white transition-colors">
+      <i class="fab fa-github text-lg"></i> GitHub
+    </a>
+    <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="hover:text-white transition-colors">
+      <i class="fab fa-linkedin text-lg"></i> LinkedIn
+    </a>
+    <a href="mailto:carlosiilva66@gmail.com" class="hover:text-white transition-colors">
+      <i class="fas fa-envelope text-lg"></i> Email
+    </a>
   </div>
+  <p>
+    © <span id="ano-atual"></span> Desenvolvido com ❤️ por 
+    <a href="https://github.com/carlos0ff" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">José Carlos</a>
+  </p>
 </footer>
+
+<!-- Core javascript -->
+<script type="text/javascript" src="../../assets/js/main.js"></script>
+
+
 
 </body>
 </html>
