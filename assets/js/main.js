@@ -1,10 +1,38 @@
+
+
 function getProjectLink(project) {
-  // Verifica se já tem o parâmetro id
-  if (project.link.includes('?')) {
+  if (project.link.includes('?')) 
     return project.link;
+
+  return `/projetos/${project.link.replace(/^\//, '')}?id=${project.id}`;
+}
+
+
+
+/**
+ * Função para registrar visualização quando o projeto é acessado
+ */
+function registerProjectView(projectId) {
+  const viewsKey = `project_${projectId}_views`;
+  let views = localStorage.getItem(viewsKey);
+  
+  if (!views) {
+    views = 0;
   }
-  // Adiciona o ID se não existir
-  return `${project.link}?id=${project.id}`;
+  
+  const newCount = parseInt(views) + 1;
+  localStorage.setItem(viewsKey, newCount);
+  
+  return newCount.toLocaleString();
+}
+
+/**
+ * Função para obter contagem de visualizações sem incrementar
+ */
+function getViewCount(projectId) {
+  const viewsKey = `project_${projectId}_views`;
+  let views = localStorage.getItem(viewsKey) || 0;
+  return parseInt(views).toLocaleString();
 }
 
 /**
@@ -27,7 +55,6 @@ function getCurrentProjectId() {
   return 1; 
 }
 
-// Render related projects
 function renderRelatedProjects(currentProjectId = null, count = 3) {
   const container = document.getElementById("related-list");
   
@@ -55,14 +82,14 @@ function renderRelatedProjects(currentProjectId = null, count = 3) {
 
   selected.forEach(project => {
     const item = document.createElement("a");
-    // Corrigido: usa caminho absoluto começando com /projetos/
+
     item.href = `/projetos/${project.link.replace(/^\//, '')}?id=${project.id}`;
     item.className = "flex items-start gap-3 p-3 hover:bg-gray-700/50 rounded-lg transition-colors group";
     
     item.innerHTML = `
       <div class="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-lg overflow-hidden border border-gray-600">
         <img src="${project.image}" alt="${project.title}" 
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
       </div>
       <div class="flex-1 min-w-0">
         <h4 class="text-sm font-medium text-white group-hover:text-primary-500 truncate">${project.title}</h4>
@@ -78,6 +105,7 @@ function renderRelatedProjects(currentProjectId = null, count = 3) {
   });
 }
 
+
 /**
  * PROJECT DATA
  */
@@ -90,7 +118,7 @@ const projects = [
     tags: ["PHP", "HTML5", "CSS3", "MySQL"],
     image: "../../assets/image/thumb/thumb-driveflex.png",
     link: "driveflex/",
-    github: "#"
+    github: "https://github.com/seu-usuario/driveflex"
   },
   {
     id: 2,
@@ -100,7 +128,7 @@ const projects = [
     tags: ["Angular", "TypeScript", "Chart.js"],
     image: "../../assets/image/8bit-computer.jpg",
     link: "pokedex/",
-    github: "#"
+    github: "https://github.com/seu-usuario/dashboard"
   },
   {
     id: 3,
@@ -110,7 +138,7 @@ const projects = [
     tags: ["Java", "Angular", "MySQL"],
     image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
     link: "ecommerce",
-    github: "#"
+    github: "https://github.com/seu-usuario/ecommerce"
   }
 ];
 
@@ -159,6 +187,12 @@ const utils = {
 
   scrollToTop: () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
+  },
+
+  // Função para lidar com o clique no link do projeto
+  handleProjectView: (projectId, event) => {
+    registerProjectView(projectId);
+    // Você pode adicionar aqui outras lógicas como tracking analytics
   }
 };
 
@@ -199,12 +233,22 @@ const render = {
           </div>
 
           <div class="flex justify-between items-center pt-3 border-t border-gray-700/50 mt-auto">
-            <a href="${getProjectLink(project)}" class="text-sm text-primary-500 hover:text-primary-400 flex items-center">
-  <i class="fas fa-external-link-alt mr-2"></i> Ver Projeto
-</a>
-            <a href="${project.github}" target="_blank" class="text-gray-400 hover:text-white">
-              <i class="fab fa-github"></i>
+            <a href="${getProjectLink(project)}" 
+               onclick="utils.handleProjectView(${project.id}, event)"
+               class="text-sm text-primary-500 hover:text-blue-400 flex items-center">
+              <i class="fas fa-external-link-alt mr-2"></i> Ver Projeto
             </a>
+            <div class="flex items-center gap-3">
+              <a href="${project.github}" 
+                 target="_blank" 
+                 class="text-gray-400 hover:text-white"
+                 onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i>
+              </a>
+              <span class="text-sm text-gray-400 flex items-center" title="Visualizações">
+                <i class="fas fa-eye mr-1"></i> ${getViewCount(project.id)}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -269,6 +313,7 @@ const render = {
   },
 
   relatedProjects: () => {
+    const currentProjectId = getCurrentProjectId();
     const availableProjects = projects.filter(p => 
       p.id !== currentProjectId && p.link && p.link !== "#" && p.image
     );
@@ -350,9 +395,7 @@ const controller = {
   }
 };
 
-
-
 /**
  * INITIALIZATION
  */
-document.addEventListener('DOMContentLoaded', controller.init);
+document.addEventListener("DOMContentLoaded", updateVisitCounter);
