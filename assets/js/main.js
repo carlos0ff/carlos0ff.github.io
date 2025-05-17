@@ -1,12 +1,10 @@
 
-
 function getProjectLink(project) {
   if (project.link.includes('?')) 
     return project.link;
 
   return `/projetos/${project.link.replace(/^\//, '')}?id=${project.id}`;
 }
-
 
 
 /**
@@ -18,6 +16,62 @@ function registerProjectView(projectId) {
   
   if (!views) {
     views = 0;
+
+const projects = [
+  {
+    title: "API do Brasileirão",
+    badge: "Backend",
+    description: " API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["Java", "Spring Boot", "Git"],
+    image: "../../assets/image/brasileirao-logo-ouro.png", 
+    detailsLink: "brasileirao-API",
+    githubLink: "https://github.com/carlos0ff/Brasileirao-API"
+  },
+  {
+    title: "Pokédex",
+    badge: "Frontend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["HTML5", "CSS3", "Javascript"],
+    image: "../../assets/image/brasileirao-logo-ouro.png", 
+    detailsLink: "/projetos/pokedex",
+    githubLink: "#"
+  },
+  {
+    title: "Sistema de Aluguel de Carros",
+    badge: "Null",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap"],
+    image: "../../assets/image/brasileirao-logo-ouro.png",
+    detailsLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "ss",
+    badge: "Backend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    image: "/assets/image/8bit-computer.jpg",
+    detailsLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "ss",
+    badge: "Backend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    image: "/assets/image/8bit-computer.jpg",
+    detailsLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "ss",
+    badge: "Backend",
+    description: "API RESTful para acesso a dados do Campeonato Brasileiro de Futebol (Séries A-D). Desenvolvida em Java com Spring Boot, fornece informações atualizadas sobre times, jogadores, partidas e classificações.",
+    tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+    image: "/assets/image/8bit-computer.jpg",
+    detailsLink: "#",
+    githubLink: "#"
+>>>>>>> parent of 783e25b (Merge branch 'main' of https://github.com/carlos0ff/carlos0ff.github.io)
   }
   
   const newCount = parseInt(views) + 1;
@@ -309,6 +363,7 @@ const render = {
       </button>
     `;
 
+<<<<<<< HEAD
     elements.paginationNav.innerHTML = paginationHTML;
   },
 
@@ -399,3 +454,6 @@ const controller = {
  * INITIALIZATION
  */
 document.addEventListener("DOMContentLoaded", updateVisitCounter);
+=======
+renderProjects();
+>>>>>>> parent of 783e25b (Merge branch 'main' of https://github.com/carlos0ff/carlos0ff.github.io)
