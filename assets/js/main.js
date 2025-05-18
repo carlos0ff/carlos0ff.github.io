@@ -115,32 +115,122 @@ const projects = [
     id: 1,
     title: "DriveFlex Básico - Aluguel de Carros",
     category: "backend",
-    description: "Sistema simples de aluguel de veículos desenvolvido com PHP puro para aprendizagem dos conceitos fundamentais.",
+    description: "Sistema de aluguel de veículos desenvolvido em PHP puro, focado no aprendizado dos conceitos básicos de programação web, incluindo manipulação de formulários, gerenciamento de sessões e interação com banco de dados.",
     tags: ["PHP", "HTML5", "CSS3", "MySQL"],
     image: "../../assets/image/thumb/thumb-driveflex.png",
     link: "driveflex/",
-    github: "https://github.com/seu-usuario/driveflex"
+    github: "https://github.com/carlos0ff/driveflex"
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    category: "frontend",
-    description: "Painel de visualização de dados com gráficos interativos e tempo real.",
-    tags: ["Angular", "TypeScript", "Chart.js"],
-    image: "../../assets/image/8bit-computer.jpg",
-    link: "pokedex/",
-    github: "https://github.com/seu-usuario/dashboard"
+    title: "iPhone Simulator",
+    category: "backend",
+    description: "Simulador completo das funcionalidades de um iPhone, desenvolvido como projeto prático no Bootcamp Bradesco - Java Cloud Native, com foco em lógica de programação, orientação a objetos e boas práticas de desenvolvimento em Java.",
+    tags: ["Java","Orientação a objetos"],
+    image: "../../assets/image/thumb/thumb-iphone.png",
+    link: "iPhoneSimulator/",
+    github: "https://github.com/carlos0ff/driveflex"
   },
   {
     id: 3,
-    title: "E-commerce Completo",
-    category: "fullstack",
-    description: "Plataforma de e-commerce com carrinho de compras e gateway de pagamento.",
-    tags: ["Java", "Angular", "MySQL"],
+    title: "Brasileirão API",
+    category: "backend",
+    description: "Aplicação backend desenvolvida em Java, capaz de consumir e processar dados da API do Brasileirão, oferecendo informações atualizadas sobre times, partidas, classificações e estatísticas. Projeto prático realizado no Bootcamp Bradesco - Java Cloud Native, com foco em integração de APIs, tratamento de dados e boas práticas em desenvolvimento backend",
+    tags: ["Java","Spring Boot", "APIs", "Restful", "Orientação a objetos"],
     image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
+    link: "brasileirao-api/",
+    github: "https://github.com/carlos0ff/brasileirao-api-java"
+  },
+  {
+    id: 4,
+    title: "Folha de pagamento",
+    category: "hardware",
+    description: "NULL",
+    tags: ["Java", "Quarkus", "Quality Assurance", "Orientação a objetos"],
+    image: "../../assets/image/8bit-computer.jpg",
+    link: "8bit-computer/",
+    github: "https://github.com/carlos0ff/"
+  },
+  {
+    id: 5,
+    title: "Banco de Dados - SQL e Modelagem",
+    category: "banco de dados",
+    description: "Estudo dos fundamentos de bancos de dados relacionais, incluindo modelagem de dados com diagramas entidade-relacionamento, normalização para integridade e eficiência, e criação e otimização de consultas SQL para manipulação e gerenciamento de dados.",
+    tags: ["SGBD", "SQL", "MySQL WorkBanch"],
+    image: "https://www.opservices.com.br/wp-content/uploads/2016/10/Quais-as-principais-diferencas-entre-banco-de-dados.png",
+    link: "database",
+    github: "https://github.com/carlos0ff/ecommerce"
+  },
+  {
+    id: 6,
+    title: "Estrutura de Dados I & II",
+    category: "Estrutura de Dados",
+    description: "Disciplinas ministradas pelo professor Edkallen, que abordam desde estruturas básicas como vetores, listas encadeadas, pilhas e filas, até estruturas avançadas como árvores, tabelas hash e grafos.",
+    tags: ["C/C++", "Estruturas de Dados", "Algoritmos"],
+    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*yOYRUM0jeimN32tcX7nLng.jpeg",
     link: "ecommerce",
-    github: "https://github.com/seu-usuario/ecommerce"
+    github: "https://github.com/carlos0ff/ecommerce"
   }
+  // {
+  //   id: 7,
+  //   title: "Computador 8 Bits",
+  //   category: "hardware",
+  //   description: "Projeto de um computador de 8 bits feito do zero, incluindo unidade de controle, ALU, registradores e barramentos. Ideal para estudo de arquitetura de computadores e sistemas embarcados.",
+  //   tags: ["Eletrônica Digital", "C/C++", "Arquitetura", "Hardware"],
+  //   image: "../../assets/image/8bit-computer.jpg",
+  //   link: "8bit-computer/",
+  //   github: "https://github.com/carlos0ff/"
+  // },
+  // {
+  //   id: 8,
+  //   title: "Brasileirão API",
+  //   category: "backend",
+  //   description: "Aplicação backend em Java que consome e processa dados da API do Brasileirão para fornecer informações sobre times, partidas, classificações e estatísticas em tempo real.",
+  //   tags: ["Java","Spring Boot", "APIs", "Restful"],
+  //   image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
+  //   link: "brasileirao-api-java/",
+  //   github: "https://github.com/carlos0ff/brasileirao-api-java"
+  // },
+  // {
+  //   id: 9,
+  //   title: "Banco de Dados - SQL e Modelagem",
+  //   category: "banco de dados",
+  //   description: "Estudo dos fundamentos de bancos de dados relacionais, incluindo modelagem de dados com diagramas entidade-relacionamento, normalização para integridade e eficiência, e criação e otimização de consultas SQL para manipulação e gerenciamento de dados.",
+  //   tags: ["SGBD", "SQL", "MySQL WorkBanch"],
+  //   image: "https://www.opservices.com.br/wp-content/uploads/2016/10/Quais-as-principais-diferencas-entre-banco-de-dados.png",
+  //   link: "database",
+  //   github: "https://github.com/carlos0ff/ecommerce"
+  // },
+  // {
+  //   id: 10,
+  //   title: "Estrutura de Dados I & II",
+  //   category: "Estrutura de Dados",
+  //   description: "As disciplinas de Estrutura de Dados I e II abordam estruturas básicas e avançadas para organização e manipulação eficiente de dados, como vetores, listas, pilhas, filas, árvores, tabelas hash e grafos, com foco em implementação e análise de complexidade",
+  //   tags: ["C/C++", "Estruturas de Dados", "Algoritmos"],
+  //   image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*yOYRUM0jeimN32tcX7nLng.jpeg",
+  //   link: "ecommerce",
+  //   github: "https://github.com/carlos0ff/ecommerce"
+  // },
+  // {
+  //   id: 11,
+  //   title: "MyDrugs",
+  //   category: "fullstack",
+  //   description: "Plataforma de e-commerce com carrinho de compras e gateway de pagamento.",
+  //   tags: ["Java", "Angular", "MySQL"],
+  //   image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
+  //   link: "ecommerce",
+  //   github: "https://github.com/carlos0ff/ecommerce"
+  // },
+  // {
+  //   id: 12,
+  //   title: "MyDrugs",
+  //   category: "fullstack",
+  //   description: "Plataforma de e-commerce com carrinho de compras e gateway de pagamento.",
+  //   tags: ["Java", "Angular", "MySQL"],
+  //   image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
+  //   link: "ecommerce",
+  //   github: "https://github.com/carlos0ff/ecommerce"
+  // }
 ];
 
 /**

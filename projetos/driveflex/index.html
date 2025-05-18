@@ -174,8 +174,57 @@
               </div>
             </div>
           </div>
+
+          <div class="lg:col-span-2 space-y-10">
+            <div id="query1" class="mt-4">
+                <h5 class="text-xl font-bold mb-6 flex items-start">
+                    <span class="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mr-3 mt-1 flex items-center justify-center">
+                        <span class="text-white text-xs font-bold">1</span>
+                    </span>
+                    <span class="flex-grow">
+                        <span class="block text-white">Consulta de Clientes e Contratos</span>
+                        <span class="block text-gray-400 font-normal text-base mt-1">
+                        Recuperar o nome e telefone dos clientes, número de contrato, modelo e placa do veículo. 
+                        <span class="text-blue-300">Ordenado pela data de saída mais recente</span>
+                        </span>
+                    </span>
+                </h5>
+          
+                <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
+                  <div class="flex items-center px-4 py-2 bg-gray-800 border-b border-gray-700">
+                    <div class="flex space-x-2 mr-4">
+                      <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <span class="text-gray-400 text-sm">SQL</span>
+                  </div>
+                  
+                  <div class="p-4 font-mono text-sm text-gray-300 overflow-x-auto">
+                    <pre><code class="language-sql">
+      <span class="text-blue-400">SELECT</span> 
+          c.nome <span class="text-purple-400">AS</span> NomeCliente,
+          t.numero <span class="text-purple-400">AS</span> Telefone,
+          ct.numero <span class="text-purple-400">AS</span> NumeroContrato,
+          v.modelo <span class="text-purple-400">AS</span> ModeloVeiculo,
+          v.placa <span class="text-purple-400">AS</span> PlacaVeiculo,
+          ct.dataSaida <span class="text-purple-400">AS</span> DataSaida
+      <span class="text-blue-400">FROM</span> 
+          cliente c
+      <span class="text-blue-400">LEFT JOIN</span> 
+          telefone t <span class="text-blue-400">ON</span> c.codigo = t.codigoCliente
+      <span class="text-blue-400">JOIN</span> 
+          contrato ct <span class="text-blue-400">ON</span> c.codigo = ct.codigoCliente
+      <span class="text-blue-400">JOIN</span> 
+          veiculo v <span class="text-blue-400">ON</span> ct.idVeiculo = v.id
+      <span class="text-blue-400">ORDER BY</span> 
+          ct.dataSaida <span class="text-blue-400">DESC</span>;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
       <!-- Sidebar -->
       <div class="space-y-8">
@@ -223,6 +272,7 @@
               </h4>
               <div class="flex flex-wrap gap-2">
                 <span class="px-3 py-1 rounded-full text-sm bg-blue-900/30 text-blue-400">PHP</span>
+                <span class="px-3 py-1 rounded-full text-sm bg-blue-900/30 text-blue-400">Procedural</span>
               </div>
             </div>
             <div>

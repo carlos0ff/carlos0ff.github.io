@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const canvas = document.getElementById('matrix-canvas');
   const ctx = canvas.getContext('2d');
   
-  const binaryChars = "01";
+  const binaryChars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
   const fontSize = 14;
   const columns = Math.floor(window.innerWidth / fontSize);
   const drops = Array(columns).fill(1);

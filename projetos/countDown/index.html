@@ -3,79 +3,652 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚀 COUNTDOWN BCC - ULTIMATE EDITION</title>
 
-  <title>Contagem Regressiva Meme BCC</title>
-
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'pixel': ['"Press Start 2P"', 'cursive'],
+            'matrix': ['"Matrix Code NFI"', 'monospace'],
+            'cyber': ['"Cyberpunk"', 'sans-serif']
+          },
+          animation: {
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'float': 'float 6s ease-in-out infinite',
+            'shake': 'shake 0.5s ease-in-out infinite'
+          },
+          keyframes: {
+            glow: {
+              'from': { 'text-shadow': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6' },
+              'to': { 'text-shadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            },
+            shake: {
+              '0%, 100%': { transform: 'translateX(0)' },
+              '25%': { transform: 'translateX(-5px)' },
+              '75%': { transform: 'translateX(5px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- Matrix Font -->
+  <link href="https://fonts.cdnfonts.com/css/matrix-code-nfi" rel="stylesheet">
+  
+  <!-- Cyberpunk Font -->
+  <link href="https://fonts.cdnfonts.com/css/cyberpunk" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../assets/css/achievement.css">
- 
+  <style>
+    /* Efeito de gradiente animado */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .gradient-animation {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    
+    /* Efeito de vidro */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Efeito de neon */
+    .neon-text {
+      color: #fff;
+      text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #ff00ff,
+        0 0 40px #ff00ff,
+        0 0 80px #ff00ff;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    
+    /* Efeito de digitação */
+    .typing {
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+    
+    /* Efeito de hover 3D */
+    .hover-3d {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-3d:hover {
+      transform: perspective(500px) rotateX(5deg) rotateY(5deg) scale(1.05);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Efeito de partículas */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
+    /* Efeito de botão futurista */
+    .cyber-btn {
+      position: relative;
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+      border-radius: 0;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        0 100%
+      );
+    }
+    
+    .cyber-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: 0.5s;
+      z-index: -1;
+    }
+    
+    .cyber-btn:hover::before {
+      left: 100%;
+    }
+    
+    /* Efeito de circuito */
+    .circuit-bg {
+      background-image: 
+        linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    /* Efeito de scanlines */
+    .scanlines {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .scanlines::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.03) 50%,
+        transparent 50%
+      );
+      background-size: 100% 4px;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body class="min-h-screen flex items-center justify-center p-4 bg-black text-white overflow-hidden">
 
-<div class="w-full max-w-4xl bg-yellow-400 border-4 border-black pixel-corners p-6">
-  <div class="text-center mb-8">
-    <h1 class="text-4xl sm:text-5xl meme-text text-white mb-2">WHEN YOU</h1>
-    <h2 class="text-3xl sm:text-4xl meme-text text-red-600">ACHIEVEMOS A FORMATURA DE BCC</h2>
-    <div class="flex justify-center my-4">
-      <div class="bg-black text-white px-4 py-1 text-sm">
-        <i class="fas fa-graduation-cap mr-2"></i> TURMA DOS SOFRIDORES DE CÁLCULO I
+<!-- Efeito de partículas -->
+<div id="particles-js"></div>
+
+<!-- Efeito de circuito no fundo -->
+<div class="fixed inset-0 circuit-bg z-0 opacity-10"></div>
+
+<div class="w-full max-w-6xl glass-effect p-8 rounded-xl border border-white border-opacity-20 relative overflow-hidden z-10 transform transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/50">
+  <!-- Efeito de luzes laterais -->
+  <div class="absolute -left-1 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-blue-500"></div>
+  <div class="absolute -right-1 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+  
+  <!-- Título principal com efeito neon -->
+  <div class="text-center mb-12 relative">
+    <h1 class="text-5xl sm:text-6xl font-cyber text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-6 tracking-wider">
+      <span class="neon-text">GRADUATION COUNTDOWN</span>
+    </h1>
+    <h2 class="text-3xl sm:text-4xl font-pixel text-yellow-300 mb-4 typing">
+      WHEN YOU FINISH BCC
+    </h2>
+    <div class="flex justify-center my-6">
+      <div class="glass-effect text-white px-6 py-2 text-sm font-pixel rounded-full border border-white border-opacity-30 hover:bg-purple-900/50 transition">
+        <i class="fas fa-skull mr-2"></i> CLASS OF CALCULUS SURVIVORS
       </div>
     </div>
-    <div class="current-time mb-2" id="current-time"></div>
+    <div class="current-time font-matrix text-green-400 text-lg" id="current-time"></div>
   </div>
   
-  <div class="bg-black p-6 mb-8 border-4 border-white pixel-corners" id="timer-container">
-    <div class="grid grid-cols-4 gap-4">
+  <!-- Timer principal -->
+  <div class="glass-effect p-8 mb-12 rounded-xl border border-white border-opacity-20 relative overflow-hidden scanlines hover-3d">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
       <div class="flex flex-col items-center">
-        <span id="days" class="text-4xl sm:text-5xl font-bold text-green-400">00</span>
-        <span class="text-sm text-white mt-1">DIAS SEM DORMIR</span>
+        <span id="days" class="text-5xl sm:text-6xl font-bold text-white font-matrix mb-2">00</span>
+        <span class="text-sm text-green-400 font-pixel tracking-wider">DIAS SEM DORMIR</span>
+        <div class="w-full bg-gray-800/50 h-2 mt-4 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full" style="width: 100%"></div>
+        </div>
       </div>
       <div class="flex flex-col items-center">
-        <span id="hours" class="text-4xl sm:text-5xl font-bold text-green-400">00</span>
-        <span class="text-sm text-white mt-1">HORAS NO VS CODE</span>
+        <span id="hours" class="text-5xl sm:text-6xl font-bold text-white font-matrix mb-2">00</span>
+        <span class="text-sm text-green-400 font-pixel tracking-wider">HORAS NO VS CODE</span>
+        <div class="w-full bg-gray-800/50 h-2 mt-4 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-blue-500 to-green-500 rounded-full" style="width: 100%"></div>
+        </div>
       </div>
       <div class="flex flex-col items-center">
-        <span id="minutes" class="text-4xl sm:text-5xl font-bold text-green-400">00</span>
-        <span class="text-sm text-white mt-1">MINUTOS DE PROCRAS</span>
+        <span id="minutes" class="text-5xl sm:text-6xl font-bold text-white font-matrix mb-2">00</span>
+        <span class="text-sm text-green-400 font-pixel tracking-wider">MINUTOS DE PROCRAS</span>
+        <div class="w-full bg-gray-800/50 h-2 mt-4 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-green-500 to-yellow-500 rounded-full" style="width: 100%"></div>
+        </div>
       </div>
       <div class="flex flex-col items-center">
-        <span id="seconds" class="text-4xl sm:text-5xl font-bold text-green-400">00</span>
-        <span class="text-sm text-white mt-1">SEGUNDOS DE DESESPERO</span>
+        <span id="seconds" class="text-5xl sm:text-6xl font-bold text-white font-matrix mb-2">00</span>
+        <span class="text-sm text-green-400 font-pixel tracking-wider">SEGUNDOS DE DESESPERO</span>
+        <div class="w-full bg-gray-800/50 h-2 mt-4 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-yellow-500 to-red-500 rounded-full" style="width: 100%"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Barra de progresso animada -->
+    <div class="w-full bg-gray-800/50 h-4 mt-8 rounded-full overflow-hidden relative">
+      <div id="progress-bar" class="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 rounded-full" style="width: 0%">
+        <div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-white rounded-full animate-pulse"></div>
+      </div>
+      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-xs font-pixel text-white">
+        <span id="progress-text">CARREGANDO CONHECIMENTO...</span>
       </div>
     </div>
   </div>
 
-  <div class="bg-white border-4 border-black p-4 mb-6 text-center">
-    <p class="text-xl font-bold mb-2">"Ainda bem que fiz BCC" - Ninguém, nunca</p>
-    <p class="text-lg">"Vou só compilar rapidão" (2 horas depois)</p>
-  </div>
-  
-  <div class="grid grid-cols-2 gap-4 mb-6">
-    <div class="bg-white border-4 border-black p-2">
-      <div class="text-center font-bold mb-1">Quando o código funciona de primeira:</div>
-      <div class="text-6xl text-center">🤡</div>
+  <!-- Status Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="glass-effect p-6 rounded-xl border border-white border-opacity-20 hover-3d">
+      <div class="flex items-center justify-between mb-4">
+        <div class="font-pixel text-sm">NÍVEL DE CAFÉ</div>
+        <div class="text-2xl">☕</div>
+      </div>
+      <div class="w-full bg-gray-800/50 h-4 rounded-full overflow-hidden">
+        <div id="coffee-level" class="h-full bg-gradient-to-r from-yellow-800 to-yellow-200 rounded-full" style="width: 80%"></div>
+      </div>
+      <div class="text-right text-xs mt-2 font-matrix text-yellow-300" id="coffee-text">80% - BEBE MAIS!</div>
     </div>
-    <div class="bg-white border-4 border-black p-2">
-      <div class="text-center font-bold mb-1">Quando descobrem que Java != JavaScript:</div>
-      <div class="text-6xl text-center">💀</div>
+    
+    <div class="glass-effect p-6 rounded-xl border border-white border-opacity-20 hover-3d">
+      <div class="flex items-center justify-between mb-4">
+        <div class="font-pixel text-sm">SANIDADE MENTAL</div>
+        <div class="text-2xl">🧠</div>
+      </div>
+      <div class="w-full bg-gray-800/50 h-4 rounded-full overflow-hidden">
+        <div id="sanity-level" class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width: 30%"></div>
+      </div>
+      <div class="text-right text-xs mt-2 font-matrix text-purple-300" id="sanity-text">30% - CRÍTICO!</div>
+    </div>
+    
+    <div class="glass-effect p-6 rounded-xl border border-white border-opacity-20 hover-3d">
+      <div class="flex items-center justify-between mb-4">
+        <div class="font-pixel text-sm">CHANCE DE DESISTIR</div>
+        <div class="text-2xl">🏃</div>
+      </div>
+      <div class="w-full bg-gray-800/50 h-4 rounded-full overflow-hidden">
+        <div id="quit-level" class="h-full bg-gradient-to-r from-red-200 to-red-800 rounded-full" style="width: 65%"></div>
+      </div>
+      <div class="text-right text-xs mt-2 font-matrix text-red-300" id="quit-text">65% - CORRE QUE DÁ TEMPO!</div>
     </div>
   </div>
-  
 
-  <div class="flex flex-wrap justify-center gap-4">
-    <button id="debugBtn" class="bg-red-500 text-white px-6 py-3 border-2 border-black font-bold hover:bg-red-600 transition">
-      <i class="fas fa-poo mr-2"></i> Debugging My Life
+  <!-- Memes Interativos -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <div class="glass-effect p-6 rounded-xl border border-white border-opacity-20 hover-3d cursor-pointer group" id="meme1">
+      <div class="text-center font-pixel text-sm mb-4 group-hover:text-yellow-300 transition">QUANDO O CÓDIGO COMPILA DE PRIMEIRA:</div>
+      <div class="text-8xl text-center transform group-hover:scale-110 transition duration-300">🤡</div>
+      <div class="text-center mt-4 font-matrix text-xs opacity-70">(clique para ver a realidade)</div>
+    </div>
+    
+    <div class="glass-effect p-6 rounded-xl border border-white border-opacity-20 hover-3d cursor-pointer group" id="meme2">
+      <div class="text-center font-pixel text-sm mb-4 group-hover:text-purple-300 transition">QUANDO O PROJETO É ENTREGUE NO PRAZO:</div>
+      <div class="text-8xl text-center transform group-hover:scale-110 transition duration-300">💀</div>
+      <div class="text-center mt-4 font-matrix text-xs opacity-70">(clique para ver a realidade)</div>
+    </div>
+  </div>
+
+  <!-- Console Interativo -->
+  <div class="glass-effect p-4 h-48 mb-12 rounded-xl border border-green-500/50 overflow-y-auto font-matrix text-green-400 text-sm" id="debug-console">
+    <div>> Iniciando sistema de contagem regressiva BCC...</div>
+    <div>> Carregando memes acadêmicos...</div>
+    <div>> Verificando níveis de café...</div>
+    <div>> Sistema pronto! Boa sorte na graduação!</div>
+  </div>
+
+  <!-- Botões de Ação -->
+  <div class="flex flex-wrap justify-center gap-6">
+    <button id="debugBtn" class="cyber-btn font-cyber">
+      <i class="fas fa-bug mr-2"></i> DEBUGAR VIDA
     </button>
-    <button id="coffeeBtn" class="bg-blue-500 text-white px-6 py-3 border-2 border-black font-bold hover:bg-blue-600 transition">
-      <i class="fas fa-coffee mr-2"></i> Café > Sono
+    <button id="coffeeBtn" class="cyber-btn font-cyber">
+      <i class="fas fa-coffee mr-2"></i> CAFÉZADA
+    </button>
+    <button id="panicBtn" class="cyber-btn font-cyber">
+      <i class="fas fa-running mr-2"></i> PÂNICO
     </button>
   </div>
 </div>
 
-<script type="text/javascript" src="../../assets/js/achievement.js"></script>
+<!-- Modal de Emergência -->
+<div id="panic-modal" class="fixed inset-0 bg-black/90 flex items-center justify-center hidden z-50 p-4">
+  <div class="gradient-animation p-8 rounded-xl max-w-2xl text-center border-4 border-white/30 relative overflow-hidden">
+    <h3 class="text-4xl font-cyber text-white mb-6">🚨 EMERGÊNCIA ACADÊMICA 🚨</h3>
+    <p class="text-xl font-pixel text-white mb-6">VOCÊ NÃO PODE DESISTIR AGORA!</p>
+    <div class="text-8xl mb-6 animate-float">😱</div>
+    <p class="text-lg font-pixel text-white mb-6">LIGUE PARA O PROFESSOR OU PARA SUA MÃE!</p>
+    <button id="close-panic" class="cyber-btn font-cyber bg-black/70">
+      <i class="fas fa-times mr-2"></i> FECHAR CRISE
+    </button>
+  </div>
+</div>
 
+<!-- Modal de Formatura -->
+<div id="graduation-modal" class="fixed inset-0 bg-black/90 flex items-center justify-center hidden z-50 p-4">
+  <div class="bg-gradient-to-br from-blue-900/90 to-purple-900/90 p-8 rounded-xl max-w-2xl text-center border-4 border-yellow-400/50 relative overflow-hidden">
+    <h3 class="text-4xl font-cyber text-white mb-6 neon-text">PARABÉNS!</h3>
+    <p class="text-xl font-pixel text-white mb-6">VOCÊ SOBREVIVEU AO BCC!</p>
+    <div class="text-8xl mb-6 animate-float">🎓</div>
+    <p class="text-lg font-pixel text-white mb-6">AGORA PODE TRABALHAR 12H POR DIA POR 3K</p>
+    <button id="close-graduation" class="cyber-btn font-cyber bg-green-600/80">
+      <i class="fas fa-graduation-cap mr-2"></i> COMEMORAR!
+    </button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  // Configuração da data de formatura
+  const graduationDate = new Date('2025-12-15T00:00:00');
+  let emergencyMode = false;
+  let coffeeLevel = 80;
+  let sanityLevel = 30;
+  let quitLevel = 65;
+  
+  // Inicializar partículas
+  function initParticles() {
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#00ffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        }
+      }
+    });
+  }
+  
+  // Atualizar contagem regressiva
+  function updateCountdown() {
+    const now = new Date();
+    const diff = graduationDate - now;
+    
+    if (diff <= 0) {
+      showGraduation();
+      return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    
+    // Atualizar barra de progresso
+    const totalDuration = graduationDate - new Date('2021-01-01');
+    const progress = ((now - new Date('2021-01-01')) / totalDuration) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = `${Math.min(progress, 100)}%`;
+    document.getElementById('progress-text').textContent = `PROGRESSO: ${Math.round(progress)}%`;
+    
+    // Ativar modo emergência quando faltar pouco tempo
+    if (days < 7 && !emergencyMode) {
+      activateEmergencyMode();
+    }
+    
+    // Atualizar status aleatoriamente
+    if (Math.random() > 0.9) {
+      updateStatusBars();
+    }
+  }
+  
+  // Atualizar hora atual
+  function updateCurrentTime() {
+    const now = new Date();
+    document.getElementById('current-time').textContent = now.toLocaleString('pt-BR', {
+      weekday: 'long',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
+  
+  // Atualizar barras de status
+  function updateStatusBars() {
+    // Café diminui com o tempo
+    coffeeLevel = Math.max(0, coffeeLevel - (Math.random() * 5));
+    document.getElementById('coffee-level').style.width = `${coffeeLevel}%`;
+    document.getElementById('coffee-text').textContent = coffeeLevel > 50 ? 
+      `${Math.round(coffeeLevel)}% - BEBE MAIS!` : 
+      `${Math.round(coffeeLevel)}% - EM COLAPSO!`;
+    
+    // Sanidade flutua
+    sanityLevel = Math.max(0, Math.min(100, sanityLevel + (Math.random() * 10 - 4)));
+    document.getElementById('sanity-level').style.width = `${sanityLevel}%`;
+    document.getElementById('sanity-text').textContent = sanityLevel > 50 ? 
+      `${Math.round(sanityLevel)}% - TÁ DE BOA` : 
+      `${Math.round(sanityLevel)}% - CRÍTICO!`;
+    
+    // Chance de desistir aumenta com baixa sanidade e café
+    quitLevel = Math.max(0, Math.min(100, 100 - sanityLevel + (100 - coffeeLevel) / 2));
+    document.getElementById('quit-level').style.width = `${quitLevel}%`;
+    document.getElementById('quit-text').textContent = quitLevel > 70 ? 
+      `${Math.round(quitLevel)}% - CORRE QUE DÁ TEMPO!` : 
+      `${Math.round(quitLevel)}% - AGUENTA FIRME!`;
+    
+    // Se café ou sanidade zerar, ativa pânico
+    if (coffeeLevel <= 0 || sanityLevel <= 0) {
+      showPanic();
+    }
+  }
+  
+  // Adicionar mensagem ao console
+  function addConsoleMessage(message) {
+    const consoleElement = document.getElementById('debug-console');
+    const newMessage = document.createElement('div');
+    newMessage.textContent = `> ${message}`;
+    consoleElement.appendChild(newMessage);
+    consoleElement.scrollTop = consoleElement.scrollHeight;
+    
+    // Limitar número de mensagens
+    if (consoleElement.children.length > 50) {
+      consoleElement.removeChild(consoleElement.children[0]);
+    }
+  }
+  
+  // Ativar modo emergência
+  function activateEmergencyMode() {
+    emergencyMode = true;
+    addConsoleMessage('🚨🚨🚨 MODO EMERGÊNCIA ATIVADO! 🚨🚨🚨');
+    
+    // Efeito visual
+    document.getElementById('panic-modal').classList.remove('hidden');
+    setTimeout(() => {
+      document.getElementById('panic-modal').classList.add('hidden');
+    }, 3000);
+  }
+  
+  // Mostrar modal de pânico
+  function showPanic() {
+    document.getElementById('panic-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  // Mostrar modal de formatura
+  function showGraduation() {
+    document.getElementById('graduation-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  // Configurar botões
+  function setupButtons() {
+    // Botão de debug
+    document.getElementById('debugBtn').addEventListener('click', () => {
+      addConsoleMessage('Iniciando debug existencial...');
+      
+      // Efeito visual
+      document.body.classList.add('gradient-animation');
+      setTimeout(() => {
+        document.body.classList.remove('gradient-animation');
+      }, 1000);
+      
+      // Mensagens aleatórias
+      const debugMessages = [
+        "Erro: Vida não encontrada",
+        "Stack Overflow não tem resposta para isso",
+        "Exception in thread 'life'",
+        "Segmentation fault (core dumped)",
+        "404 Sanity Not Found",
+        "SyntaxError: unexpected EOF while parsing",
+        "TypeError: cannot read property 'motivation' of undefined"
+      ];
+      
+      addConsoleMessage(debugMessages[Math.floor(Math.random() * debugMessages.length)]);
+    });
+    
+    // Botão de café
+    document.getElementById('coffeeBtn').addEventListener('click', () => {
+      coffeeLevel = Math.min(100, coffeeLevel + 20);
+      document.getElementById('coffee-level').style.width = `${coffeeLevel}%`;
+      document.getElementById('coffee-text').textContent = `${Math.round(coffeeLevel)}% - CAFÉZADA!`;
+      addConsoleMessage('Café adquirido! +20 energia, -5 horas de sono');
+      
+      // Efeito visual
+      const coffeeBtn = document.getElementById('coffeeBtn');
+      coffeeBtn.classList.add('animate-shake');
+      setTimeout(() => {
+        coffeeBtn.classList.remove('animate-shake');
+      }, 500);
+    });
+    
+    // Botão de pânico
+    document.getElementById('panicBtn').addEventListener('click', () => {
+      showPanic();
+      addConsoleMessage('🚨🚨🚨 PÂNICO ATIVADO! 🚨🚨🚨');
+    });
+    
+    // Fechar modal de pânico
+    document.getElementById('close-panic').addEventListener('click', () => {
+      document.getElementById('panic-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+      sanityLevel = Math.min(100, sanityLevel + 30);
+      updateStatusBars();
+    });
+    
+    // Fechar modal de formatura
+    document.getElementById('close-graduation').addEventListener('click', () => {
+      document.getElementById('graduation-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    });
+    
+    // Memes interativos
+    document.getElementById('meme1').addEventListener('click', () => {
+      const meme = document.getElementById('meme1');
+      meme.innerHTML = `
+        <div class="text-center font-pixel text-sm mb-4 text-yellow-300">REALIDADE QUANDO O CÓDIGO COMPILA:</div>
+        <div class="text-8xl text-center">😭</div>
+        <div class="text-center mt-4 font-matrix text-xs opacity-70">(você esqueceu de implementar 90% do projeto)</div>
+      `;
+      setTimeout(() => {
+        meme.innerHTML = `
+          <div class="text-center font-pixel text-sm mb-4 group-hover:text-yellow-300 transition">QUANDO O CÓDIGO COMPILA DE PRIMEIRA:</div>
+          <div class="text-8xl text-center transform group-hover:scale-110 transition duration-300">🤡</div>
+          <div class="text-center mt-4 font-matrix text-xs opacity-70">(clique para ver a realidade)</div>
+        `;
+      }, 3000);
+    });
+    
+    document.getElementById('meme2').addEventListener('click', () => {
+      const meme = document.getElementById('meme2');
+      meme.innerHTML = `
+        <div class="text-center font-pixel text-sm mb-4 text-purple-300">REALIDADE QUANDO ENTREGA NO PRAZO:</div>
+        <div class="text-8xl text-center">👻</div>
+        <div class="text-center mt-4 font-matrix text-xs opacity-70">(o professor nem vai corrigir)</div>
+      `;
+      setTimeout(() => {
+        meme.innerHTML = `
+          <div class="text-center font-pixel text-sm mb-4 group-hover:text-purple-300 transition">QUANDO O PROJETO É ENTREGUE NO PRAZO:</div>
+          <div class="text-8xl text-center transform group-hover:scale-110 transition duration-300">💀</div>
+          <div class="text-center mt-4 font-matrix text-xs opacity-70">(clique para ver a realidade)</div>
+        `;
+      }, 3000);
+    });
+  }
+  
+  // Inicialização
+  document.addEventListener('DOMContentLoaded', () => {
+    initParticles();
+    updateCountdown();
+    updateCurrentTime();
+    setInterval(updateCountdown, 1000);
+    setInterval(updateCurrentTime, 1000);
+    setInterval(updateStatusBars, 5000);
+    
+    // Mensagens aleatórias no console
+    setInterval(() => {
+      const randomMessages = [
+        "Verificando dependências...",
+        "Compilando memórias...",
+        "Atualizando conhecimento...",
+        "Procurando estágio...",
+        "Reclamando de Java...",
+        "Stack Overflow salvando vidas...",
+        "Commitando código quebrado...",
+        "Debugando sonhos...",
+        "Projeto atrasado detectado...",
+        "Calculando média para passar...",
+        "Procurando café na máquina...",
+        "Lembrando que Java != JavaScript...",
+        "Erro: Motivação não encontrada...",
+        "Compilando desculpas...",
+        "Atualizando LinkedIn sem ter o que por..."
+      ];
+      addConsoleMessage(randomMessages[Math.floor(Math.random() * randomMessages.length)]);
+    }, 8000);
+    
+    setupButtons();
+    
+    // Efeito inicial
+    setTimeout(() => {
+      addConsoleMessage('Sistema pronto! Boa sorte na graduação!');
+    }, 2000);
+  });
+</script>
 </body>
 </html>
-

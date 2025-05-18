@@ -103,46 +103,40 @@
 </section>
 
 
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const counterEl = document.getElementById("visit-counter");
-    const storageKey = 'visitCount';
-    
-    let count = localStorage.getItem(storageKey);
-
-    count = count ? parseInt(count) + 1 : 1;
-    localStorage.setItem(storageKey, count);
-
-    const formattedCount = count.toString().padStart(6, '0');
-    counterEl.className = 'font-mono tracking-widest text-gray-500 px-2 py-1 rounded-lg border border-gray-600  inline-flex items-center';
-    
-    
-    for (let i = 0; i < formattedCount.length; i++) {
-      
-      const digit = document.createElement('span');
-
-      digit.className = 'block min-w-[1ch] text-center';
-      digit.textContent = formattedCount[i];
-      counterEl.appendChild(digit);
-      
-      if (i < 5) {
-        const separator = document.createElement('span');
-        separator.className = 'text-gray-500 mx-[0.1em]';
-        separator.textContent = '|';
-        counterEl.appendChild(separator);
-      }
-    }
+<!-- Core javascript -->
+<script type="text/javascript" src="assets/js/particulas.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  const counterEl = document.getElementById("visit-counter");
+  const storageKey = 'visitCount';
   
-    counterEl.classList.add('animate-pulse');
-    setTimeout(() => counterEl.classList.remove('animate-pulse'), 500);
-  });
+  let count = localStorage.getItem(storageKey);
+  count = count ? parseInt(count) + 1 : 1;
+  localStorage.setItem(storageKey, count);
+
+  const formattedCount = count.toString().padStart(6, '0');
+  counterEl.className = 'font-mono tracking-widest text-gray-500 px-2 py-1 rounded-4x1 border border-gray-600 inline-flex items-center';
+  
+  for (let i = 0; i < formattedCount.length; i++) {
+    const digit = document.createElement('span');
+    digit.className = 'block min-w-[1ch] text-center';
+    digit.textContent = formattedCount[i];
+    counterEl.appendChild(digit);
+    
+    if (i < formattedCount.length - 1) {
+      const separator = document.createElement('span');
+      separator.className = 'text-gray-500 mx-[0.1em]';
+      separator.textContent = '|';
+      counterEl.appendChild(separator);
+    }
+  }
+
+  counterEl.classList.add('animate-pulse');
+  setTimeout(() => counterEl.classList.remove('animate-pulse'), 500);
+});
 
 </script>
 
-<!-- Core javascript -->
-<script type="text/javascript" src="assets/js/particulas.js"></script>
 
 </body>
 </html>
