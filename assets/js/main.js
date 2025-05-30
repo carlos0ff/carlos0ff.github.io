@@ -142,14 +142,14 @@ const projects = [
     github: "https://github.com/carlos0ff/brasileirao-api-java"
   },
   {
-    id: 4,
-    title: "Folha de pagamento",
-    category: "Backend",
-    description: "Aplicação baseada no livro 'Java: Como Programar' dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
-    tags: ["Java", , "Orientação a objetos"],
-    image: "../../assets/image/payroll.png",
-    link: "payroll/",
-    github: "https://github.com/carlos0ff/"
+    "id": 4,
+    "title": "Folha de pagamento",
+    "category": "backend",
+    "description": "Aplicação baseada no livro \"Java: Como Programar\" dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
+    "tags": ["Java", "Spring Boot", "Orientação a objetos"],
+    "image": "../../assets/image/payroll.png",
+    "link": "payroll/",
+    "github": "https://github.com/carlos0ff/"
   },
   {
     id: 5,
