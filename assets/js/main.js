@@ -144,11 +144,11 @@ const projects = [
   {
     id: 4,
     title: "Folha de pagamento",
-    category: "hardware",
-    description: "NULL",
-    tags: ["Java", "Quarkus", "Quality Assurance", "Orientação a objetos"],
-    image: "../../assets/image/8bit-computer.jpg",
-    link: "8bit-computer/",
+    category: "Backend",
+    description: "Aplicação baseada no livro "Java: Como Programar" dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
+    tags: ["Java", , "Orientação a objetos"],
+    image: "../../assets/image/payroll.png",
+    link: "payroll/",
     github: "https://github.com/carlos0ff/"
   },
   {
