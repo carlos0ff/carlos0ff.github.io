@@ -145,7 +145,7 @@ const projects = [
     id: 4,
     title: "Folha de pagamento",
     category: "Backend",
-    description: "Aplicação baseada no livro "Java: Como Programar" dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
+    description: "Aplicação baseada no livro 'Java: Como Programar' dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
     tags: ["Java", , "Orientação a objetos"],
     image: "../../assets/image/payroll.png",
     link: "payroll/",
