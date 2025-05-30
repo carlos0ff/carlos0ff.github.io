@@ -156,7 +156,7 @@ const projects = [
     title: "Banco de Dados - SQL e Modelagem",
     category: "banco de dados",
     description: "Estudo dos fundamentos de bancos de dados relacionais, incluindo modelagem de dados com diagramas entidade-relacionamento, normalização para integridade e eficiência, e criação e otimização de consultas SQL para manipulação e gerenciamento de dados.",
-    tags: ["SGBD", "SQL", "MySQL WorkBanch"],
+    tags: ["SGBD", "SQL", "DML", "DDL", "MySQL WorkBanch"],
     image: "https://www.opservices.com.br/wp-content/uploads/2016/10/Quais-as-principais-diferencas-entre-banco-de-dados.png",
     link: "database",
     github: "https://github.com/carlos0ff/ecommerce"
