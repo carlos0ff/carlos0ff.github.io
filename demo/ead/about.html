@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | UpInside</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.03); }
+    </style>
+</head>
+<body class="bg-gray-50">
+   
+<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-blue-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="/" class="group flex items-center space-x-2 transition-all duration-300">
+      <div class="relative">
+        <i class="fas fa-laptop-code text-blue-600 text-2xl z-10 relative group-hover:text-blue-500 transition-colors duration-300"></i>
+        <div class="absolute inset-0 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-125 transition-all duration-300"></div>
+      </div>
+      <span class="text-2xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-blue-400 transition-all duration-300">
+        Up<span class="font-extrabold">Inside</span>
+      </span>
+    </a>
+
+    <div class="flex items-center space-x-4">
+      <nav class="hidden md:flex space-x-1 items-center">
+        <a href="index.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Home
+        </a>
+        <a href="courses.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Cursos
+        </a>
+        <a href="certificate.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Certificados
+        </a>
+        <a href="about.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Sobre
+        </a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="auth-login.html" class="hidden md:flex items-center text-sm text-blue-600 hover:text-blue-500 px-3 py-1.5 transition-all duration-300 group">
+          <span>Área do Aluno</span>
+        </a>
+        <a href="#" class="hidden md:flex items-center text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 px-4 py-2 rounded-md shadow-sm transition-all duration-300 hover:shadow-md">
+          <span>Matricule-se</span>
+        </a>
+      </div>
+      
+      <button class="md:hidden text-blue-600 hover:text-blue-500 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="md:hidden hidden bg-white border-t border-blue-50 px-6 py-3">
+    <div class="flex flex-col space-y-2">
+      <a href="index.html" class="px-3 py-2 text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200">Home</a>
+      <a href="courses.html" class="px-3 py-2 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">Cursos</a>
+      <a href="certificate.html" class="px-3 py-2 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">Certificados</a>
+      <a href="about.html" class="px-3 py-2 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">Sobre</a>
+      
+      <div class="pt-2 mt-2 border-t border-blue-100 space-y-2">
+        <a href="auth-login.html" class="block px-3 py-2 text-center text-blue-600 font-medium rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
+          Área do Aluno
+        </a>
+        <a href="#" class="block px-3 py-2 text-center text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg shadow hover:from-blue-700 hover:to-cyan-600 transition-colors duration-200">
+          Matricule-se
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero About Section -->
+<section class="relative bg-gradient-to-br from-blue-900 to-blue-700 text-white overflow-hidden">
+  <div class="absolute inset-0 bg-[url('https://www.upinside.com.br/themes/upinside_new/images/pattern-light.svg')] bg-[length:200px] opacity-10"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center relative">
+    <div class="animate-fade-in">
+      <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/20 text-white backdrop-blur-sm mb-6">
+        <i class="fas fa-heart mr-2"></i> Nossa História
+      </span>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Transformando vidas através da <br class="hidden lg:block"> 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">educação digital</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+        Desde 2012, capacitamos profissionais com metodologias práticas e suporte especializado
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission Section -->
+<section class="relative bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+      <div class="lg:col-span-7 animate-fade-in">
+        <div class="relative rounded-2xl shadow-xl overflow-hidden hover-scale">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+               alt="Equipe UpInside" 
+               class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/30 to-transparent"></div>
+        </div>
+      </div>
+      
+      <div class="mt-12 lg:mt-0 lg:col-span-5 animate-fade-in delay-100">
+        <div class="bg-blue-50 rounded-2xl p-8 md:p-10">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Nossa <span class="text-blue-600">Missão</span>
+          </h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Democratizar o acesso à educação de qualidade em tecnologia, formando profissionais completos e preparados para os desafios do mercado.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-600">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="ml-4">
+                <p class="text-gray-700 font-medium">Metodologia prática</p>
+                <p class="text-gray-600 text-sm mt-1">Aprenda fazendo projetos reais</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-600">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="ml-4">
+                <p class="text-gray-700 font-medium">Suporte especializado</p>
+                <p class="text-gray-600 text-sm mt-1">Tire dúvidas diretamente com instrutores</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Nossos <span class="text-blue-600">Números</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Resultados que nos enchem de orgulho e motivam nosso trabalho
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in delay-100">
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center hover-scale transition-transform duration-300">
+        <div class="text-4xl font-bold text-blue-600 mb-2">10K+</div>
+        <p class="text-gray-600">Alunos formados</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center hover-scale transition-transform duration-300">
+        <div class="text-4xl font-bold text-blue-600 mb-2">98%</div>
+        <p class="text-gray-600">Satisfação</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center hover-scale transition-transform duration-300">
+        <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+        <p class="text-gray-600">Horas de conteúdo</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center hover-scale transition-transform duration-300">
+        <div class="text-4xl font-bold text-blue-600 mb-2">24/7</div>
+        <p class="text-gray-600">Suporte ativo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founder Section -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+      <div class="lg:col-span-5 mb-12 lg:mb-0 animate-fade-in">
+        <div class="relative">
+          <img src="https://avatars.githubusercontent.com/u/8345682?v=4" 
+               alt="Robson V. Leite" 
+               class="rounded-2xl shadow-xl w-full max-w-md mx-auto">
+          <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white rounded-lg px-4 py-3 shadow-lg">
+            <div class="text-2xl font-bold">12+</div>
+            <div class="text-sm">Anos de experiência</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:col-span-7 animate-fade-in delay-100">
+        <span class="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full mb-4">
+          Fundador & CEO
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Robson V. Leite
+        </h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Com mais de 15 anos de experiência em desenvolvimento web, Robson fundou a UpInside em 2012 com o objetivo de compartilhar seu conhecimento de forma prática e acessível.
+        </p>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+          Autor de 8 livros sobre programação e empreendedorismo digital, sua metodologia de ensino já transformou a carreira de milhares de alunos em todo o Brasil.
+        </p>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="flex items-center text-blue-600 hover:text-blue-800">
+            <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+          </a>
+          <a href="#" class="flex items-center text-blue-600 hover:text-blue-800">
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+          <a href="#" class="flex items-center text-blue-600 hover:text-blue-800">
+            <i class="fas fa-book mr-2"></i> Livros
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Conheça Nosso <span class="text-blue-600">Time</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Profissionais apaixonados por educação e tecnologia
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in delay-100">
+      <!-- Team Member 1 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover-scale transition-transform duration-300">
+        <div class="relative pt-[75%] bg-gray-100">
+          <img class="absolute inset-0 w-full h-full object-cover" 
+               src="https://avatars.githubusercontent.com/u/8345682?v=4" 
+               alt="Robson V. Leite">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-1">Robson V. Leite</h3>
+          <p class="text-blue-600 mb-4">CEO & Instrutor</p>
+          <p class="text-gray-600 text-sm mb-4">Especialista em PHP há mais de 15 anos, autor de 8 livros e apaixonado por educação.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Team Member 2 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover-scale transition-transform duration-300">
+        <div class="relative pt-[75%] bg-gray-100">
+          <img class="absolute inset-0 w-full h-full object-cover" 
+               src="https://randomuser.me/api/portraits/women/44.jpg" 
+               alt="Instrutora">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-1">Ana Silva</h3>
+          <p class="text-blue-600 mb-4">Instrutora Frontend</p>
+          <p class="text-gray-600 text-sm mb-4">Especialista em JavaScript moderno e frameworks como React e Vue.js.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Team Member 3 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover-scale transition-transform duration-300">
+        <div class="relative pt-[75%] bg-gray-100">
+          <img class="absolute inset-0 w-full h-full object-cover" 
+               src="https://randomuser.me/api/portraits/men/32.jpg" 
+               alt="Instrutor">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-1">Carlos Oliveira</h3>
+          <p class="text-blue-600 mb-4">Instrutor Backend</p>
+          <p class="text-gray-600 text-sm mb-4">Especialista em Node.js, Python e arquitetura de sistemas escaláveis.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Team Member 4 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover-scale transition-transform duration-300">
+        <div class="relative pt-[75%] bg-gray-100">
+          <img class="absolute inset-0 w-full h-full object-cover" 
+               src="https://randomuser.me/api/portraits/women/68.jpg" 
+               alt="Suporte">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-1">Juliana Santos</h3>
+          <p class="text-blue-600 mb-4">Gerente de Suporte</p>
+          <p class="text-gray-600 text-sm mb-4">Responsável por garantir a melhor experiência de aprendizagem para nossos alunos.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="bg-blue-600">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span class="block">Quer se tornar um profissional completo?</span>
+            <span class="block text-blue-200">Comece hoje mesmo na UpInside.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="inline-flex rounded-md shadow">
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors duration-300">
+                    Quero me matricular
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <i class="fas fa-laptop-code text-blue-500 text-xl"></i>
+          <span class="text-xl font-bold text-white">UpInside</span>
+        </div>
+        <p class="text-sm mb-4">Treinamentos que transformam iniciantes em profissionais qualificados.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Cursos</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">PHP do Zero ao Profissional</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">JavaScript Moderno</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">React Avançado</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Node.js Completo</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Suporte</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Central de Ajuda</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Contato</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Certificados</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Institucional</h3>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm hover:text-white transition-colors duration-200">Sobre Nós</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Termos de Uso</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Política de Privacidade</a></li>
+          <li><a href="#" class="text-sm hover:text-white transition-colors duration-200">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+      <p>&copy; 2023 UpInside Treinamentos. Todos os direitos reservados.</p>
+      <p class="mt-2">CNPJ: 00.000.000/0000-00</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.querySelector('button[aria-label="Menu"]').addEventListener('click', function() {
+    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+    mobileMenu.classList.toggle('hidden');
+  });
+  
+  // Animation on scroll
+  document.addEventListener('DOMContentLoaded', function() {
+    const animateElements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-down');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(el => observer.observe(el));
+  });
+</script>
+</body>
+</html>

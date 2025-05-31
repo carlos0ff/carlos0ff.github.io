@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevCampus - Plataforma de Cursos de Tecnologia</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config/tailwind.config.js"></script>
+    
+
+</head>
+<body class="font-sans bg-gray-50 text-dark">
+    
+<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-blue-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    
+    <a href="/" class="group flex items-center space-x-2 transition-all duration-300">
+      <div class="relative">
+        <i class="fas fa-laptop-code text-blue-600 text-2xl z-10 relative group-hover:text-blue-500 transition-colors duration-300"></i>
+        <div class="absolute inset-0 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-125 transition-all duration-300"></div>
+      </div>
+      <span class="text-2xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-blue-400 transition-all duration-300">
+        Up<span class="font-extrabold">Inside</span>
+      </span>
+    </a>
+
+    <!-- Grupo de Navegação e Ações -->
+    <div class="flex items-center space-x-4">
+      <nav class="hidden md:flex space-x-1 items-center">
+        <a href="index.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Home
+        </a>
+        <a href="courses.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Cursos
+        </a>
+        <a href="certificate.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Certificados
+        </a>
+        <a href="about.html" class="relative px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-300">
+          Sobre
+        </a>
+      </nav>
+
+      <!-- Ações -->
+      <div class="flex items-center space-x-3">
+        <a href="auth-login.html" class="hidden md:flex items-center text-sm text-blue-600 hover:text-blue-500 px-3 py-1.5 transition-all duration-300 group">
+          <span>Área do Aluno</span>
+        </a>
+        <a href="#" class="hidden md:flex items-center text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md shadow-sm transition-all duration-300 hover:shadow-md">
+          <span>Matricule-se</span>
+        </a>
+      </div>
+      
+      <!-- Menu Mobile -->
+      <button class="md:hidden text-blue-600 hover:text-blue-500 p-2 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Menu Mobile Expandido -->
+  <div class="md:hidden hidden bg-white border-t border-blue-50 px-6 py-3">
+    <div class="flex flex-col space-y-2">
+      <a href="index.html" class="px-3 py-2 text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200">Home</a>
+      <a href="courses.html" class="px-3 py-2 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">Cursos</a>
+      <a href="certificate.html" class="px-3 py-2 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">Certificados</a>
+      <a href="about.html" class="px-3 py-2 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">Sobre</a>
+      
+      <div class="pt-2 mt-2 border-t border-blue-100 space-y-2">
+        <a href="auth-login.html" class="block px-3 py-2 text-center text-blue-600 font-medium rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
+          Área do Aluno
+        </a>
+        <a href="#" class="block px-3 py-2 text-center text-white bg-blue-600 rounded-lg shadow hover:bg-blue-500 transition-colors duration-200">
+          Matricule-se
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- Hero estilo Organizze -->
+<section class="relative bg-cover bg-center bg-no-repeat h-[60vh] flex items-center justify-center text-white" style="background-image: url('https://www.upinside.com.br/themes/upinside_new/images/club_bg.jpg');">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 bg-[url('https://www.upinside.com.br/themes/upinside_new/images/club_bg.jpg')] bg-cover bg-center bg-no-repeat opacity-70"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+  
+  <!-- Content Container -->
+  <div class="relative z-10 text-center px-4 sm:px-6 w-full max-w-4xl">
+    
+    <!-- Main Heading -->
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight animate-slide-up">
+      Domine as Habilidades <br class="hidden md:block"> 
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Que o Mercado Exige</span>
+    </h1>
+    
+    <!-- Subheading -->
+    <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in-up delay-100 max-w-2xl mx-auto">
+      Com <span class="font-semibold text-white">suporte especializado</span>, certificado reconhecido e <span class="font-semibold text-white">plano de carreira</span> para você decolar na web
+    </p>
+    
+    <!-- Badges Navigation -->
+    <div class="flex flex-wrap justify-center gap-3 animate-fade-in-up delay-200">
+      <a href="#frontend" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+        Frontend
+      </a>
+      <a href="#backend" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+        Backend
+      </a>
+      <a href="#fullstack" class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 border border-blue-400/30 rounded-full text-white font-medium transition-all duration-300 hover:scale-105 shadow-md">
+        Fullstack ★
+      </a>
+      <a href="#devops" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+        DevOps
+      </a>
+    </div>
+    
+    <!-- Trust Indicators -->
+    <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm animate-fade-in-up delay-300">
+      <div class="flex items-center text-white/80">
+        <svg class="w-5 h-5 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        </svg>
+        Certificado Reconhecido
+      </div>
+      <div class="flex items-center text-white/80">
+        <svg class="w-5 h-5 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd"></path>
+        </svg>
+        Suporte 1:1
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Features -->
+<div class="py-16 bg-gray-50">
+
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Por que estudar conosco</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-dark sm:text-4xl">
+                Metodologia que realmente funciona
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                Nosso foco é seu aprendizado e colocação no mercado de trabalho
+            </p>
+        </div>
+
+        <div class="mt-10">
+            <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                <div class="relative">
+                    <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="ml-16">
+                        <h3 class="text-lg leading-6 font-medium text-dark">Aulas 100% práticas</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Nada de teoria sem aplicação real. Todas as aulas são baseadas em projetos que você vai desenvolver junto com o instrutor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="ml-16">
+                        <h3 class="text-lg leading-6 font-medium text-dark">Grupo exclusivo</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Acesso a um grupo privado onde você pode tirar dúvidas diretamente com os instrutores e outros alunos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="ml-16">
+                        <h3 class="text-lg leading-6 font-medium text-dark">Projetos reais</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Todos os cursos incluem projetos completos que simulam desafios reais do mercado de trabalho.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="ml-16">
+                        <h3 class="text-lg leading-6 font-medium text-dark">Mentoria profissional</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Sessões de mentoria com profissionais experientes para te ajudar a evoluir na carreira.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Courses -->
+<div class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Cursos em Destaque</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-dark sm:text-4xl">
+                Aprenda com os melhores especialistas
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                Cursos completos com projetos reais do mercado de trabalho
+            </p>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Course 1 -->
+            <div class="course-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img class="w-full h-48 object-cover" src="https://desenvolvedorio.blob.core.windows.net/images/full-stack-dot-net.jpg" alt="Full Stack">
+                    <!-- <div class="absolute top-0 left-0 bg-accent text-white px-3 py-1 text-xs font-bold rounded-br-lg">
+                        NOVO
+                    </div> -->
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 text-xs font-semibold rounded-full">FULL STACK</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-1 text-gray-600">4.9</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 text-xl font-bold text-dark">Desenvolvedor Full Stack</h3>
+                    <p class="mt-2 text-gray-600">Domine front-end e back-end para criar aplicações web completas.</p>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-graduate text-gray-400 mr-2"></i>
+                            <span class="text-sm text-gray-500">1.2K alunos</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-sm line-through text-gray-500">R$ 497,00</span>
+                            <p class="text-lg font-bold text-primary">R$ 347,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 border-t border-gray-100 bg-gray-50">
+                    <a href="#" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700">
+                        Saiba mais
+                    </a>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img class="w-full h-48 object-cover" src="https://static.skillshare.com/uploads/video/thumbnails/0ab63be061d2a2051fc5a20337d2bc7f/1280-720" alt="JavaScript">
+                    <!-- <div class="absolute top-0 left-0 bg-secondary text-white px-3 py-1 text-xs font-bold rounded-br-lg">
+                        POPULAR
+                    </div> -->
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                        <span class="inline-block bg-secondary bg-opacity-10 text-secondary px-3 py-1 text-xs font-semibold rounded-full">JAVASCRIPT</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-1 text-gray-600">4.8</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 text-xl font-bold text-dark">JavaScript Moderno</h3>
+                    <p class="mt-2 text-gray-600">Aprenda JavaScript do zero até frameworks modernos como React e Vue.</p>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-graduate text-gray-400 mr-2"></i>
+                            <span class="text-sm text-gray-500">2.4K alunos</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-sm line-through text-gray-500">R$ 497,00</span>
+                            <p class="text-lg font-bold text-primary">R$ 347,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 border-t border-gray-100 bg-gray-50">
+                    <a href="#" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700">
+                        Saiba mais
+                    </a>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img class="w-full h-48 object-cover" src="https://www.upinside.com.br/tim.php?src=uploads/courses/2023/01/full-stack-php-developer-1674132121.png&w=960&h=540" alt="PHP">
+                    <!-- <div class="absolute top-0 left-0 bg-primary text-white px-3 py-1 text-xs font-bold rounded-br-lg">
+                        ATUALIZADO
+                    </div> -->
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                        <span class="inline-block bg-accent bg-opacity-10 text-accent px-3 py-1 text-xs font-semibold rounded-full">PHP</span>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-1 text-gray-600">4.7</span>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 text-xl font-bold text-dark">PHP Moderno</h3>
+                    <p class="mt-2 text-gray-600">Desenvolva aplicações robustas com PHP 8+, Laravel e boas práticas.</p>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-user-graduate text-gray-400 mr-2"></i>
+                            <span class="text-sm text-gray-500">1.8K alunos</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-sm line-through text-gray-500">R$ 497,00</span>
+                            <p class="text-lg font-bold text-primary">R$ 347,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 border-t border-gray-100 bg-gray-50">
+                    <a href="#" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-700">
+                        Saiba mais 
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="bg-blue-600">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span class="block">Quer se tornar um profissional completo?</span>
+            <span class="block text-blue-200">Comece hoje mesmo na UpInside.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="inline-flex rounded-md shadow">
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors duration-300">
+                    Quero me matricular
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">devcampus</h3>
+                <p class="mt-4 text-gray-500">plataforma de cursos online com foco em tecnologia e desenvolvimento profissional.</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">cursos</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">desenvolvimento web</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">ciência de dados</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">mobile</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">suporte</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">central de ajuda</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">contato</a></li>
+                    <li><a href="certificados.html" class="text-gray-600 hover:text-blue-500">verificar certificados</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">redes sociais</h3>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+            &copy; 2023 devcampus. todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
