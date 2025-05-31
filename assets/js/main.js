@@ -177,7 +177,7 @@ const projects = [
   //   category: "hardware",
   //   description: "Projeto de um computador de 8 bits feito do zero, incluindo unidade de controle, ALU, registradores e barramentos. Ideal para estudo de arquitetura de computadores e sistemas embarcados.",
   //   tags: ["Eletrônica Digital", "C/C++", "Arquitetura", "Hardware"],
-  //   image: "../../assets/image/8bit-computer.jpg",
+  //   image: "https://drive.google.com/file/d/16ClPZs6iLSlVY2YjSRSAxAZ3QVNpyfv4/view?usp=sharing",
   //   link: "8bit-computer/",
   //   github: "https://github.com/carlos0ff/"
   // },
