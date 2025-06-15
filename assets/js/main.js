@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {*} project 
+ * @returns 
+ */
 function getProjectLink(project) {
   if (project.link.includes('?')) 
     return project.link;
@@ -7,6 +12,8 @@ function getProjectLink(project) {
 
 /**
  * Função para registrar visualização quando o projeto é acessado
+ * @param {*} projectId 
+ * @returns 
  */
 function registerProjectView(projectId) {
   const viewsKey = `project_${projectId}_views`;
@@ -24,6 +31,8 @@ function registerProjectView(projectId) {
 
 /**
  * Função para obter contagem de visualizações sem incrementar
+ * @param {*} projectId 
+ * @returns 
  */
 function getViewCount(projectId) {
   const viewsKey = `project_${projectId}_views`;
@@ -45,8 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
   renderRelatedProjects(currentProjectId, 3);
 });
 
+/**
+ * 
+ * @returns 
+ */
 function getCurrentProjectId() {
   const path = window.location.pathname;
+
   if (path.includes('driveflex')) return 1;
   if (path.includes('dashboard')) return 2;
   if (path.includes('ecommerce')) return 3;
@@ -57,6 +71,12 @@ function getCurrentProjectId() {
   return 1; 
 }
 
+/**
+ * 
+ * @param {*} currentProjectId 
+ * @param {*} count 
+ * @returns 
+ */
 function renderRelatedProjects(currentProjectId = null, count = 3) {
   const container = document.getElementById("related-list");
   
@@ -142,14 +162,14 @@ const projects = [
     github: "https://github.com/carlos0ff/brasileirao-api-java"
   },
   {
-    "id": 4,
-    "title": "Folha de pagamento",
-    "category": "backend",
-    "description": "Aplicação baseada no livro \"Java: Como Programar\" dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
-    "tags": ["Java", "Spring Boot", "Orientação a objetos"],
-    "image": "../../assets/image/payroll.png",
-    "link": "payroll/",
-    "github": "https://github.com/carlos0ff/"
+    id: 4,
+    title: "Folha de pagamento",
+    category: "backend",
+    description: "Aplicação baseada no livro \"Java: Como Programar\" dos Deitel, voltada para a implementação de um sistema de folha de pagamento. O projeto explora conceitos fundamentais de Java como encapsulamento, herança, polimorfismo e tratamento de exceções, além da aplicação de boas práticas de programação orientada a objetos.",
+    tags: ["Java", "Spring Boot", "Orientação a objetos"],
+    image: "../../assets/image/payroll.png",
+    link: "payroll/",
+    github: "https://github.com/carlos0ff/"
   },
   {
     id: 5,
@@ -171,66 +191,6 @@ const projects = [
     link: "ecommerce",
     github: "https://github.com/carlos0ff/ecommerce"
   }
-  // {
-  //   id: 7,
-  //   title: "Computador 8 Bits",
-  //   category: "hardware",
-  //   description: "Projeto de um computador de 8 bits feito do zero, incluindo unidade de controle, ALU, registradores e barramentos. Ideal para estudo de arquitetura de computadores e sistemas embarcados.",
-  //   tags: ["Eletrônica Digital", "C/C++", "Arquitetura", "Hardware"],
-  //   image: "https://drive.google.com/file/d/16ClPZs6iLSlVY2YjSRSAxAZ3QVNpyfv4/view?usp=sharing",
-  //   link: "8bit-computer/",
-  //   github: "https://github.com/carlos0ff/"
-  // },
-  // {
-  //   id: 8,
-  //   title: "Brasileirão API",
-  //   category: "backend",
-  //   description: "Aplicação backend em Java que consome e processa dados da API do Brasileirão para fornecer informações sobre times, partidas, classificações e estatísticas em tempo real.",
-  //   tags: ["Java","Spring Boot", "APIs", "Restful"],
-  //   image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
-  //   link: "brasileirao-api-java/",
-  //   github: "https://github.com/carlos0ff/brasileirao-api-java"
-  // },
-  // {
-  //   id: 9,
-  //   title: "Banco de Dados - SQL e Modelagem",
-  //   category: "banco de dados",
-  //   description: "Estudo dos fundamentos de bancos de dados relacionais, incluindo modelagem de dados com diagramas entidade-relacionamento, normalização para integridade e eficiência, e criação e otimização de consultas SQL para manipulação e gerenciamento de dados.",
-  //   tags: ["SGBD", "SQL", "MySQL WorkBanch"],
-  //   image: "https://www.opservices.com.br/wp-content/uploads/2016/10/Quais-as-principais-diferencas-entre-banco-de-dados.png",
-  //   link: "database",
-  //   github: "https://github.com/carlos0ff/ecommerce"
-  // },
-  // {
-  //   id: 10,
-  //   title: "Estrutura de Dados I & II",
-  //   category: "Estrutura de Dados",
-  //   description: "As disciplinas de Estrutura de Dados I e II abordam estruturas básicas e avançadas para organização e manipulação eficiente de dados, como vetores, listas, pilhas, filas, árvores, tabelas hash e grafos, com foco em implementação e análise de complexidade",
-  //   tags: ["C/C++", "Estruturas de Dados", "Algoritmos"],
-  //   image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*yOYRUM0jeimN32tcX7nLng.jpeg",
-  //   link: "ecommerce",
-  //   github: "https://github.com/carlos0ff/ecommerce"
-  // },
-  // {
-  //   id: 11,
-  //   title: "MyDrugs",
-  //   category: "fullstack",
-  //   description: "Plataforma de e-commerce com carrinho de compras e gateway de pagamento.",
-  //   tags: ["Java", "Angular", "MySQL"],
-  //   image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
-  //   link: "ecommerce",
-  //   github: "https://github.com/carlos0ff/ecommerce"
-  // },
-  // {
-  //   id: 12,
-  //   title: "MyDrugs",
-  //   category: "fullstack",
-  //   description: "Plataforma de e-commerce com carrinho de compras e gateway de pagamento.",
-  //   tags: ["Java", "Angular", "MySQL"],
-  //   image: "../../assets/image/thumb/thumb-brasileiraoAPI.png",
-  //   link: "ecommerce",
-  //   github: "https://github.com/carlos0ff/ecommerce"
-  // }
 ];
 
 /**
@@ -283,7 +243,6 @@ const utils = {
   // Função para lidar com o clique no link do projeto
   handleProjectView: (projectId, event) => {
     registerProjectView(projectId);
-    // Você pode adicionar aqui outras lógicas como tracking analytics
   }
 };
 
@@ -300,50 +259,51 @@ const render = {
     };
 
     return `
-      <div class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 flex flex-col h-full">
-        <div class="relative h-48 overflow-hidden">
-          <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
-            <span class="text-xs px-2 py-1 rounded ${categoryClasses[project.category] || 'bg-gray-700/80 text-gray-300'}">
-              ${project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+    <div class="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 flex flex-col h-[500px]">
+      
+      <div class="relative h-48 overflow-hidden">
+        <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+          <span class="text-xs px-2 py-1 rounded ${categoryClasses[project.category] || 'bg-gray-700/80 text-gray-300'}">
+            ${project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+          </span>
+        </div>
+      </div>
+
+      <div class="p-6 flex flex-col flex-grow">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-semibold text-white truncate">${project.title}</h3>
+        </div>
+
+        <p class="text-gray-400 text-sm mb-4 line-clamp-3">${project.description}</p>
+
+        <div class="flex flex-wrap gap-2 text-xs text-gray-300 mb-4">
+          ${project.tags.map(tag => `
+            <span class="bg-gray-700/50 px-2 py-1 rounded">${tag}</span>
+          `).join('')}
+        </div>
+
+        <div class="flex justify-between items-center pt-3 border-t border-gray-700/50 mt-auto">
+          <a href="${getProjectLink(project)}"
+            onclick="utils.handleProjectView(${project.id}, event)"
+            class="text-sm text-blue-400 hover:text-blue-300 flex items-center">
+            <i class="fas fa-external-link-alt mr-2"></i> Ver Projeto
+          </a>
+          <div class="flex items-center gap-3">
+            <a href="${project.github}"
+              target="_blank"
+              class="text-gray-400 hover:text-white"
+              onclick="event.stopPropagation()">
+              <i class="fab fa-github"></i>
+            </a>
+            <span class="text-sm text-gray-400 flex items-center" title="Visualizações">
+              <i class="fas fa-eye mr-1"></i> ${getViewCount(project.id)}
             </span>
           </div>
         </div>
-
-        <div class="p-6 flex flex-col flex-grow">
-          <div class="flex justify-between items-start mb-3">
-            <h3 class="text-xl font-semibold text-white">${project.title}</h3>
-          </div>
-
-          <p class="text-gray-400 mb-4 flex-grow">${project.description}</p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            ${project.tags.map(tag => `
-              <span class="text-xs bg-gray-700/50 text-gray-300 px-2 py-1 rounded">${tag}</span>
-            `).join('')}
-          </div>
-
-          <div class="flex justify-between items-center pt-3 border-t border-gray-700/50 mt-auto">
-            <a href="${getProjectLink(project)}" 
-               onclick="utils.handleProjectView(${project.id}, event)"
-               class="text-sm text-primary-500 hover:text-blue-400 flex items-center">
-              <i class="fas fa-external-link-alt mr-2"></i> Ver Projeto
-            </a>
-            <div class="flex items-center gap-3">
-              <a href="${project.github}" 
-                 target="_blank" 
-                 class="text-gray-400 hover:text-white"
-                 onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i>
-              </a>
-              <span class="text-sm text-gray-400 flex items-center" title="Visualizações">
-                <i class="fas fa-eye mr-1"></i> ${getViewCount(project.id)}
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
-    `;
+    </div>
+  `;
   },
 
   projectsGrid: () => {
@@ -437,8 +397,10 @@ const render = {
   },
 
   updateFilterButtons: () => {
+
     elements.filterButtons.forEach(btn => {
       const btnCategory = btn.getAttribute('onclick')?.replace("controller.filterProjects('", "").replace("')", "");
+      
       if (btnCategory === state.currentFilter) {
         btn.classList.remove('bg-gray-700');
         btn.classList.add('bg-blue-600', 'text-white');

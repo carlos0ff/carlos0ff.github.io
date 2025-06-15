@@ -11,34 +11,93 @@
   border-radius: 2px;
 }
 
-/* Modal Control */
 body.modal-open {
   overflow: hidden;
 }
 
-/* Animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Text Effects */
-.gradient-text {
-  background: linear-gradient(90deg, #3b82f6, #1e40af);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    .animate-delay-100 {
+      animation-delay: 0.1s;
+    }
+    
+    .animate-delay-200 {
+      animation-delay: 0.2s;
+    }
+    
+    /* Efeito de Digitação */
+    .typing-effect {
+      border-right: 2px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+    }
+    
+    /* Efeito de Matrix mais suave */
+    #matrix-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    
+    /* Melhorias de Acessibilidade para Foco */
+    a:focus, button:focus {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+    }
+    
+    /* Efeitos Hover Aprimorados */
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-scale:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Gradiente Animado */
+    .animated-gradient {
+      background-size: 200% 200%;
+      animation: gradientBG 8s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
 /* Project Grid Layout */
 #project-list {
@@ -110,89 +169,78 @@ body.modal-open {
   z-index: 0;
   opacity: 0.15;
 }
-
-/* PDF Modal Styles */
-.pdf-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  overflow: hidden;
-}
-
-.pdf-modal-content {
-  width: 85%;
-  max-width: 900px;
-  height: 80%;
-  max-height: 700px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #1e293b;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-}
-
-.pdf-iframe-container {
-  flex: 1;
-  overflow: hidden;
-  border-radius: 0 0 8px 8px;
-}
-
-#pdf-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.pdf-close-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1001;
-  background-color: #1e293b;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #64748b;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.pdf-close-btn:hover {
-  background-color: #334155;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .pdf-modal-content {
-    width: 95%;
-    height: 70%;
-  }
-  
-  #project-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .project-header {
-    height: 10rem;
-  }
-  
-  .project-header img {
-    height: 5rem;
-  }
-}
+/* Estilo para o modal centralizado */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow: hidden;
+        }
+        
+        .pdf-modal-content {
+            width: 90vw;
+            max-width: 900px;
+            height: 90vh;
+            max-height: 700px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1e293b;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pdf-iframe-container {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        #pdf-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pdf-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            background-color: #1e293b;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #64748b;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pdf-close-btn:hover {
+            background-color: #334155;
+        }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .pdf-modal-content {
+                width: 95vw;
+                height: 80vh;
+            }
+        }

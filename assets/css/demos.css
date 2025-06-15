@@ -1,0 +1,68 @@
+.tech-icon {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .tech-icon {
+    transform: scale(1.1);
+    opacity: 0.3;
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f3f4f6;
+}
+
+.project-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+}
+
+.driveflex-iframe {
+    transform: scale(0.65);
+    transform-origin: 0 0;
+    width: 153.85%;
+    height: 153.85%;
+}
+
+.bitcomputer-iframe {
+    transform: scale(0.8);
+    transform-origin: 0 0;
+    width: 125%;
+    height: 125%;
+}
+
+.iframe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.iframe-overlay:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.project-iframe::-webkit-scrollbar {
+    display: none;
+}
+
+.project-iframe {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.filter-btn.active {
+    background-color: #2563eb; 
+    transform: scale(0.98);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
