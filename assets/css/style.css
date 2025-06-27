@@ -1,246 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* Scrollbar Styles */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+:root {
+  --primary: #22c55e; 
+  --secondary: #FFFFFF; 
+  --dark: #0f172a;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 2px;
+body {
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
-body.modal-open {
-  overflow: hidden;
+@keyframes typing {
+  from { width: 0 }
+  to { width: 13ch }
 }
 
-@keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
-    }
-    
-    .animate-fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    
-    .animate-pulse {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    
-    .animate-delay-100 {
-      animation-delay: 0.1s;
-    }
-    
-    .animate-delay-200 {
-      animation-delay: 0.2s;
-    }
-    
-    /* Efeito de Digitação */
-    .typing-effect {
-      border-right: 2px solid;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-    }
-    
-    /* Efeito de Matrix mais suave */
-    #matrix-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-    
-    /* Melhorias de Acessibilidade para Foco */
-    a:focus, button:focus {
-      outline: 2px solid #3b82f6;
-      outline-offset: 2px;
-    }
-    
-    /* Efeitos Hover Aprimorados */
-    .hover-scale {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .hover-scale:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Gradiente Animado */
-    .animated-gradient {
-      background-size: 200% 200%;
-      animation: gradientBG 8s ease infinite;
-    }
-    
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-/* Project Grid Layout */
-#project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  align-items: stretch;
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: var(--secondary) }
 }
 
-/* Project Header */
-.project-header {
-  position: relative;
-  height: 12rem;
-  background-color: #1f2937;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.card-hover {
+  transition: all 0.3s ease;
 }
 
-.project-header img {
-  height: 7rem;
-  object-fit: contain;
-  transition: transform 0.5s ease;
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.project-header img:hover {
+.skill-pill {
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
   transform: scale(1.05);
 }
 
-.project-header .badge {
+#particles-js {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
-}
-
-/* Features List */
-.features li {
-  margin-bottom: 0.25rem;
-}
-
-/* Specifications Grid */
-.specs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
-.spec-item {
-  font-size: 0.75rem;
-}
-
-.spec-value {
-  font-weight: bold;
-  color: #a5b4fc;
-}
-
-/* Matrix Background Effect */
-#matrix-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  opacity: 0.15;
+  background-image: url('https://falconmasters.com/demos/sitio_estilo_hacker/bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
-/* Estilo para o modal centralizado */
-        .pdf-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            overflow: hidden;
-        }
-        
-        .pdf-modal-content {
-            width: 90vw;
-            max-width: 900px;
-            height: 90vh;
-            max-height: 700px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #1e293b;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .pdf-iframe-container {
-            flex: 1;
-            overflow: hidden;
-            border-radius: 0 0 8px 8px;
-        }
-        
-        #pdf-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .pdf-close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 1001;
-            background-color: #1e293b;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #64748b;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        .pdf-close-btn:hover {
-            background-color: #334155;
-        }
-        
-        body.modal-open {
-            overflow: hidden;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .pdf-modal-content {
-                width: 95vw;
-                height: 80vh;
-            }
-        }

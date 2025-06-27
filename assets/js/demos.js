@@ -4,13 +4,13 @@
 const projects = [
     {
         id: 1,
-        title: "Aluguel de Carros",
+        title: "Localiza - Aluguel de Carros",
         category: "backend",
         description: "Sistema de aluguel de veículos desenvolvido em PHP puro, focado no aprendizado dos conceitos básicos de programação web, incluindo manipulação de formulários, gerenciamento de sessões e interação com banco de dados.",
         tags: ["PHP", "MySQL","HTML5", "CSS3"],
         image: "../../assets/image/admin.png",
         iframeUrl: null,
-        link: "driveflex/",
+        link: "localiza/",
         github: "https://github.com/carlos0ff/driveflex",
         customClass: "driveflex-iframe"
     },
@@ -19,7 +19,7 @@ const projects = [
         title: "Computador de 8 bit",
         category: "hardware",
         description: "Simulador de computador de 8-bit construído com lógica digital, demonstrando os princípios fundamentais de arquitetura de computadores, incluindo ALU, registradores e unidade de controle.",
-        tags: ["Arquitetura", "C/C++"],
+        tags: ["Arquitetura", "C/C++", "Assembly", "Eletrônica Digital"],
         image: "https://external-preview.redd.it/build-an-8-bit-computer-from-scratch-v0-MuXs5RX-cmwj4OMH2S8GrfuHXDIogl1bJEeNA_zJbsU.jpg?width=640&crop=smart&auto=webp&s=adb210d4e7753eecab21b269f94759956ab15ec9",
         iframeUrl: null,
         link: "8bit-computer/",
@@ -36,6 +36,28 @@ const projects = [
         iframeUrl: null,
         link: "pokedex/",
         github: "https://github.com/carlos0ff/pokedex"
+    },
+    {
+        id: 4,
+        title: "Fada Group",
+        category: "backend",
+        description: "Aplicação web interativa que consome a PokeAPI para exibir informações detalhadas sobre Pokémon, com recursos de busca, filtragem e visualização de estatísticas.",
+        tags: ["PHP", "Laravel", "API REST", "MySQL", "JavaScript"],
+        image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+        iframeUrl: null,
+        link: "fadagroup/",
+        github: "https://github.com/carlos0ff/pokedex"
+    },
+    {
+        id: 5,
+        title: "Plataforma EAD",
+        category: "backend",
+        description: "Aplicação web interativa que consome a PokeAPI para exibir informações detalhadas sobre Pokémon, com recursos de busca, filtragem e visualização de estatísticas.",
+        tags: ["PHP", "Laravel", "API REST", "MySQL", "JavaScript"],
+        image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+        iframeUrl: null,
+        link: "ead/",
+        github: "https://github.com/carlos0ff/pokedex"
     }
 ];
 
@@ -46,7 +68,7 @@ const tagColors = {
     "CSS3": "bg-blue-900 text-blue-200",
     "MySQL": "bg-cyan-900 text-cyan-200",
     "Java": "bg-red-900 text-red-200",
-    "Lógica Digital": "bg-emerald-900 text-emerald-200",
+    "Eletrônica Digital": "bg-emerald-900 text-emerald-200",
     "Arquitetura": "bg-indigo-900 text-indigo-200",
     "Assembly": "bg-fuchsia-900 text-fuchsia-200",
     "JavaScript": "bg-yellow-900 text-yellow-200",
@@ -106,14 +128,17 @@ function renderProjects() {
     if (filteredProjects.length === 0) {
     container.innerHTML = `
         <div class="col-span-full text-center py-12">
-        <i class="fas fa-search text-4xl text-gray-400 mb-4"></i>
-        <h3 class="text-xl font-medium text-gray-300">Nenhum projeto encontrado</h3>
-        <p class="text-gray-500 mt-2">Tente ajustar seus filtros ou termos de busca</p>
+            <i class="fas fa-search text-4xl text-gray-400 mb-4"></i>
+            <h3 class="text-xl font-medium text-gray-300">Nenhum projeto encontrado</h3>
+            <p class="text-gray-500 mt-2">Tente ajustar seus filtros ou termos de busca</p>
         </div>
     `;
     return;
 }
 
+/**
+ * 
+ */
 filteredProjects.forEach(project => {
     const mainIcon1 = techIcons[project.tags[0]] || techIcons.default;
     const mainIcon2 = project.tags[1] ? (techIcons[project.tags[1]] || techIcons.default) : "fas fa-server";
@@ -148,10 +173,10 @@ filteredProjects.forEach(project => {
             <div class="flex flex-col justify-between flex-grow p-5 space-y-4">
             <div>
                 <h3 class="text-lg font-semibold text-white mb-2 truncate" title="${project.title}">
-                ${project.title}
+                    ${project.title}
                 </h3>
                 <p class="text-sm text-gray-400 line-clamp-3 mb-3">
-                ${project.description}
+                    ${project.description}
                 </p>
 
                 <div class="flex flex-wrap gap-2">
@@ -164,17 +189,17 @@ filteredProjects.forEach(project => {
 
             <div class="flex justify-between items-center pt-2 border-t border-gray-700/50">
                 <a href="${project.link}" 
-                ${project.link.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
-                class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center group transition-colors duration-200">
-                <i class="fas fa-external-link-alt mr-2 text-xs group-hover:translate-x-1 transition-transform"></i> Ver Demo
+                    ${project.link.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                    class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center group transition-colors duration-200">
+                    <i class="fas fa-external-link-alt mr-2 text-xs group-hover:translate-x-1 transition-transform"></i> Ver Demo
                 </a>
 
                 <a href="${project.github}" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="text-gray-400 hover:text-white text-sm flex items-center transition-colors duration-200"
-                title="Ver código no GitHub">
-                <i class="fab fa-github mr-1"></i> Código
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-white text-sm flex items-center transition-colors duration-200"
+                    title="Ver código no GitHub">
+                    <i class="fab fa-github mr-1"></i> Código
                 </a>
             </div>
             </div>

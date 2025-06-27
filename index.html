@@ -1,117 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO Aprimorado -->
-  <meta name="description" content="José Carlos - Desenvolvedor Backend Java & Spring Boot especializado em construir APIs robustas e sistemas escaláveis. Confira meu portfólio e projetos.">
-  <meta name="keywords" content="desenvolvedor Java, backend developer, Spring Boot, Angular, API REST, microserviços, José Carlos, portfólio programador">
-  <meta name="author" content="José Carlos" />
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="José Carlos | Desenvolvedor Backend Java & Spring Boot">
-  <meta property="og:description" content="Especialista em desenvolvimento backend com Java, Spring Boot e arquitetura de sistemas escaláveis.">
-  <meta property="og:image" content="https://carlos0ff.github.io/assets/image/share/share.png">
-  <meta property="og:url" content="https://carlos0ff.github.io/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Portfólio José Carlos">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/image/payroll.png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png">
-
-  <!-- Preload de Recursos Críticos -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <title>José Carlos | Desenvolvedor Back-end Java & Spring Boot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="config/tailwind.config.js"></script>
+  <title>José Carlos | Desenvolvedor Backend Java & Spring Boot | Especialista em APIs</title>
 
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- SEO Otimizado -->
+  <meta name="description" content="José Carlos - Desenvolvedor Backend especializado em Java, Spring Boot e Laravel. Criação de APIs RESTful, microserviços e sistemas escaláveis com boas práticas e arquitetura limpa.">
+  <meta name="keywords" content="Desenvolvedor Java, Spring Boot, Laravel, Backend, API REST, Microserviços, José Carlos, Programador, Portfólio, SOLID, Clean Code">
+  <meta name="author" content="José Carlos">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="José Carlos | Desenvolvedor Backend Java & Spring Boot">
+  <meta property="og:description" content="Especialista em desenvolvimento de APIs robustas, escaláveis e seguras.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://carlos0ff.github.io/">
+
+  <!-- Favicon Moderno -->
+  <link rel="icon" href="/assets/image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Pré-carregar recursos críticos -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Tailwind CSS Otimizado -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  
+
 
 </head>
 
-<body class="relative min-h-screen bg-gray-900 text-gray-100 font-inter antialiased">
+<body class="relative min-h-screen bg-gray-900 text-gray-100 antialiased">
 
-<canvas id="matrix-canvas" aria-hidden="true"></canvas>
+<div id="particles-js" class="fixed inset-0 z-0 opacity-20"></div>
 
-<!-- CONTENT -->
+<!-- Main Content -->
 <main class="relative z-10">
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="mb-10 animate-fade-in-up animate-delay-100">
-        <div class="flex justify-center mb-6">
-          <div class="relative group">
-            <img src="https://avatars.githubusercontent.com/u/49466705?s=400&u=fc27866cff4b04b2d0466d46bef94f7044865b10&v=4" 
-                  alt="Foto de perfil de José Carlos" 
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary-500/30 object-cover shadow-xl hover:border-primary-500 transition-all duration-300">
-            <span class="absolute bottom-2 right-2 md:bottom-3 md:right-3 w-6 h-6 md:w-7 md:h-7 bg-green-500 rounded-full border-2 border-gray-900 group-hover:animate-pulse" 
-                  title="Disponível para oportunidades"></span>
-          </div>
+  <section id="inicio" class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex justify-center mb-8">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-green-600 rounded-full opacity-30 group-hover:opacity-50 transition duration-300 animate-pulse "></div>
+          <img src="https://avatars.githubusercontent.com/u/49466705"
+              alt="Foto de perfil de José Carlos"
+              class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-green-500 object-cover transition-transform duration-300 hover:scale-105">
+
+          <a href="https://drive.google.com/file/d/1FQ5jLWq-iaqd-9dV6PWXp3YFJIx-VW7m/preview" class="absolute bottom-1.5 right-4 w-5 h-5 bg-green-500 rounded-full border-2 border-gray-900 group-hover:scale-105 transition-transform cursor-pointer"
+                title="Disponível para oportunidades" target="_blank" rel="noopener noreferrer">
+          </a>
         </div>
-        
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-          <span class="block text-lg md:text-xl font-medium text-gray-300 mb-2 tracking-wider animate-fade-in-up animate-delay-200">
-            <span class="typing-effect" 
-                  style="width: 13ch; 
-                  animation: typing 1.5s steps(12), blink-caret 0.75s step-end infinite;
-                ">Prazer, eu sou</span>
-          </span>
-
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600">
-            José Carlos
-          </span>
-        </h1>
-        
-        <h2 class="text-lg md:text-xl text-gray-400 font-light mb-6">
-          <span class="text-gray-300">Desenvolvedor Back-end </span> 
-          <span class="text-red-400 font-medium">Java</span> 
-        </h2>
-
-        <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-          Especialista em construir APIs robustas e sistemas escaláveis com arquitetura limpa, 
-          boas práticas e foco em performance e segurança.
-        </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-in-up animate-delay-300">
-        <a href="projetos/" 
-          class="px-8 py-3.5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white rounded-lg shadow-lg hover-scale font-medium text-lg flex items-center justify-center gap-3 border-2 border-green-600/50 transition-all"
-          aria-label="Ver projetos de José Carlos">
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+        <span class="block text-base md:text-lg font-medium text-gray-400 mb-2 tracking-wider">
+          <span class="inline-block typing-effect border-r-2 border-red-500 pr-1 whitespace-nowrap overflow-hidden"
+                style="animation: typing 2s steps(13) forwards, blink 0.7s infinite;">
+            Prazer, eu sou
+          </span>
+        </span>
+
+        <span class="text-green-500 -uppercase">Carlos</span>
+      </h1>
+
+      <h2 class="text-xl md:text-2xl text-gray-400 font-light mb-6">
+        <span class="text-gray-300">Desenvolvedor Backend</span>  
+      </h2>
+
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-10">
+        Curto bastante desenvolver <span class="text-green-400 uppercase">APIs que funcionam de verdade</span> e construir <span class="text-red-400 uppercase">sistemas que não travam</span>.  
+        Sempre tento escrever um código limpo, aprender boas práticas e deixar tudo rápido e organizado.
+      </p>
+
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+        <a href="/em-breve"
+           class="px-8 py-3.5 bg-green-500 hover:bg-green-600 text-gray-900 rounded-lg shadow-lg font-medium text-lg flex items-center justify-center gap-3 border border-green-500 transition-all hover:shadow-green-500/20">
           <i class="fas fa-code-branch"></i>
-          Explorar Projetos
+          Ver Projetos
         </a>
 
-        <a href="https://drive.google.com/file/d/1FQ5jLWq-iaqd-9dV6PWXp3YFJIx-VW7m/view?usp=sharing" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="px-8 py-3.5 bg-gray-800 hover:bg-gray-700 border-2 border-gray-700 rounded-lg hover-scale transition-all font-medium text-lg flex items-center justify-center gap-3 group"
-          aria-label="Abrir currículo de José Carlos">
-          <i class="fas fa-file-alt group-hover:text-primary-400 transition-colors"></i>
-          <span class="group-hover:text-primary-300 transition-colors">Ver Currículo</span>
+        <a href="https://drive.google.com/file/d/1FQ5jLWq-iaqd-9dV6PWXp3YFJIx-VW7m/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           class="px-8 py-3.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg font-medium text-lg flex items-center justify-center gap-3 group transition hover:border-gray-500">
+          <i class="fas fa-file-alt text-green-500 group-hover:text-green-400"></i>
+          <span class="group-hover:text-green-400">Ver Currículo</span>
         </a>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-2 text-sm ">
-        <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="px-5 py-2 bg-gray-900 rounded-full hover:bg-primary-600 transition-colors flex items-center gap-2">
+      <!-- Redes Sociais -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://linkedin.com/in/carlos0ff" target="_blank" rel="noopener noreferrer"
+           class="px-5 py-2.5 bg-gray-800 hover:bg-green-600 transition-colors rounded-full flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-green-500/10">
           <i class="fab fa-linkedin-in"></i> LinkedIn
         </a>
-        <a href="https://github.com/carlos0ff" target="_blank" class="px-5 py-2 bg-gray-900 rounded-full hover:bg-primary-600 transition-colors flex items-center gap-2">
+        <a href="https://github.com/carlos0ff" target="_blank" rel="noopener noreferrer"
+           class="px-5 py-2.5 bg-gray-800 hover:bg-green-600 transition-colors rounded-full flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-green-500/10">
           <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="mailto:carlosiilva66@gmail.com" class="px-5 py-2 bg-gray-900 rounded-full hover:bg-primary-600 transition-colors flex items-center gap-2">
+        <a href="mailto:carlosiilva66@gmail.com"
+           class="px-5 py-2.5 bg-gray-800 hover:bg-green-600 transition-colors rounded-full flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-green-500/10">
           <i class="fas fa-envelope"></i> E-mail
         </a>
-        <a href="/certificados" class="px-5 py-2 bg-gray-900 rounded-full hover:bg-primary-600 transition-colors flex items-center gap-2">
+        <a href="/certificados"
+           class="px-5 py-2.5 bg-gray-800 hover:bg-red-600 transition-colors rounded-full flex items-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-red-500/10">
           <i class="fas fa-certificate"></i> Certificados
         </a>
       </div>
@@ -119,47 +138,11 @@
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="bg-gray-900/80 border-t border-gray-800 py-8 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
-        <a href="/" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500 flex items-center">
-          <span class="bg-gray-800 p-2 rounded-lg mr-2">
-            <i class="fas fa-microchip text-primary-500"></i>
-          </span>
-          José Carlos
-        </a>
-      </div>
-      
-      <div class="flex space-x-6 mb-4 md:mb-0">
-        <a href="https://github.com/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
-          <i class="fab fa-github text-lg"></i>
-        </a>
-        <a href="https://linkedin.com/in/carlos0ff" target="_blank" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-          <i class="fab fa-linkedin text-lg"></i>
-        </a>
-        <a href="mailto:carlosiilva66@gmail.com" class="text-gray-400 hover:text-white transition-colors" aria-label="Email">
-          <i class="fas fa-envelope text-lg"></i>
-        </a>
-      </div>
-      
-      <div class="text-sm text-gray-500">
-        <span class="block mb-1"><i class="fas fa-eye mr-1"></i> Visitas: </span>
-        <div id="visit-counter" class="inline-block"></div>
-      </div>
-    </div>
-    
-    <div class="mt-6 pt-6 border-t border-gray-800 text-center text-xs text-gray-600">
-      <p>© <span id="current-year"></span> José Carlos. Todos os direitos reservados.</p>
-      <p class="mt-1">Desenvolvido com <i class="fas fa-heart text-red-400"></i> e <i class="fas fa-coffee text-amber-600"></i></p>
-    </div>
-  </div>
-</footer>
-
-<!-- Core javascript -->
-<script type="text/javascript" src="assets/js/teste.js"></script>
+<!-- Core Javascripts -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script type="text/javascript" src="assets/js/particulas.js"></script>
+
+
 
 </body>
 </html>

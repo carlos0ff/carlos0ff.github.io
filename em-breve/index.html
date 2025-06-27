@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Em Breve | José Carlos | Desenvolvedor Backend Java & Spring Boot</title>
+
+  <!-- SEO Otimizado -->
+  <meta name="description" content="Página em construção - José Carlos está preparando conteúdo especial sobre desenvolvimento backend com Java, Spring Boot e boas práticas de programação.">
+  <meta name="keywords" content="Java, Spring Boot, API REST, Microserviços, Backend, Desenvolvedor Java, José Carlos, Portfólio">
+  <meta name="author" content="José Carlos">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/image/payroll.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'typing': 'typing 3.5s steps(40, end)',
+            'blink': 'blink .75s step-end infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            typing: {
+              from: { width: '0' },
+              to: { width: '100%' }
+            },
+            blink: {
+              'from, to': { 'border-color': 'transparent' },
+              '50%': { 'border-color': 'rgb(239 68 68)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .code-block {
+      background: #1e293b;
+      border-left: 4px solid #10b981;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen bg-gray-900 text-gray-100 antialiased">
+
+<div id="particles-js" class="fixed inset-0 z-0 opacity-20"></div>
+
+<!-- Main Content -->
+<main class="relative z-10">
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20">
+    <div class="max-w-4xl mx-auto">
+      <!-- Cabeçalho com identidade visual -->
+      <div class="mb-12">
+        <a href="/" class="inline-block text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-300 hover:from-green-400 hover:to-green-200 transition-all duration-300">
+          José Carlos
+        </a>
+        <span class="ml-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-800 text-green-400">
+          <span class="w-2 h-2 mr-2 rounded-full bg-green-500 animate-pulse"></span>
+          Backend Developer
+        </span>
+      </div>
+
+      <!-- Conteúdo Dinâmico Baseado na Seção -->
+      <div id="content-container" class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 md:p-10 shadow-2xl">
+        <!-- Ícone Animado -->
+        <div id="icon-box" class="mx-auto w-24 h-24 rounded-full flex items-center justify-center text-4xl mb-8 animate-float">
+          <i class="fas fa-tools"></i>
+        </div>
+
+        <!-- Título e Descrição -->
+        <h1 id="page-title" class="text-3xl md:text-4xl font-bold mb-4 text-green-400">
+          <span class="inline-block typing-effect border-r-2 border-red-500 pr-1 whitespace-nowrap overflow-hidden"
+                style="animation: typing 2s steps(20) forwards, blink 0.7s infinite;">
+            Em construção
+          </span>
+        </h1>
+        
+        <div class="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30 my-6"></div>
+        
+        <p id="page-description" class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+          Estou preparando esta seção com conteúdo especial sobre desenvolvimento backend. Volte em breve para conferir!
+        </p>
+
+        <!-- Bloco de Código (Dinâmico por seção) -->
+        <div id="code-preview" class="code-block rounded-lg p-4 text-left mb-8 overflow-x-auto">
+          <pre id="code-content" class="text-green-400 font-mono text-sm md:text-base">
+// Código de exemplo será exibido aqui
+// Baseado na seção acessada</pre>
+        </div>
+
+        <!-- Barra de Progresso -->
+        <div class="mb-8">
+          <div class="flex justify-between text-sm text-gray-400 mb-2">
+            <span>Progresso do desenvolvimento</span>
+            <span id="progress-percent">70%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2">
+            <div id="progress-bar" class="bg-gradient-to-r from-green-500 to-green-300 h-2 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+
+        <!-- Contador Regressivo -->
+        <div class="bg-gray-900 rounded-lg p-6 mb-8 border border-gray-700">
+          <p class="text-sm text-gray-400 mb-4">Disponível em:</p>
+          <div id="countdown" class="flex justify-center gap-3">
+            <div class="bg-gray-800 rounded-lg p-3 min-w-[70px]">
+              <div class="text-2xl font-mono font-bold text-green-400" id="days">00</div>
+              <div class="text-xs text-gray-400">dias</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-3 min-w-[70px]">
+              <div class="text-2xl font-mono font-bold text-green-400" id="hours">00</div>
+              <div class="text-xs text-gray-400">horas</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-3 min-w-[70px]">
+              <div class="text-2xl font-mono font-bold text-green-400" id="minutes">00</div>
+              <div class="text-xs text-gray-400">min</div>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-3 min-w-[70px]">
+              <div class="text-2xl font-mono font-bold text-green-400" id="seconds">00</div>
+              <div class="text-xs text-gray-400">seg</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/" class="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-gray-900 rounded-lg shadow-lg hover:shadow-green-500/20 transition-all duration-300 flex items-center justify-center font-medium gap-2">
+            <i class="fas fa-home"></i> Voltar à Home
+          </a>
+          <a href="mailto:carlosiilva66@gmail.com" class="px-6 py-3 border border-gray-600 hover:border-green-400 text-gray-300 hover:text-white rounded-lg hover:bg-gray-800/50 transition-all duration-300 flex items-center justify-center font-medium gap-2">
+            <i class="fas fa-envelope"></i> Contato
+          </a>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="mt-12 text-sm text-gray-500">
+        © <span id="year"></span> José Carlos. Todos os direitos reservados.
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  // Configurações dinâmicas por tipo de página
+  const params = new URLSearchParams(window.location.search);
+  const tipo = params.get("tipo")?.toLowerCase() || 'default';
+
+  const secoes = {
+    projetos: {
+      title: "Portfólio em construção",
+      desc: "Estou organizando meus projetos mais recentes com Java, Spring Boot e Laravel. Em breve você poderá explorar cases completos com arquitetura limpa e boas práticas.",
+      icon: "fa-laptop-code",
+      color: "bg-gradient-to-br from-blue-600 to-blue-400",
+      code: `@RestController
+@RequestMapping("/api/projetos")
+public class ProjetoController {
+  
+  private final ProjetoService projetoService;
+
+  public ProjetoController(ProjetoService projetoService) {
+    this.projetoService = projetoService;
+  }
+
+  @GetMapping
+  public ResponseEntity<List<ProjetoDTO>> listarTodos() {
+    return ResponseEntity.ok(projetoService.listarTodos());
+  }
+}`,
+      progress: 65,
+      launchDate: "2023-11-30"
+    },
+    certificados: {
+      title: "Certificados em breve",
+      desc: "Estou organizando meus certificados de Java, Spring Boot, arquitetura de software e outras tecnologias relevantes para desenvolvimento backend.",
+      icon: "fa-certificate",
+      color: "bg-gradient-to-br from-yellow-600 to-yellow-400",
+      code: `public class Certificado {
+  private String titulo;
+  private String instituicao;
+  private LocalDate dataConclusao;
+  private String urlCredencial;
+
+  // Builder pattern
+  public static class Builder {
+    private String titulo;
+    // outros campos...
+  }
+}`,
+      progress: 85,
+      launchDate: "2023-12-10"
+    },
+    cv: {
+      title: "Currículo em atualização",
+      desc: "Estou revisando meu currículo com as experiências mais recentes em desenvolvimento backend, incluindo projetos complexos com Spring Boot e arquitetura de microserviços.",
+      icon: "fa-file-alt",
+      color: "bg-gradient-to-br from-purple-600 to-purple-400",
+      code: `public interface DesenvolvedorBackend {
+  List<String> getHabilidades();
+  List<Experiencia> getExperiencias();
+  default String getNivel() {
+    return "Sênior";
+  }
+}`,
+      progress: 75,
+      launchDate: "2023-12-15"
+    },
+    default: {
+      title: "Conteúdo em desenvolvimento",
+      desc: "Estou preparando material técnico especializado sobre desenvolvimento backend com Java e Spring Boot. Em breve você encontrará artigos, tutoriais e cases aqui.",
+      icon: "fa-tools",
+      color: "bg-gradient-to-br from-green-600 to-green-400",
+      code: `@SpringBootApplication
+public class PortfolioApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(PortfolioApplication.class, args);
+    System.out.println("Em breve: conteúdo incrível!");
+  }
+}`,
+      progress: 50,
+      launchDate: "2023-12-01"
+    }
+  };
+
+  // Aplica configurações da seção
+  const secao = secoes[tipo] || secoes.default;
+  
+  document.title = `${secao.title} | José Carlos - Desenvolvedor Backend`;
+  document.getElementById("page-title").textContent = secao.title;
+  document.getElementById("page-description").textContent = secao.desc;
+  document.getElementById("progress-percent").textContent = `${secao.progress}%`;
+  document.getElementById("progress-bar").style.width = `${secao.progress}%`;
+  document.getElementById("code-content").textContent = secao.code;
+  
+  const iconBox = document.getElementById("icon-box");
+  iconBox.className = `mx-auto w-24 h-24 ${secao.color} rounded-full flex items-center justify-center text-4xl mb-8 animate-float`;
+  iconBox.innerHTML = `<i class="fas ${secao.icon}"></i>`;
+
+  // Contador regressivo
+  function updateCountdown() {
+    const now = new Date();
+    const launchDate = new Date(secao.launchDate);
+    const diff = launchDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = `
+        <div class="text-center py-4">
+          <div class="text-green-400 font-medium mb-2">Conteúdo disponível!</div>
+          <a href="/${tipo}" class="text-green-300 hover:underline">Atualize a página</a>
+        </div>
+      `;
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days.toString().padStart(2, '0');
+    document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Atualiza o ano no rodapé
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Inicializa partículas (opcional)
+  if (typeof particlesJS !== 'undefined') {
+    particlesJS.load('particles-js', 'assets/js/particles-config.json');
+  }
+</script>
+
+</body>
+</html>
